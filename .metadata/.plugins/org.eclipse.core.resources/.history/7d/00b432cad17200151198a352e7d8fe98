@@ -1,0 +1,7 @@
+#include "gametree.h"
+
+int main()
+{
+	GameTree<int> gTree;
+	gTree.print_value();
+}

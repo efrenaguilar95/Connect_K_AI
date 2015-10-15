@@ -1,13 +1,12 @@
 #ifndef GAMETREE_H_
 #define GAMETREE_H_
 
-#include <iostream>
 //Uses code by Prof. Richard Pattis for the foundation of the tree
 template<class T>
 class GameTree
 {
 	public:
-		GameTree() : first_child(NULL), next_sibling(NULL), parent(NULL)
+		GameTree() : first_child(nullptr), next_sibling(nullptr), parent(nullptr)
 		{
 			//Initializes a GameTree with no children
 		}
@@ -17,7 +16,7 @@ class GameTree
 			//GameTree copy constructor
 		}
 
-		GameTree(T value, GameTree<T>* fc=NULL, GameTree<T>* ns = NULL, GameTree<T>* p = NULL)
+		GameTree(T value, GameTree<T>* fc=nullptr, GameTree<T>* ns = nullptr, GameTree<T>* p = nullptr)
 			: value(value), first_child(fc), next_sibling(ns), parent(p)
 		{
 
@@ -27,11 +26,6 @@ class GameTree
 		GameTree<T>* first_child;	//First for a linked list of children
 		GameTree<T>* next_sibling; 	//Next in linked list of siblings
 		GameTree<T>* parent;		//The parent of this node
-
-		void print_value()
-		{
-			std::cout << value << std::endl;
-		}
 
 
 };

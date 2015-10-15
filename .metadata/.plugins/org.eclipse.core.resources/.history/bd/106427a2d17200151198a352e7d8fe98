@@ -7,7 +7,7 @@ template<class T>
 class GameTree
 {
 	public:
-		GameTree() : first_child(NULL), next_sibling(NULL), parent(NULL)
+		GameTree() : first_child(NULL), next_sibling(nullptr), parent(nullptr)
 		{
 			//Initializes a GameTree with no children
 		}
@@ -17,7 +17,7 @@ class GameTree
 			//GameTree copy constructor
 		}
 
-		GameTree(T value, GameTree<T>* fc=NULL, GameTree<T>* ns = NULL, GameTree<T>* p = NULL)
+		GameTree(T value, GameTree<T>* fc=nullptr, GameTree<T>* ns = nullptr, GameTree<T>* p = nullptr)
 			: value(value), first_child(fc), next_sibling(ns), parent(p)
 		{
 
