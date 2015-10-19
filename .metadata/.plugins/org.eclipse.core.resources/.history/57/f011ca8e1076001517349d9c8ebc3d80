@@ -23,11 +23,6 @@ class GameTree
 
 		}
 
-		~GameTree()
-		{
-			//delete this node, and all its children (and siblings?)
-		}
-
 		T value;
 		GameTree<T>* first_child;	//First for a linked list of children
 		GameTree<T>* next_sibling; 	//Next in linked list of siblings
@@ -41,22 +36,18 @@ class GameTree
 
 		void addChild(GameTree<T>* child)
 		{
-			first_child = child;
-			first_child->parent = *this;
+
 		}
 
 		void addSibling(GameTree<T>* sibling)
 		{
-			next_sibling = sibling;
-			next_sibling->parent = parent;
+
 		}
 
 		void removeSiblings()
 		{
 			//Removes all siblings of this node, and their respective children
 		}
-
-
 
 
 

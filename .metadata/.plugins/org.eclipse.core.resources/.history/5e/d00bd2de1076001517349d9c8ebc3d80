@@ -42,13 +42,11 @@ class GameTree
 		void addChild(GameTree<T>* child)
 		{
 			first_child = child;
-			first_child->parent = *this;
 		}
 
 		void addSibling(GameTree<T>* sibling)
 		{
-			next_sibling = sibling;
-			next_sibling->parent = parent;
+
 		}
 
 		void removeSiblings()

@@ -42,7 +42,6 @@ class GameTree
 		void addChild(GameTree<T>* child)
 		{
 			first_child = child;
-			first_child->parent = *this;
 		}
 
 		void addSibling(GameTree<T>* sibling)
