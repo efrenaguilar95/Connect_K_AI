@@ -40,11 +40,10 @@ class GameTree
 
 
 
-		void addChild(GameTree<T>& child)
+		void addChild(const GameTree<T>& child)
 		{
-			GameTree<T>* c = new GameTree<T>(child.value);
-			first_child = c;
-			first_child->parent = this;
+			first_child = child;
+			first_child->paren = this;
 		}
 
 		/*void addChild(GameTree<T>* child)

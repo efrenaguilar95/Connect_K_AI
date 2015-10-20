@@ -42,7 +42,7 @@ class GameTree
 
 		void addChild(GameTree<T>& child)
 		{
-			GameTree<T>* c = new GameTree<T>(child.value);
+			*GameTree<T> c = new GameTree<T>;
 			first_child = c;
 			first_child->parent = this;
 		}

@@ -39,20 +39,11 @@ class GameTree
 		}
 
 
-
-		void addChild(GameTree<T>& child)
-		{
-			GameTree<T>* c = new GameTree<T>(child.value);
-			first_child = c;
-			first_child->parent = this;
-		}
-
-		/*void addChild(GameTree<T>* child)
+		void addChild(GameTree<T>* child)
 		{
 			first_child = child;
-			first_child->parent = this;
+			first_child->parent = *this;
 		}
-		*/
 
 		void addSibling(GameTree<T>* sibling)
 		{

@@ -71,3 +71,123 @@ collect2.exe: error: ld returned 1 exit status
 Info: Internal Builder is used for build
 g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
 g++ -o GameTree.exe main.o 
+Info: Nothing to build for Connect_K_AI
+13:11:39 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o GameTree.exe main.o 
+Info: Nothing to build for GameTree
+13:18:35 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+In file included from ..\main.cpp:1:0:
+..\gametree.h: In instantiation of 'void GameTree<T>::addChild(GameTree<T>*) [with T = int]':
+..\main.cpp:9:24:   required from here
+..\gametree.h:45:24: error: cannot convert 'GameTree<int>' to 'GameTree<int>*' in assignment
+    first_child->parent = *this;
+                        ^
+13:19:56 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+..\main.cpp: In function 'int main()':
+..\main.cpp:9:22: error: no match for 'operator*' (operand type is 'GameTree<int>')
+  GameTree<int>* g2 = *gTree2;
+                      ^
+In file included from ..\main.cpp:1:0:
+..\gametree.h: In instantiation of 'void GameTree<T>::addChild(GameTree<T>*) [with T = int]':
+..\main.cpp:10:19:   required from here
+..\gametree.h:45:24: error: cannot convert 'GameTree<int>' to 'GameTree<int>*' in assignment
+    first_child->parent = *this;
+                        ^
+Info: Nothing to build for Connect_K_AI
+13:20:37 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+..\main.cpp: In function 'int main()':
+..\main.cpp:9:22: error: no match for 'operator*' (operand type is 'GameTree<int>')
+  GameTree<int>* g2 = *gTree2;
+                      ^
+In file included from ..\main.cpp:1:0:
+..\gametree.h: In instantiation of 'void GameTree<T>::addChild(GameTree<T>*) [with T = int]':
+..\main.cpp:10:19:   required from here
+..\gametree.h:45:24: error: cannot convert 'GameTree<int>' to 'GameTree<int>*' in assignment
+    first_child->parent = *this;
+                        ^
+13:21:11 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+..\main.cpp: In function 'int main()':
+..\main.cpp:9:22: error: cannot convert 'GameTree<int>' to 'GameTree<int>*' in initialization
+  GameTree<int>* g2 = gTree2;
+                      ^
+In file included from ..\main.cpp:1:0:
+..\gametree.h: In instantiation of 'void GameTree<T>::addChild(GameTree<T>*) [with T = int]':
+..\main.cpp:10:19:   required from here
+..\gametree.h:45:24: error: cannot convert 'GameTree<int>' to 'GameTree<int>*' in assignment
+    first_child->parent = *this;
+                        ^
+13:21:21 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+In file included from ..\main.cpp:1:0:
+..\gametree.h: In instantiation of 'void GameTree<T>::addChild(GameTree<T>*) [with T = int]':
+..\main.cpp:10:19:   required from here
+..\gametree.h:45:24: error: cannot convert 'GameTree<int>' to 'GameTree<int>*' in assignment
+    first_child->parent = *this;
+                        ^
+13:22:38 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+In file included from ..\main.cpp:1:0:
+..\gametree.h: In instantiation of 'void GameTree<T>::addChild(GameTree<T>*) [with T = int]':
+..\main.cpp:10:19:   required from here
+..\gametree.h:45:24: error: cannot convert 'GameTree<int>' to 'GameTree<int>*' in assignment
+    first_child->parent = *this;
+                        ^
+13:24:08 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o GameTree.exe main.o 
+13:33:38 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+In file included from ..\main.cpp:1:0:
+..\gametree.h: In instantiation of 'void GameTree<T>::addChild(const GameTree<T>&) [with T = int]':
+..\main.cpp:10:23:   required from here
+..\gametree.h:45:16: error: cannot convert 'const GameTree<int>' to 'GameTree<int>*' in assignment
+    first_child = child;
+                ^
+13:34:24 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+In file included from ..\main.cpp:1:0:
+..\gametree.h: In instantiation of 'void GameTree<T>::addChild(GameTree<T>&) [with T = int]':
+..\main.cpp:10:23:   required from here
+..\gametree.h:45:16: error: cannot convert 'GameTree<int>' to 'GameTree<int>*' in assignment
+    first_child = child;
+                ^
+13:34:47 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+In file included from ..\main.cpp:1:0:
+..\gametree.h: In instantiation of 'void GameTree<T>::addChild(GameTree<T>&) [with T = int]':
+..\main.cpp:10:23:   required from here
+..\gametree.h:45:18: error: no match for 'operator*' (operand type is 'GameTree<int>')
+    first_child = *child;
+                  ^
+13:38:07 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+In file included from ..\main.cpp:1:0:
+..\gametree.h: In member function 'void GameTree<T>::addChild(GameTree<T>&)':
+..\gametree.h:45:17: error: expected primary-expression before 'c'
+    *GameTree<T> c = new GameTree<T>;
+                 ^
+..\gametree.h:45:17: error: expected ';' before 'c'
+..\gametree.h:46:18: error: 'c' was not declared in this scope
+    first_child = c;
+                  ^
+13:38:47 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o GameTree.exe main.o 

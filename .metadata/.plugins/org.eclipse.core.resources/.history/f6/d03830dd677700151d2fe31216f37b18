@@ -6,8 +6,8 @@ int main()
 	GameTree<int> gTree(10);
 	gTree.print_value();
 	GameTree<int> gTree2(8);
-	//GameTree<int>* g2 = &gTree2;
-	gTree.addChild(gTree2);
+	*GameTree<int> g2 = *gTree2;
+	gTree.addChild(&gTree2);
 	gTree.first_child->print_value();
 	gTree.print_value();
 }
