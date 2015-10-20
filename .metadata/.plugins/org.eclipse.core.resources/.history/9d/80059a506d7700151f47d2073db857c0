@@ -58,7 +58,9 @@ class GameTree
 		{
 			GameTree<T>* s = new GameTree<T>(sibling.value);
 			next_sibling = s;
+			std::cout<<"here"<<std::endl;
 			next_sibling->parent = parent;
+			std::cout<<"here1"<<std::endl;
 		}
 
 		void removeSiblings()

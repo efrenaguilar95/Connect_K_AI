@@ -38,7 +38,7 @@ public:
 	//Our own code
 	GameTree<int **>* gameTree;
 	GameTree<int **>* makeTree();
-	GameTree<int **>* generatestates(int ** board);
+	GameTree<int **>* generatestates();
 };
 
 #endif //AISHELL_H

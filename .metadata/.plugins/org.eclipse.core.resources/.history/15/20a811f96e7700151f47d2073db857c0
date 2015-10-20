@@ -12,5 +12,4 @@ int main()
 	GameTree<int> gTree3(7);
 	gTree.first_child->addSibling(gTree3);
 	std::cout << gTree.first_child->next_sibling->value<< std::endl;
-
 }

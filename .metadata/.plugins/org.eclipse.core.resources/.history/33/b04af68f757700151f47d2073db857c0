@@ -32,7 +32,6 @@ Move AIShell::makeMove(){
 	if (lastMove.col == -1 && lastMove.row == -1)
 	{
 		Move m(numCols/2, numRows/2);
-		return m;
 	}
 	
 	//this will move to the left-most column possible.

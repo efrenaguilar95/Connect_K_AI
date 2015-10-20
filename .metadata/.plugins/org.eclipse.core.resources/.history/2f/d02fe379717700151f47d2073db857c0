@@ -36,9 +36,7 @@ public:
 	Move makeMove();
 
 	//Our own code
-	GameTree<int **>* gameTree;
-	GameTree<int **>* makeTree();
-	GameTree<int **>* generatestates(int ** board);
+	GameTree<int **> gameTree;
 };
 
 #endif //AISHELL_H
