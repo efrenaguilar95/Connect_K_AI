@@ -191,3 +191,23 @@ In file included from ..\main.cpp:1:0:
 Info: Internal Builder is used for build
 g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
 g++ -o GameTree.exe main.o 
+13:43:15 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o GameTree.exe main.o 
+13:46:25 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o GameTree.exe main.o 
+13:47:18 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o GameTree.exe main.o 
+13:48:33 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o GameTree.exe main.o 
+13:48:51 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o GameTree.exe main.o 

@@ -40,7 +40,7 @@ class GameTree
 
 
 
-		void addChild(const GameTree<T>& child)
+		void addChild(GameTree<T>& child)
 		{
 			GameTree<T>* c = new GameTree<T>(child.value);
 			first_child = c;
@@ -54,13 +54,10 @@ class GameTree
 		}
 		*/
 
-		void addSibling(const GameTree<T>& sibling)
+		void addSibling(GameTree<T>* sibling)
 		{
-			GameTree<T>* s = new GameTree<T>(sibling.value);
-			next_sibling = s;
-			std::cout<<"here"<<std::endl;
+			next_sibling = sibling;
 			next_sibling->parent = parent;
-			std::cout<<"here1"<<std::endl;
 		}
 
 		void removeSiblings()

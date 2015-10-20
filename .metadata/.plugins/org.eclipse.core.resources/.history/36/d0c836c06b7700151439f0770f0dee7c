@@ -11,5 +11,4 @@ int main()
 	gTree.first_child->print_value();
 	GameTree<int> gTree3(7);
 	gTree.addSibling(gTree3);
-	gTree.first_child->next_sibling->print_value();
 }
