@@ -49,3 +49,202 @@ g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp"
  }
  ^
 g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+22:32:50 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o Move.o "..\\Move.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'GameTree<int**>* AIShell::makeTree()':
+..\AIShell.cpp:59:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+..\AIShell.cpp: In member function 'GameTree<int**>* AIShell::generatestates(int**)':
+..\AIShell.cpp:73:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o ConnectK.o "..\\ConnectK.cpp" 
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+22:32:53 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o GameTree.exe main.o 
+22:53:50 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+In file included from ..\main.cpp:1:0:
+..\gametree.h:70:38: error: 'this' may not be used in this context
+   void dfs(GameTree<T>* start_node = this)
+                                      ^
+..\main.cpp: In function 'int main()':
+..\main.cpp:15:12: error: call to 'void GameTree<T>::dfs(GameTree<T>*) [with T = int]' uses the default argument for parameter 1, which is not yet defined
+  gTree.dfs();
+            ^
+22:58:00 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+In file included from ..\main.cpp:1:0:
+..\gametree.h:69:38: error: 'this' may not be used in this context
+   void dfs(GameTree<T>* start_node = this)
+                                      ^
+..\main.cpp: In function 'int main()':
+..\main.cpp:15:12: error: call to 'void GameTree<T>::dfs(GameTree<T>*) [with T = int]' uses the default argument for parameter 1, which is not yet defined
+  gTree.dfs();
+            ^
+Info: Nothing to build for Connect_K_AI
+23:03:24 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o GameTree.exe main.o 
+Info: Nothing to build for Connect_K_AI
+23:05:57 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+..\main.cpp: In function 'int main()':
+..\main.cpp:17:11: error: no matching function for call to 'dfs(GameTree<int>&)'
+  dfs(gTree);
+           ^
+..\main.cpp:17:11: note: candidate is:
+In file included from ..\main.cpp:1:0:
+..\gametree.h:136:6: note: template<class T> void dfs(GameTree<T>*)
+ void dfs(GameTree<T>* start_node)
+      ^
+..\gametree.h:136:6: note:   template argument deduction/substitution failed:
+..\main.cpp:17:11: note:   mismatched types 'GameTree<T>*' and 'GameTree<int>'
+  dfs(gTree);
+           ^
+23:06:12 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+..\main.cpp: In function 'int main()':
+..\main.cpp:17:6: error: no match for 'operator*' (operand type is 'GameTree<int>')
+  dfs(*gTree);
+      ^
+Info: Nothing to build for Connect_K_AI
+23:06:16 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+..\main.cpp: In function 'int main()':
+..\main.cpp:17:6: error: no match for 'operator*' (operand type is 'GameTree<int>')
+  dfs(*gTree);
+      ^
+Info: Nothing to build for Connect_K_AI
+23:08:56 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+..\main.cpp: In function 'int main()':
+..\main.cpp:8:25: error: invalid conversion from 'int' to 'GameTree<int>*' [-fpermissive]
+  GameTree<int>* gTree(10);
+                         ^
+..\main.cpp:9:8: error: request for member 'print_value' in 'gTree', which is of pointer type 'GameTree<int>*' (maybe you meant to use '->' ?)
+  gTree.print_value();
+        ^
+..\main.cpp:12:8: error: request for member 'addChild' in 'gTree', which is of pointer type 'GameTree<int>*' (maybe you meant to use '->' ?)
+  gTree.addChild(gTree2);
+        ^
+..\main.cpp:13:8: error: request for member 'first_child' in 'gTree', which is of pointer type 'GameTree<int>*' (maybe you meant to use '->' ?)
+  gTree.first_child->print_value();
+        ^
+..\main.cpp:15:8: error: request for member 'first_child' in 'gTree', which is of pointer type 'GameTree<int>*' (maybe you meant to use '->' ?)
+  gTree.first_child->addSibling(gTree3);
+        ^
+..\main.cpp:16:21: error: request for member 'first_child' in 'gTree', which is of pointer type 'GameTree<int>*' (maybe you meant to use '->' ?)
+  std::cout << gTree.first_child->next_sibling->value<< std::endl;
+                     ^
+Info: Nothing to build for Connect_K_AI
+23:09:13 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o GameTree.exe main.o 
+23:09:27 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o GameTree.exe main.o 
+23:10:00 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o GameTree.exe main.o 
+23:10:19 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o GameTree.exe main.o 
+23:18:42 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o GameTree.exe main.o 
+23:21:21 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o GameTree.exe main.o 
+23:22:38 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o GameTree.exe main.o 
+23:27:13 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o GameTree.exe main.o 
+Info: Nothing to build for GameTree
+23:29:04 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o GameTree.exe main.o 
+23:33:10 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o GameTree.exe main.o 
+Info: Nothing to build for Connect_K_AI
+23:40:13 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o GameTree.exe main.o 
+Info: Nothing to build for GameTree
+Info: Nothing to build for GameTree
+23:42:53 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o GameTree.exe main.o 
+23:44:51 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o GameTree.exe main.o 
+23:45:26 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o GameTree.exe main.o 
+23:45:35 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o GameTree.exe main.o 
+Info: Nothing to build for GameTree
+Info: Nothing to build for Connect_K_AI
+Info: Nothing to build for GameTree
+Info: Nothing to build for Connect_K_AI
+Info: Nothing to build for GameTree
+Info: Nothing to build for Connect_K_AI
+Info: Nothing to build for GameTree
+Info: Nothing to build for Connect_K_AI
+Info: Nothing to build for GameTree
+Info: Nothing to build for Connect_K_AI
+Info: Nothing to build for GameTree
+Info: Nothing to build for Connect_K_AI
+Info: Nothing to build for GameTree
+Info: Nothing to build for Connect_K_AI
+Info: Nothing to build for GameTree
+Info: Nothing to build for Connect_K_AI
+Info: Nothing to build for GameTree
+Info: Nothing to build for Connect_K_AI
+Info: Nothing to build for GameTree
+Info: Nothing to build for Connect_K_AI
+Info: Nothing to build for GameTree
+Info: Nothing to build for Connect_K_AI
+Info: Nothing to build for GameTree
+23:47:23 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o GameTree.exe main.o 
+23:47:27 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o GameTree.exe main.o 
+Info: Nothing to build for Connect_K_AI
+Info: Nothing to build for GameTree
+Info: Nothing to build for GameTree
