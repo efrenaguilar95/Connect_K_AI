@@ -1,7 +1,7 @@
-18:41:08 **** Incremental Build of configuration Debug for project GameTree ****
+19:05:25 **** Incremental Build of configuration Debug for project GameTree ****
 Info: Internal Builder is used for build
 g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
 g++ -o GameTree.exe main.o 
 
-18:41:11 Build Finished (took 2s.193ms)
+19:05:26 Build Finished (took 921ms)
 

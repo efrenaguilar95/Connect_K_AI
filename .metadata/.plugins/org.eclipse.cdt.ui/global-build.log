@@ -277,3 +277,76 @@ g++ -o GameTree.exe main.o
 Info: Internal Builder is used for build
 g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
 g++ -o GameTree.exe main.o 
+Info: Nothing to build for Connect_K_AI
+18:43:55 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o GameTree.exe main.o 
+Info: Nothing to build for GameTree
+Info: Nothing to build for GameTree
+Info: Nothing to build for GameTree
+Info: Nothing to build for GameTree
+Info: Nothing to build for GameTree
+18:51:09 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o GameTree.exe main.o 
+Info: Nothing to build for Connect_K_AI
+Info: Nothing to build for GameTree
+Info: Nothing to build for GameTree
+Info: Nothing to build for GameTree
+Info: Nothing to build for GameTree
+Info: Nothing to build for GameTree
+Info: Nothing to build for Connect_K_AI
+18:59:23 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o GameTree.exe main.o 
+Info: Nothing to build for Connect_K_AI
+Info: Nothing to build for GameTree
+Info: Nothing to build for GameTree
+Info: Nothing to build for Connect_K_AI
+Info: Nothing to build for GameTree
+Info: Nothing to build for GameTree
+Info: Nothing to build for GameTree
+Info: Nothing to build for GameTree
+19:01:19 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o GameTree.exe main.o 
+Info: Nothing to build for Connect_K_AI
+19:01:50 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o GameTree.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.8.1/../../../../mingw32/bin/ld.exe: cannot open output file GameTree.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+19:01:55 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -o GameTree.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.8.1/../../../../mingw32/bin/ld.exe: cannot open output file GameTree.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for Connect_K_AI
+19:02:00 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -o GameTree.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.8.1/../../../../mingw32/bin/ld.exe: cannot open output file GameTree.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+19:02:03 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -o GameTree.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.8.1/../../../../mingw32/bin/ld.exe: cannot open output file GameTree.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+19:02:29 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -o GameTree.exe main.o 
+Info: Nothing to build for Connect_K_AI
+19:04:57 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o GameTree.exe main.o 
+Info: Nothing to build for GameTree
+19:05:25 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o GameTree.exe main.o 

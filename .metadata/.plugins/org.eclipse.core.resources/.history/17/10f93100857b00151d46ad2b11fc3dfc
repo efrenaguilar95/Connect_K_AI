@@ -43,11 +43,6 @@ class GameTree
 		void addChild(const GameTree<T>& child)
 		{
 			GameTree<T>* c = new GameTree<T>(child.value);
-			if(first_child!= NULL)
-			{
-				first_child->addSibling(child);
-				return;
-			}
 			first_child = c;
 			first_child->parent = this;
 		}
@@ -63,23 +58,19 @@ class GameTree
 		{
 			GameTree<T>* s = new GameTree<T>(sibling.value);
 
-			if(next_sibling == NULL)
+			GameTree<T>* next = next_sibling;
+			while(next != NULL){
+				next = next->next_sibling;
+			}
+
+			if(next == NULL)
 			{
 				next_sibling = s;
 				next_sibling->parent = parent;
 				return;
 			}
-
-			GameTree<T>* next = next_sibling;
-			while(next != NULL)
-			{
-				if(next->next_sibling == NULL)
-					break;
-				next = next->next_sibling;
-			}
-
-			next->next_sibling = s;
-			next->next_sibling->parent = parent;
+			next = s;
+			next->parent = parent;
 		}
 
 		void removeSiblings()
