@@ -1,1 +1,24 @@
-Info: Nothing to build for Connect_K_AI
+19:54:39 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'GameTree<int**>* AIShell::makeTree()':
+..\AIShell.cpp:62:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+..\AIShell.cpp: In member function 'GameTree<int**>* AIShell::generatestates(int**)':
+..\AIShell.cpp:77:26: error: no matching function for call to 'GameTree<int**>::addChild(GameTree<int**>**)'
+     gameTree->addChild(&n);
+                          ^
+..\AIShell.cpp:77:26: note: candidate is:
+In file included from ..\AIShell.h:6:0,
+                 from ..\AIShell.cpp:1:
+..\gametree.h:43:8: note: void GameTree<T>::addChild(const GameTree<T>&) [with T = int**]
+   void addChild(const GameTree<T>& child)
+        ^
+..\gametree.h:43:8: note:   no known conversion for argument 1 from 'GameTree<int**>**' to 'const GameTree<int**>&'
+..\AIShell.cpp:84:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+
+19:54:40 Build Finished (took 909ms)
+

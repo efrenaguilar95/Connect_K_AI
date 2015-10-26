@@ -55,9 +55,6 @@ GameTree<int **>* AIShell::makeTree(){
 	//make these states the children of the current node
 	//recurse on each child
 
-	gameTree->value = gameState;
-
-
 
 }
 
@@ -69,33 +66,8 @@ GameTree<int **>* AIShell::generatestates(int ** board){
 	for (int col = 0; col<numCols; col++){
 		for (int row =0; row<numRows; row++)
 		{
-			if(gameState[col][row] == 0)
-			{
-				int** copy = copyboard(gameState);
-				copy[col][row] = 1;
-				GameTree<int **>* n = new GameTree<int **>(copy);
-				gameTree->addChild(&n);
 
-
-			}
 		}
 	}
 
-}
-
-int ** AIShell::copyboard(int ** board){
-
-	int **copy = NULL;
-	copy = new int*[numCols];
-	for (int i =0; i<numCols; i++){
-		copy[i] = new int[numRows];
-	}
-
-	for (int col = 0; col<numCols; col++){
-			for (int row =0; row<numRows; row++)
-			{
-				copy[col][row] = board[col][row];
-				}
-			}
-	return copy;
 }

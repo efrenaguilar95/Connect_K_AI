@@ -71,10 +71,9 @@ GameTree<int **>* AIShell::generatestates(int ** board){
 		{
 			if(gameState[col][row] == 0)
 			{
-				int** copy = copyboard(gameState);
-				copy[col][row] = 1;
-				GameTree<int **>* n = new GameTree<int **>(copy);
-				gameTree->addChild(&n);
+				int** copy = gameState;
+				int** nm = copy[col][row] = 1;
+				GameTree<int **>* n = new GameTree<int **>(nm);
 
 
 			}
@@ -83,19 +82,6 @@ GameTree<int **>* AIShell::generatestates(int ** board){
 
 }
 
-int ** AIShell::copyboard(int ** board){
+int ** AIShell::copyboard(int **){
 
-	int **copy = NULL;
-	copy = new int*[numCols];
-	for (int i =0; i<numCols; i++){
-		copy[i] = new int[numRows];
-	}
-
-	for (int col = 0; col<numCols; col++){
-			for (int row =0; row<numRows; row++)
-			{
-				copy[col][row] = board[col][row];
-				}
-			}
-	return copy;
 }

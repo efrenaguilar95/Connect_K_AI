@@ -74,7 +74,6 @@ GameTree<int **>* AIShell::generatestates(int ** board){
 				int** copy = copyboard(gameState);
 				copy[col][row] = 1;
 				GameTree<int **>* n = new GameTree<int **>(copy);
-				gameTree->addChild(&n);
 
 
 			}

@@ -43,6 +43,11 @@ class GameTree
 		void addChild(const GameTree<T>& child)
 		{
 			GameTree<T>* c = new GameTree<T>(child.value);
+			if(first_child!= NULL)
+			{
+				first_child->addSibling(child);
+				return;
+			}
 			first_child = c;
 			first_child->parent = this;
 		}
@@ -57,10 +62,24 @@ class GameTree
 		void addSibling(const GameTree<T>& sibling)
 		{
 			GameTree<T>* s = new GameTree<T>(sibling.value);
-			next_sibling = s;
-			std::cout<<"here"<<std::endl;
-			next_sibling->parent = parent;
-			std::cout<<"here1"<<std::endl;
+
+			if(next_sibling == NULL)
+			{
+				next_sibling = s;
+				next_sibling->parent = parent;
+				return;
+			}
+
+			GameTree<T>* next = next_sibling;
+			while(next != NULL)
+			{
+				if(next->next_sibling == NULL)
+					break;
+				next = next->next_sibling;
+			}
+
+			next->next_sibling = s;
+			next->next_sibling->parent = parent;
 		}
 
 		void removeSiblings()
@@ -68,11 +87,82 @@ class GameTree
 			//Removes all siblings of this node, and their respective children
 		}
 
+		void dfs()
+		{
+			if(first_child == NULL && next_sibling == NULL)
+			{
+				std::cout<<value<<std::endl;
+				return;
+			}
+
+			if(first_child != NULL)
+			{
+				dfs(first_child);
+				std::cout<<value<<std::endl;
+			}
+
+			if(next_sibling!= NULL)
+			{
+				std::cout<<value<<std::endl;
+				dfs(next_sibling);
+			}
+		}
+
+
+
+		void dfs(GameTree<T>* start_node)
+		{
+			if(start_node->first_child == NULL && start_node->next_sibling == NULL)
+			{
+				std::cout<<start_node->value<<std::endl;
+				return;
+			}
+
+			if(start_node->first_child != NULL)
+			{
+				dfs(start_node->first_child);
+				std::cout<<start_node->value<<std::endl;	//This should print out after ALL the children have been reached
+			}
+
+			if(start_node->next_sibling!= NULL)
+			{
+				if(start_node->first_child==NULL)
+					std::cout<<start_node->value<<std::endl;
+				dfs(start_node->next_sibling);
+			}
+		}
+
+
+
+
 
 
 
 
 };
+
+template<class T>
+void dfs(GameTree<T>* start_node)
+		{
+			if(start_node->first_child == NULL && start_node->next_sibling == NULL)
+			{
+				std::cout<<start_node->value<<std::endl;
+				return;
+			}
+
+			if(start_node->first_child != NULL)
+			{
+				dfs(start_node->first_child);
+			}
+
+			std::cout<<start_node->value<<std::endl;
+			if(start_node->next_sibling!= NULL)
+			{
+				dfs(start_node->next_sibling);
+			}
+		}
+
+
 
 
 
