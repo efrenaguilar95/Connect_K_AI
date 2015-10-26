@@ -57,14 +57,8 @@ class GameTree
 		void addSibling(const GameTree<T>& sibling)
 		{
 			GameTree<T>* s = new GameTree<T>(sibling.value);
-
-			GameTree<T>* next = next_sibling;
-			while(next_sibling!=NULL){
-				next = next->next_sibling;
-			}
-
-			next = s;
-			next->parent = parent;
+			next_sibling = s;
+			next_sibling->parent = parent;
 		}
 
 		void removeSiblings()

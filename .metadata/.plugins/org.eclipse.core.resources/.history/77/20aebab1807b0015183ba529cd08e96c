@@ -20,7 +20,7 @@ int main()
 	//std::cout << gTree.first_child->next_sibling->value<< std::endl;
 	GameTree<int> gTree6(11);
 	GameTree<int> gTree7(18);
-	gTree.first_child->addSibling(gTree6);
+	gTree.addChild(gTree6);
 	gTree.first_child->addChild(gTree7);
 	gTree.dfs();
 	std::cout<< "end" << std::endl;
