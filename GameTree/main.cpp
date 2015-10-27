@@ -1,9 +1,27 @@
 #include "gametree.h"
+#include <iostream>
 
+
+
+void print_board(int** board, int colCount, int rowCount)
+{
+	int row = rowCount-1;
+	while(row >= 0)
+	{
+		for(int col = 0; col<colCount; col++)
+		{
+			std::cout<<board[row][col];
+		}
+		std::cout<<std::endl;
+		row -= 1;
+	}
+}
 
 
 int main()
 {
+	//Original GameTree testing code
+	/*
 	//Random comment
 	GameTree<int> gTree(10);
 	//gTree.print_value();
@@ -26,6 +44,49 @@ int main()
 	std::cout<< "end" << std::endl;
 
 	GameTree<int>* k = &gTree;
+	*/
+
+	int colCount = 9;
+	int rowCount = 7;
+
+
+	int** board = NULL;
+	board = new int*[colCount];
+	for(int i = 0; i<colCount; i++)
+	{
+		board[i] = new int[rowCount];
+	}
+
+	for(int col = 0; col<colCount; col++)
+	{
+		for(int row = 0; row<rowCount; row++)
+		{
+			board[row][col] = 0;
+		}
+	}
+	print_board(board, colCount, rowCount);
+	std::cout<<std::endl;
+	//board[3][2] = 1;
+	print_board(board, colCount, rowCount);
+
+	int current_player = 1;
+	while(true) //Once you get isWinner function working this should say while isWinner = false
+	{
+		current_player *= -1;
+		std::cout<<current_player<<"'s turn"<<std::endl;
+		std::cout<<"What row would you like to place piece? (Bottom row is zero) : "<<std::endl;
+		int row, col;
+		std::cin>> row;
+		std::cout<<std::endl;
+		std::cout<<"What column would you like to place piece? (First column is zero) : "<<std::endl;
+		std::cin>> col;
+		std::cout<<std::endl;
+		board[row][col] = current_player;
+		print_board(board, colCount, rowCount);
+
+
+	}
+
 }
 
 

@@ -571,3 +571,38 @@ g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp"
 g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
 Info: Nothing to build for GameTree
 Info: Nothing to build for Connect_K_AI
+14:30:29 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+..\main.cpp: In function 'int main()':
+..\main.cpp:54:8: error: cannot convert 'int*' to 'int**' in assignment
+  board = new int[colCount];
+        ^
+14:30:49 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o GameTree.exe main.o 
+14:32:57 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o GameTree.exe main.o 
+14:34:12 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o GameTree.exe main.o 
+14:34:57 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o GameTree.exe main.o 
+14:40:59 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o GameTree.exe main.o 
+14:41:08 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o GameTree.exe main.o 
+14:41:37 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o GameTree.exe main.o 
