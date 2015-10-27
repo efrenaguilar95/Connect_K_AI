@@ -11,6 +11,7 @@ AIShell::AIShell(int numCols, int numRows, bool gravityOn, int** gameState, Move
 	this->gameState=gameState;
 	this->lastMove=lastMove;
 	this->gameTree=new GameTree<int **>;
+	makeTree(gameTree);
 }
 
 
@@ -49,19 +50,33 @@ Move AIShell::makeMove(){
 	 
 }
 
-GameTree<int **>* AIShell::makeTree(){
+void AIShell::makeTree(GameTree<int**>* node){
 
-	//get all the next possible states for board in current state
-	//make these states the children of the current node
-	//recurse on each child
+	generatestates(node);
+	if(node->first_child == NULL) //|| depth_level > max || time >= time_limit)
+		return;
+	GameTree<int **>* child = node->first_child;
+	makeTree(child);
+	while(child->next_sibling != NULL)
+	{
+		child = child->next_sibling;
+		makeTree(child);
+	}
 
-	gameTree->value = gameState;
+
+
+	//start at root node
+	//generate its children
+	//get first child
+	//recurse
+	//go to sibling
+	//recurse
 
 
 
 }
 
-GameTree<int **>* AIShell::generatestates(int ** board){
+GameTree<int **>* AIShell::generatestates(GameTree<int **>* node){
 
 
 	//find the first empty slot aka index value = 0
@@ -69,12 +84,12 @@ GameTree<int **>* AIShell::generatestates(int ** board){
 	for (int col = 0; col<numCols; col++){
 		for (int row =0; row<numRows; row++)
 		{
-			if(gameState[col][row] == 0)
+			if(node->value[col][row] == 0)
 			{
-				int** copy = copyboard(gameState);
+				int** copy = copyboard(node->value);
 				copy[col][row] = 1;
-				GameTree<int **>* n = new GameTree<int **>(copy);
-				gameTree->addChild(&n);
+				GameTree<int **> n = GameTree<int **>(copy);
+				node->addChild(n);
 
 
 			}

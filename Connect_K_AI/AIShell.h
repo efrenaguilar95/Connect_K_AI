@@ -37,8 +37,8 @@ public:
 
 	//Our own code
 	GameTree<int **>* gameTree;
-	GameTree<int **>* makeTree();
-	GameTree<int **>* generatestates(int ** board);
+	void makeTree(GameTree<int **>* node);
+	GameTree<int **>* generatestates(GameTree<int **>* node);
 
 	int ** copyboard(int ** board);
 };

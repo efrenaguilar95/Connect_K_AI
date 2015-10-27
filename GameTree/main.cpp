@@ -24,6 +24,8 @@ int main()
 	gTree.first_child->addChild(gTree7);
 	gTree.dfs();
 	std::cout<< "end" << std::endl;
+
+	GameTree<int>* k = &gTree;
 }
 
 
