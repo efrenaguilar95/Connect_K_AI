@@ -41,8 +41,6 @@ public:
 	GameTree<int **>* generatestates(GameTree<int **>* node);
 
 	int ** copyboard(int ** board);
-
-	int checkvictory() const;
 };
 
 #endif //AISHELL_H

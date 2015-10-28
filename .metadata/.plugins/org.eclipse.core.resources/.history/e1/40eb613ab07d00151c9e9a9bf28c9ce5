@@ -116,100 +116,69 @@ int ** AIShell::copyboard(int ** board){
 }
 
 int AIShell::checkvictory() const {
-	//1 means Ai won, -1 means human won, 0 means board is filled with no winner
     bool victory;
     int c;
-
-    for (int col = 0; col<numCols; col++){
-    	for (int row = 0; row<numRows; row++){
-    		c = gameState[col][row];
-    		if (c!=0)
-    		{
-    			victory = true;
-
-    			//check row right
-    			for (int x = 0; x < k; x++){
-    				if(gameState[col+x][row] != c){
-    					victory = false;
-    					break;
-    				}
-    			}
-
-    			if (victory) return c;
-
-    			//check row right left
-    			for (int x = 0; x < k; x++){
-    				if(gameState[col-x][row] != c){
-    					victory = false;
-    					break;
-    				}
-    			}
-
-    			if (victory) return c;
-
-    			//check col right
-    			for (int y = 0; y < k; y++){
-    				if(gameState[col][row+y] != c){
-    					victory = false;
-    					break;
-    				}
-    			}
-
-    			if (victory) return c;
-
-    			//check col left
-    			for (int y = 0; y < k; y++){
-    				if(gameState[col][row-y] != c){
-    					victory = false;
-    					break;
-    				}
-    			}
-
-    			if (victory) return c;
-
-    			//check diagonal up right
-    			for (int xy = 0; xy < k; xy++){
-    				if(gameState[col+xy][row+xy] != c){
-    					victory = false;
-    					break;
-    				}
-    			}
-
-    			if (victory) return c;
-
-    			//check diagonal up left
-    			for (int xy = 0; xy < k; xy++){
-    				if(gameState[col+xy][row-xy] != c){
-    					victory = false;
-    					break;
-    				}
-    			}
-
-    			//check diagonal down right
-    			for (int xy = 0; xy < k; xy++){
-    				if(gameState[col-xy][row+xy] != c){
-    					victory = false;
-    					break;
-    				}
-    			}
-    			if (victory) return c;
-
-    			//check diagonal down left
-    			for (int xy = 0; xy < k; xy++){
-    				if(gameState[col-xy][row-xy] != c){
-    					victory = false;
-    					break;
-    				}
-    			}
-    			if (victory) return c;
-    		}
-    	}
-
+    // Check the rows
+    for (int y = 0; y < _size; y++) {
+        c = getVal(0, y);
+        if (c != NO_VAL) {
+            victory = true;
+            for (int x = 0; x < _size; x++) {
+                if (getVal(x, y) != c) {
+                    victory = false;
+                    break;
+                }
+            }
+            if (victory) return c;
+        }
     }
 
-    return 0;
+    // Check the columns
+    for (int x = 0; x < _size; x++) {
+        c = getVal(x, 0);
+        if (c != NO_VAL) {
+            victory = true;
+            for (int y = 0; y < _size; y++) {
+                if (getVal(x, y) != c) {
+                    victory = false;
+                    break;
+                }
+            }
+            if (victory) return c;
+        }
+    }
 
+    // Check top left diagonal
+    c = getVal(0, 0);
+    if (c != NO_VAL) {
+        victory = true;
+        for (int xy = 0; xy < _size; xy++) {
+            if (getVal(xy, xy) != c) {
+                victory = false;
+                break;
+            }
+        }
+        if (victory) return c;
+    }
 
+    // Check top right diagonal
+    c = getVal(_size - 1, 0);
+    if (c != NO_VAL) {
+        victory = true;
+        for (int xy = 0; xy < _size; xy++) {
+            if (getVal(_size - xy - 1, xy) != c) {
+                victory = false;
+                break;
+            }
+        }
+        if (victory) return c;
+    }
 
+    // Check for tie game
+    for (int i = 0; i < _board.size(); i++) {
+        if (_board[i] == NO_VAL) return NO_VAL;
+    }
+    // If we get here, every spot was filled, so return tie
+    return TIE_VAL;
 }
 

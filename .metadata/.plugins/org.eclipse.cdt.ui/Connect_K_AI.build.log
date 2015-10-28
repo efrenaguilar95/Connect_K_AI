@@ -1,1 +1,11 @@
-Info: Nothing to build for Connect_K_AI
+13:21:24 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'GameTree<int**>* AIShell::generatestates(GameTree<int**>*)':
+..\AIShell.cpp:99:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+
+13:21:26 Build Finished (took 1s.837ms)
+

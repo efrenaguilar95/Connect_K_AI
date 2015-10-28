@@ -606,3 +606,102 @@ g++ -o GameTree.exe main.o
 Info: Internal Builder is used for build
 g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
 g++ -o GameTree.exe main.o 
+12:10:28 **** Incremental Build of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o GameTree.exe main.o 
+Info: Nothing to build for GameTree
+12:21:26 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o ConnectK.o "..\\ConnectK.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o Move.o "..\\Move.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'GameTree<int**>* AIShell::generatestates(GameTree<int**>*)':
+..\AIShell.cpp:99:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+..\AIShell.cpp: In member function 'int AIShell::checkvictory() const':
+..\AIShell.cpp:122:25: error: '_size' was not declared in this scope
+     for (int y = 0; y < _size; y++) {
+                         ^
+..\AIShell.cpp:123:24: error: 'getVal' was not declared in this scope
+         c = getVal(0, y);
+                        ^
+..\AIShell.cpp:124:18: error: 'NO_VAL' was not declared in this scope
+         if (c != NO_VAL) {
+                  ^
+..\AIShell.cpp:137:25: error: '_size' was not declared in this scope
+     for (int x = 0; x < _size; x++) {
+                         ^
+..\AIShell.cpp:138:24: error: 'getVal' was not declared in this scope
+         c = getVal(x, 0);
+                        ^
+..\AIShell.cpp:139:18: error: 'NO_VAL' was not declared in this scope
+         if (c != NO_VAL) {
+                  ^
+..\AIShell.cpp:152:20: error: 'getVal' was not declared in this scope
+     c = getVal(0, 0);
+                    ^
+..\AIShell.cpp:153:14: error: 'NO_VAL' was not declared in this scope
+     if (c != NO_VAL) {
+              ^
+..\AIShell.cpp:155:31: error: '_size' was not declared in this scope
+         for (int xy = 0; xy < _size; xy++) {
+                               ^
+..\AIShell.cpp:165:16: error: '_size' was not declared in this scope
+     c = getVal(_size - 1, 0);
+                ^
+..\AIShell.cpp:166:14: error: 'NO_VAL' was not declared in this scope
+     if (c != NO_VAL) {
+              ^
+..\AIShell.cpp:178:25: error: '_board' was not declared in this scope
+     for (int i = 0; i < _board.size(); i++) {
+                         ^
+..\AIShell.cpp:179:26: error: 'NO_VAL' was not declared in this scope
+         if (_board[i] == NO_VAL) return NO_VAL;
+                          ^
+..\AIShell.cpp:182:12: error: 'TIE_VAL' was not declared in this scope
+     return TIE_VAL;
+            ^
+..\AIShell.cpp:183:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+13:12:35 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'GameTree<int**>* AIShell::generatestates(GameTree<int**>*)':
+..\AIShell.cpp:99:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+Info: Nothing to build for Connect_K_AI
+Info: Nothing to build for Connect_K_AI
+Info: Nothing to build for Connect_K_AI
+Info: Nothing to build for GameTree
+Info: Nothing to build for Connect_K_AI
+13:21:08 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'GameTree<int**>* AIShell::generatestates(GameTree<int**>*)':
+..\AIShell.cpp:99:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+..\AIShell.cpp: In member function 'int AIShell::checkvictory() const':
+..\AIShell.cpp:120:10: warning: unused variable 'victory' [-Wunused-variable]
+     bool victory;
+          ^
+..\AIShell.cpp:121:9: warning: unused variable 'c' [-Wunused-variable]
+     int c;
+         ^
+..\AIShell.cpp:125:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+13:21:24 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'GameTree<int**>* AIShell::generatestates(GameTree<int**>*)':
+..\AIShell.cpp:99:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 

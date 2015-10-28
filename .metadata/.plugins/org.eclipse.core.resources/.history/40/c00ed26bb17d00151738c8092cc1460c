@@ -208,8 +208,5 @@ int AIShell::checkvictory() const {
     }
 
     return 0;
-
-
-
 }
 
