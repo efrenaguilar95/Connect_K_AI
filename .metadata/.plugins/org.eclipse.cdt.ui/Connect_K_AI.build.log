@@ -1,4 +1,4 @@
-13:21:24 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+12:46:04 **** Incremental Build of configuration Debug for project Connect_K_AI ****
 Info: Internal Builder is used for build
 g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
 ..\AIShell.cpp: In member function 'GameTree<int**>* AIShell::generatestates(GameTree<int**>*)':
@@ -7,5 +7,5 @@ g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp"
  ^
 g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
 
-13:21:26 Build Finished (took 1s.837ms)
+12:46:06 Build Finished (took 2s.186ms)
 

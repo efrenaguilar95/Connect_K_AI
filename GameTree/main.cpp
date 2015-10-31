@@ -17,6 +17,148 @@ void print_board(int** board, int colCount, int rowCount)
 	}
 }
 
+int checkvictory(int** gameState, int numCols, int numRows, int col, int row) {
+	//1 means Ai won, -1 means human won, 0 means board is filled with no winner; is no victory yet 2
+
+    bool victory;
+    int c;
+
+	c = gameState[row][col];
+
+	std::cout << "c is "<<c << std::endl;
+
+
+		victory = true;
+
+		//check off bound
+
+		//check row right
+
+		for (int x = 0; x < 4; x++){
+			if(col+x > numCols){
+				victory = false;
+				break;
+			}
+
+			if(gameState[col+x][row] != c){
+				victory = false;
+				break;
+			}
+		}
+
+		if (victory) return c;
+
+		//check row right left
+		for (int x = 0; x < 4; x++){
+			if(col-x < 0){
+				victory = false;
+				break;
+			}
+
+			if(gameState[col-x][row] != c){
+				victory = false;
+				break;
+			}
+		}
+
+		if (victory) return c;
+
+		//check col right
+		for (int y = 0; y < 4; y++){
+			if(row+y > numRows){
+				victory = false;
+				break;
+			}
+
+			if(gameState[col][row+y] != c){
+				victory = false;
+				break;
+			}
+		}
+
+		if (victory) return c;
+
+		//check col left
+		for (int y = 0; y < 4; y++){
+			if(row-y < 0){
+				victory = false;
+				break;
+			}
+			if(gameState[col][row-y] != c){
+				victory = false;
+				break;
+			}
+		}
+
+		if (victory) return c;
+
+		//check diagonal up right
+		for (int xy = 0; xy < 4; xy++){
+			if(col+xy > numCols or row+xy > numRows){
+				victory = false;
+				break;
+			}
+			if(gameState[col+xy][row+xy] != c){
+				victory = false;
+				break;
+			}
+		}
+
+		if (victory) return c;
+
+		//check diagonal up left
+		for (int xy = 0; xy < 4; xy++){
+			if(col+xy > numCols or row-xy < 0){
+				victory = false;
+				break;
+			}
+			if(gameState[col+xy][row-xy] != c){
+				victory = false;
+				break;
+			}
+		}
+
+		//check diagonal down right
+		for (int xy = 0; xy < 4; xy++){
+			if(col-xy < 0 or row+xy > numRows){
+				victory = false;
+				break;
+			}
+			if(gameState[col-xy][row+xy] != c){
+				victory = false;
+				break;
+			}
+		}
+		if (victory) return c;
+
+		//check diagonal down left
+		for (int xy = 0; xy < 4; xy++){
+			if(col-xy < 0 or row-xy < 0){
+				victory = false;
+				break;
+			}
+			if(gameState[col-xy][row-xy] != c){
+				victory = false;
+				break;
+			}
+		}
+		if (victory) return c;
+
+
+    for (int cl = 0; cl<numCols; cl++){
+    	for (int rw = 0; rw<numRows; rw++){
+    		std::cout<< gameState[cl][rw] << std::endl;
+    		if(gameState[cl][rw] == 0) return 2;
+    	}
+
+    }
+    std::cout << "ending"<< std::endl;
+
+    return 0;
+
+
+}
+
 
 int main()
 {
@@ -83,6 +225,10 @@ int main()
 		std::cout<<std::endl;
 		board[row][col] = current_player;
 		print_board(board, colCount, rowCount);
+		int v = checkvictory(board, colCount, rowCount, col, row);
+		std::cout << ";" << v << ";"<<std::endl;
+		if (v!=2) break;
+
 
 
 	}

@@ -42,7 +42,7 @@ public:
 
 	int ** copyboard(int ** board);
 
-	int checkvictory() const;
+	int checkvictory(int col, int row) const;
 };
 
 #endif //AISHELL_H
