@@ -17,144 +17,160 @@ void print_board(int** board, int colCount, int rowCount)
 	}
 }
 
-int checkvictory(int** gameState, int numCols, int numRows, int col, int row) {
-	//1 means Ai won, -1 means human won, 0 means board is filled with no winner; is no victory yet 2
+int check_winner(int ** gameState, int numCols, int numRows, int k)
+{
+	//1 means Ai won, -1 means human won, 0 means board is filled with no winner
+	    bool victory;
+	    int c;
 
-    bool victory;
-    int c;
+	    for (int col = 0; col<numCols; col++){
+	    	for (int row = 0; row<numRows; row++){
+	    		c = gameState[col][row];
+	    		if (c!=0)
+	    		{
+	    			victory = true;
 
-	c = gameState[row][col];
+	    			//check victory right
 
-	std::cout << "c is "<<c << std::endl;
+	    			if(col <= (numCols - (k-1)))
+	    			{
+	    				for (int x = 0; x < k; x++)
+	    				{
+	    					if(gameState[col+x][row] != c)
+	    					{
+	    						victory = false;
+	    						break;
+	    					}
+	    				}
+	    			}
+	    			else victory = false;
 
+	    			if (victory) return c;
 
-		victory = true;
+	    			victory = true;
 
-		//check off bound
+	    			//check victory left
 
-		//check row right
+	    			if(col >= k-1)
+	    			{
+	    				for (int x = 0; x < k; x++){
+	    					if(gameState[col-x][row] != c){
+	    						victory = false;
+	    						break;
+	    					}
+	    				}
+	    			}
+	    			else victory = false;
 
-		for (int x = 0; x < 4; x++){
-			if(col+x > numCols){
-				victory = false;
-				break;
-			}
+	    			if (victory) return c;
 
-			if(gameState[col+x][row] != c){
-				victory = false;
-				break;
-			}
-		}
+	    			victory = true;
 
-		if (victory) return c;
+	    			//check victory up
 
-		//check row right left
-		for (int x = 0; x < 4; x++){
-			if(col-x < 0){
-				victory = false;
-				break;
-			}
+	    			if(row <= (numRows - (k-1)))
+	    			{
+	    				for (int y = 0; y < k; y++){
+	    					if(gameState[col][row+y] != c){
+	    						victory = false;
+	    						break;
+	    					}
+	    				}
+	    			}
 
-			if(gameState[col-x][row] != c){
-				victory = false;
-				break;
-			}
-		}
+	    			else victory = false;
 
-		if (victory) return c;
+	    			if (victory) return c;
 
-		//check col right
-		for (int y = 0; y < 4; y++){
-			if(row+y > numRows){
-				victory = false;
-				break;
-			}
+	    			victory = true;
 
-			if(gameState[col][row+y] != c){
-				victory = false;
-				break;
-			}
-		}
+	    			//check victory down
 
-		if (victory) return c;
-
-		//check col left
-		for (int y = 0; y < 4; y++){
-			if(row-y < 0){
-				victory = false;
-				break;
-			}
-			if(gameState[col][row-y] != c){
-				victory = false;
-				break;
-			}
-		}
-
-		if (victory) return c;
-
-		//check diagonal up right
-		for (int xy = 0; xy < 4; xy++){
-			if(col+xy > numCols or row+xy > numRows){
-				victory = false;
-				break;
-			}
-			if(gameState[col+xy][row+xy] != c){
-				victory = false;
-				break;
-			}
-		}
-
-		if (victory) return c;
-
-		//check diagonal up left
-		for (int xy = 0; xy < 4; xy++){
-			if(col+xy > numCols or row-xy < 0){
-				victory = false;
-				break;
-			}
-			if(gameState[col+xy][row-xy] != c){
-				victory = false;
-				break;
-			}
-		}
-
-		//check diagonal down right
-		for (int xy = 0; xy < 4; xy++){
-			if(col-xy < 0 or row+xy > numRows){
-				victory = false;
-				break;
-			}
-			if(gameState[col-xy][row+xy] != c){
-				victory = false;
-				break;
-			}
-		}
-		if (victory) return c;
-
-		//check diagonal down left
-		for (int xy = 0; xy < 4; xy++){
-			if(col-xy < 0 or row-xy < 0){
-				victory = false;
-				break;
-			}
-			if(gameState[col-xy][row-xy] != c){
-				victory = false;
-				break;
-			}
-		}
-		if (victory) return c;
+	    			if(row >= k-1)
+	    			{
+	    				for (int y = 0; y < k; y++){
+	    					if(gameState[col][row-y] != c){
+	    						victory = false;
+	    						break;
+	    					}
+	    				}
+	    			}
+	    			else victory = false;
 
 
-    for (int cl = 0; cl<numCols; cl++){
-    	for (int rw = 0; rw<numRows; rw++){
-    		std::cout<< gameState[cl][rw] << std::endl;
-    		if(gameState[cl][rw] == 0) return 2;
-    	}
+	    			if (victory) return c;
 
-    }
-    std::cout << "ending"<< std::endl;
+	    			victory = true;
 
-    return 0;
+	    			//check diagonal up right
+	    			if((row <= (numRows - (k-1))) && (col <= (numCols - (k-1))))
+	    			{
+	    				for (int xy = 0; xy < k; xy++){
+	    					if(gameState[col+xy][row+xy] != c){
+	    						victory = false;
+	    						break;
+	    					}
+	    				}
+	    			}
+	    			else victory = false;
+
+	    			if (victory) return c;
+
+	    			victory = true;
+
+	    			//check diagonal up left
+	    			if((row <= (numRows - (k-1))) && (col >= (k-1)))
+	    			{
+	    				for (int xy = 0; xy < k; xy++){
+	    					if(gameState[col-xy][row+xy] != c){
+	    						victory = false;
+	    						break;
+	    					}
+	    				}
+	    			}
+	    			else victory = false;
+
+	    			if(victory) return c;
+
+	    			victory = true;
+
+
+	    			//check diagonal down right
+	    			if((row >= (k-1)) && (col <= (numCols - (k-1))))
+	    			{
+	    				for (int xy = 0; xy < k; xy++){
+	    					if(gameState[col+xy][row-xy] != c){
+	    						victory = false;
+	    						break;
+	    					}
+	    				}
+	    			}
+	    			else victory = false;
+
+	    			if (victory) return c;
+
+	    			victory = true;
+
+	    			//check diagonal down left
+	    			if((row >= (k-1)) && (col >= (k-1)))
+	    			{
+	    				for (int xy = 0; xy < k; xy++){
+	    					if(gameState[col-xy][row-xy] != c){
+	    						victory = false;
+	    						break;
+	    					}
+	    				}
+	    			}
+	    			else victory = false;
+
+	    			if (victory) return c;
+	    		}
+	    	}
+
+	    }
+
+	    return 0;
+
 
 
 }
@@ -225,10 +241,9 @@ int main()
 		std::cout<<std::endl;
 		board[row][col] = current_player;
 		print_board(board, colCount, rowCount);
-		int v = checkvictory(board, colCount, rowCount, col, row);
-		std::cout << ";" << v << ";"<<std::endl;
-		if (v!=2) break;
-
+		int winner = check_winner(board, colCount, rowCount, 4);
+		if(winner != 0)
+			std::cout<<winner<<" wins!"<<std::endl;
 
 
 	}

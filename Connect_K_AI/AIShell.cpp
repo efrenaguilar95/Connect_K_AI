@@ -115,237 +115,158 @@ int ** AIShell::copyboard(int ** board){
 	return copy;
 }
 
-int AIShell::checkvictory(int col, int row) const {
-	//1 means Ai won, -1 means human won, 0 means board is filled with no winner; is no victory yet 2
+int AIShell::checkvictory() const {
+	//1 means Ai won, -1 means human won, 0 means board is filled with no winner
     bool victory;
     int c;
 
-	c = gameState[col][row];
-
-	if (c!=0)
-	{
-		victory = true;
-
-		//check off bound
-
-		//check row right
-
-		for (int x = 0; x < k; x++){
-			if(col+x > numCols){
-				victory = false;
-				break;
-			}
-
-			if(gameState[col+x][row] != c){
-				victory = false;
-				break;
-			}
-		}
-
-		if (victory) return c;
-
-		//check row right left
-		for (int x = 0; x < k; x++){
-			if(col-x < 0){
-				victory = false;
-				break;
-			}
-
-			if(gameState[col-x][row] != c){
-				victory = false;
-				break;
-			}
-		}
-
-		if (victory) return c;
-
-		//check col right
-		for (int y = 0; y < k; y++){
-			if(row+y > numRows){
-				victory = false;
-				break;
-			}
-
-			if(gameState[col][row+y] != c){
-				victory = false;
-				break;
-			}
-		}
-
-		if (victory) return c;
-
-		//check col left
-		for (int y = 0; y < k; y++){
-			if(row-y < 0){
-				victory = false;
-				break;
-			}
-			if(gameState[col][row-y] != c){
-				victory = false;
-				break;
-			}
-		}
-
-		if (victory) return c;
-
-		//check diagonal up right
-		for (int xy = 0; xy < k; xy++){
-			if(col+xy > numCols or row+xy > numRows){
-				victory = false;
-				break;
-			}
-			if(gameState[col+xy][row+xy] != c){
-				victory = false;
-				break;
-			}
-		}
-
-		if (victory) return c;
-
-		//check diagonal up left
-		for (int xy = 0; xy < k; xy++){
-			if(col+xy > numCols or row-xy < 0){
-				victory = false;
-				break;
-			}
-			if(gameState[col+xy][row-xy] != c){
-				victory = false;
-				break;
-			}
-		}
-
-		//check diagonal down right
-		for (int xy = 0; xy < k; xy++){
-			if(col-xy < 0 or row+xy > numRows){
-				victory = false;
-				break;
-			}
-			if(gameState[col-xy][row+xy] != c){
-				victory = false;
-				break;
-			}
-		}
-		if (victory) return c;
-
-		//check diagonal down left
-		for (int xy = 0; xy < k; xy++){
-			if(col-xy < 0 or row-xy < 0){
-				victory = false;
-				break;
-			}
-			if(gameState[col-xy][row-xy] != c){
-				victory = false;
-				break;
-			}
-		}
-		if (victory) return c;
-	}
-
-    for (int cl = 0; cl<numCols; cl++){
-    	for (int rw = 0; rw<numRows; rw++){
-    		if(gameState[cl][rw] == 0) return 2;
-    	}
-
-    }
-
-    return 0;
-
-    /*
-    bool filled = true;
-
     for (int col = 0; col<numCols; col++){
-    	for (int row = 0; row<numRows; row++){
-    		c = gameState[col][row];
+   	    	for (int row = 0; row<numRows; row++){
+   	    		c = gameState[col][row];
+   	    		if (c!=0)
+   	    		{
+   	    			victory = true;
 
-    		if (c==0) filled = false;
+   	    			//check victory right
 
-    		if (c!=0)
-    		{
-    			victory = true;
+   	    			if(col <= (numCols - (k-1)))
+   	    			{
+   	    				for (int x = 0; x < k; x++)
+   	    				{
+   	    					if(gameState[col+x][row] != c)
+   	    					{
+   	    						victory = false;
+   	    						break;
+   	    					}
+   	    				}
+   	    			}
+   	    			else victory = false;
 
-    			//check row right
-    			for (int x = 0; x < k; x++){
-    				if(gameState[col+x][row] != c){
-    					victory = false;
-    					break;
-    				}
-    			}
+   	    			if (victory) return c;
 
-    			if (victory) return c;
+   	    			victory = true;
 
-    			//check row right left
-    			for (int x = 0; x < k; x++){
-    				if(gameState[col-x][row] != c){
-    					victory = false;
-    					break;
-    				}
-    			}
+   	    			//check victory left
 
-    			if (victory) return c;
+   	    			if(col >= k-1)
+   	    			{
+   	    				for (int x = 0; x < k; x++){
+   	    					if(gameState[col-x][row] != c){
+   	    						victory = false;
+   	    						break;
+   	    					}
+   	    				}
+   	    			}
+   	    			else victory = false;
 
-    			//check col right
-    			for (int y = 0; y < k; y++){
-    				if(gameState[col][row+y] != c){
-    					victory = false;
-    					break;
-    				}
-    			}
+   	    			if (victory) return c;
 
-    			if (victory) return c;
+   	    			victory = true;
 
-    			//check col left
-    			for (int y = 0; y < k; y++){
-    				if(gameState[col][row-y] != c){
-    					victory = false;
-    					break;
-    				}
-    			}
+   	    			//check victory up
 
-    			if (victory) return c;
+   	    			if(row <= (numRows - (k-1)))
+   	    			{
+   	    				for (int y = 0; y < k; y++){
+   	    					if(gameState[col][row+y] != c){
+   	    						victory = false;
+   	    						break;
+   	    					}
+   	    				}
+   	    			}
 
-    			//check diagonal up right
-    			for (int xy = 0; xy < k; xy++){
-    				if(gameState[col+xy][row+xy] != c){
-    					victory = false;
-    					break;
-    				}
-    			}
+   	    			else victory = false;
 
-    			if (victory) return c;
+   	    			if (victory) return c;
 
-    			//check diagonal up left
-    			for (int xy = 0; xy < k; xy++){
-    				if(gameState[col+xy][row-xy] != c){
-    					victory = false;
-    					break;
-    				}
-    			}
+   	    			victory = true;
 
-    			//check diagonal down right
-    			for (int xy = 0; xy < k; xy++){
-    				if(gameState[col-xy][row+xy] != c){
-    					victory = false;
-    					break;
-    				}
-    			}
-    			if (victory) return c;
+   	    			//check victory down
 
-    			//check diagonal down left
-    			for (int xy = 0; xy < k; xy++){
-    				if(gameState[col-xy][row-xy] != c){
-    					victory = false;
-    					break;
-    				}
-    			}
-    			if (victory) return c;
-    		}
-    	}
+   	    			if(row >= k-1)
+   	    			{
+   	    				for (int y = 0; y < k; y++){
+   	    					if(gameState[col][row-y] != c){
+   	    						victory = false;
+   	    						break;
+   	    					}
+   	    				}
+   	    			}
+   	    			else victory = false;
 
-    }
 
-	if (filled) return 0;
+   	    			if (victory) return c;
 
-    return 2;*/
+   	    			victory = true;
+
+   	    			//check diagonal up right
+   	    			if((row <= (numRows - (k-1))) && (col <= (numCols - (k-1))))
+   	    			{
+   	    				for (int xy = 0; xy < k; xy++){
+   	    					if(gameState[col+xy][row+xy] != c){
+   	    						victory = false;
+   	    						break;
+   	    					}
+   	    				}
+   	    			}
+   	    			else victory = false;
+
+   	    			if (victory) return c;
+
+   	    			victory = true;
+
+   	    			//check diagonal up left
+   	    			if((row <= (numRows - (k-1))) && (col >= (k-1)))
+   	    			{
+   	    				for (int xy = 0; xy < k; xy++){
+   	    					if(gameState[col-xy][row+xy] != c){
+   	    						victory = false;
+   	    						break;
+   	    					}
+   	    				}
+   	    			}
+   	    			else victory = false;
+
+   	    			if(victory) return c;
+
+   	    			victory = true;
+
+
+   	    			//check diagonal down right
+   	    			if((row >= (k-1)) && (col <= (numCols - (k-1))))
+   	    			{
+   	    				for (int xy = 0; xy < k; xy++){
+   	    					if(gameState[col+xy][row-xy] != c){
+   	    						victory = false;
+   	    						break;
+   	    					}
+   	    				}
+   	    			}
+   	    			else victory = false;
+
+   	    			if (victory) return c;
+
+   	    			victory = true;
+
+   	    			//check diagonal down left
+   	    			if((row >= (k-1)) && (col >= (k-1)))
+   	    			{
+   	    				for (int xy = 0; xy < k; xy++){
+   	    					if(gameState[col-xy][row-xy] != c){
+   	    						victory = false;
+   	    						break;
+   	    					}
+   	    				}
+   	    			}
+   	    			else victory = false;
+
+   	    			if (victory) return c;
+   	    		}
+   	    	}
+
+   	    }
+
+   	    return 0;
 
 
 
