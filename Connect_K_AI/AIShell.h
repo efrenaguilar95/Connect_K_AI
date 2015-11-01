@@ -50,11 +50,11 @@ public:
 
 	int ** copyboard(int ** board);
 
-	int checkvictory(int col, int row) const;
+	AiMove getBestMove(int** board, int player, int depth, int x = 0, int y = 0);
+	int getScore(int col, int row, int player);
+	int** boardCopy;
 
-	AiMove getbestmove(int ** board, int player, int depth);
-
-	int depth_limit = 2;
+	int depth_limit;
 
 
 };

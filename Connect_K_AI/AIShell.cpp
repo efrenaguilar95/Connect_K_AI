@@ -13,7 +13,10 @@ AIShell::AIShell(int numCols, int numRows, bool gravityOn, int** gameState, Move
 	this->gameState=gameState;
 	this->lastMove=lastMove;
 	this->gameTree=new GameTree<int **>;
-	makeTree(gameTree);
+	this->boardCopy = copyboard(this->gameState);
+	this->depth_limit = 3;
+
+	//makeTree(gameTree);
 }
 
 
@@ -39,6 +42,7 @@ Move AIShell::makeMove(){
 	}
 	
 	//this will move to the left-most column possible.
+	/*
 	for (int col = 0; col<numCols; col++){
 		for (int row = 0; row<numRows; row++){
 			if (gameState[col][row] == NO_PIECE){
@@ -46,8 +50,10 @@ Move AIShell::makeMove(){
 				return m;
 			}
 		}
-	}
-	Move m(0, 0);
+	}*/
+	AiMove bestMove = getBestMove(boardCopy, 1, 0);
+	std::cout<<bestMove.x<<bestMove.y<<std::endl;
+	Move m = Move(bestMove.x, bestMove.y);
 	return m;
 	 
 }
@@ -117,323 +123,165 @@ int ** AIShell::copyboard(int ** board){
 	return copy;
 }
 
-int AIShell::checkvictory(int col, int row) const {
-	//1 means Ai won, -1 means human won, 0 means board is filled with no winner; is no victory yet 2
+int AIShell::getScore(int col, int row, int player)
+{
+	//std::cout<<col<<row<<std::endl;
+	int val = 0;
+	int counter = 0;
+	int verticalCount;
+	int horizontalCount;
+	int lrDiagCount;
+	int rlDiagCount;
+	if(gravityOn)
+		{
+			//Check underneath where the piece was just placed
+			if(row >= k-1)
+			{
+				for (int y = 0; y < k; y++)
+				{
+					if(boardCopy[col][row-y] != player)
+						break;
+					counter++;
+				}
+			}
+			if(counter == k)
+				return 100 * player;
 
-    bool victory;
-    int c;
+			verticalCount = counter;
+			counter = 0;
 
-	c = gameState[col][row];
+			//Check if the row has a winner
 
-	if (c!=0)
-	{
-		victory = true;
+			//Start by checking left
+			if(col != 0)
+			{
+				for(int x = col-1; x >= 0; x--)
+				{
+					if(counter == (k-1) || boardCopy[x][row] != player)
+						break;
+					counter++;
+				}
+			}
+			if(counter == (k-1))
+				return 100 * player;
+			//Then check right
+			if(col != numCols-1)
+			{
+				for(int x = col+1; x < numCols; x++)
+				{
+					if(counter == (k-1) || boardCopy[x][row] != player)
+						break;
+					counter++;
+				}
+			}
+			if(counter == (k-1))
+				return 100 * player;
+			horizontalCount = counter;
+			counter = 0;
 
-		//check off bound
+			//Check left right diagonal(/)
 
-		//check row right
+			//Start by checking bottom left
+			if(row != 0 && col != 0)
+			{
+				int x,y;
+				for(x = col-1, y = row-1; x >= 0 && y >= 0; x--, y--)
+				{
+					if(counter == (k-1) || boardCopy[x][y] != player)
+						break;
+					counter++;
+				}
+			}
+			if(counter == (k-1))
+				return 100 * player;
 
-		for (int x = 0; x < k; x++){
-			if(col+x > numCols){
-				victory = false;
-				break;
+			//Then check top right
+			if(row != (numRows-1) && col != (numCols-1))
+			{
+				int x,y;
+				for(x = col+1, y = row+1; x < numCols && y < numRows; x++, y++)
+				{
+					if(counter == (k-1) || boardCopy[x][y] != player)
+						break;
+					counter++;
+				}
+			}
+			lrDiagCount = counter;
+			if(counter == (k-1))
+				return 100 * player;
+			counter = 0;
+
+			//Lastly, check right left diagonal (\)
+
+			//Start by checking bottom right
+			if(row != 0 && col != (numCols-1))
+			{
+				int x,y;
+				for(x = col+1, y = row-1; x < numCols && y>=0; x++, y--)
+				{
+					if(counter == (k-1) || boardCopy[x][y] != player)
+						break;
+					counter++;
+				}
+			}
+			if(counter == (k-1))
+				return 100 * player;
+
+			//Then check top left
+			if(row != (numRows-1) && col!= 0)
+			{
+				int x,y;
+				for(x = col-1, y = row+1; x >= 0 && y < numRows; x--, y++)
+				{
+					if(counter == (k-1) || boardCopy[x][y] != player)
+						break;
+					counter++;
+				}
 			}
 
-			if(gameState[col+x][row] != c){
-				victory = false;
-				break;
-			}
+			rlDiagCount = counter;
+			if(counter == (k-1))
+				return 100 * player;
+
+			return (verticalCount + horizontalCount + lrDiagCount + rlDiagCount) * player;
+
+
+
 		}
-
-		if (victory) return c;
-
-		//check row right left
-		for (int x = 0; x < k; x++){
-			if(col-x < 0){
-				victory = false;
-				break;
-			}
-
-			if(gameState[col-x][row] != c){
-				victory = false;
-				break;
-			}
-		}
-
-		if (victory) return c;
-
-		//check col right
-		for (int y = 0; y < k; y++){
-			if(row+y > numRows){
-				victory = false;
-				break;
-			}
-
-			if(gameState[col][row+y] != c){
-				victory = false;
-				break;
-			}
-		}
-
-		if (victory) return c;
-
-		//check col left
-		for (int y = 0; y < k; y++){
-			if(row-y < 0){
-				victory = false;
-				break;
-			}
-			if(gameState[col][row-y] != c){
-				victory = false;
-				break;
-			}
-		}
-
-		if (victory) return c;
-
-		//check diagonal up right
-		for (int xy = 0; xy < k; xy++){
-			if(col+xy > numCols or row+xy > numRows){
-				victory = false;
-				break;
-			}
-			if(gameState[col+xy][row+xy] != c){
-				victory = false;
-				break;
-			}
-		}
-
-		if (victory) return c;
-
-		//check diagonal up left
-		for (int xy = 0; xy < k; xy++){
-			if(col+xy > numCols or row-xy < 0){
-				victory = false;
-				break;
-			}
-			if(gameState[col+xy][row-xy] != c){
-				victory = false;
-				break;
-			}
-		}
-
-		//check diagonal down right
-		for (int xy = 0; xy < k; xy++){
-			if(col-xy < 0 or row+xy > numRows){
-				victory = false;
-				break;
-			}
-			if(gameState[col-xy][row+xy] != c){
-				victory = false;
-				break;
-			}
-		}
-		if (victory) return c;
-
-		//check diagonal down left
-		for (int xy = 0; xy < k; xy++){
-			if(col-xy < 0 or row-xy < 0){
-				victory = false;
-				break;
-			}
-			if(gameState[col-xy][row-xy] != c){
-				victory = false;
-				break;
-			}
-		}
-		if (victory) return c;
-	}
-
-    for (int cl = 0; cl<numCols; cl++){
-    	for (int rw = 0; rw<numRows; rw++){
-    		if(gameState[cl][rw] == 0) return 2;
-    	}
-
-    }
-
-    return 0;
-
-	/*	//1 means Ai won, -1 means human won, 0 means board is filled with no winner
-    bool victory;
-    int c;
-
-    for (int col = 0; col<numCols; col++){
-   	    	for (int row = 0; row<numRows; row++){
-   	    		c = gameState[col][row];
-   	    		if (c!=0)
-   	    		{
-   	    			victory = true;
-
-   	    			//check victory right
-
-   	    			if(col <= (numCols - (k-1)))
-   	    			{
-   	    				for (int x = 0; x < k; x++)
-   	    				{
-   	    					if(gameState[col+x][row] != c)
-   	    					{
-   	    						victory = false;
-   	    						break;
-   	    					}
-   	    				}
-   	    			}
-   	    			else victory = false;
-
-   	    			if (victory) return c;
-
-   	    			victory = true;
-
-   	    			//check victory left
-
-   	    			if(col >= k-1)
-   	    			{
-   	    				for (int x = 0; x < k; x++){
-   	    					if(gameState[col-x][row] != c){
-   	    						victory = false;
-   	    						break;
-   	    					}
-   	    				}
-   	    			}
-   	    			else victory = false;
-
-   	    			if (victory) return c;
-
-   	    			victory = true;
-
-   	    			//check victory up
-
-   	    			if(row <= (numRows - (k-1)))
-   	    			{
-   	    				for (int y = 0; y < k; y++){
-   	    					if(gameState[col][row+y] != c){
-   	    						victory = false;
-   	    						break;
-   	    					}
-   	    				}
-   	    			}
-
-   	    			else victory = false;
-
-   	    			if (victory) return c;
-
-   	    			victory = true;
-
-   	    			//check victory down
-
-   	    			if(row >= k-1)
-   	    			{
-   	    				for (int y = 0; y < k; y++){
-   	    					if(gameState[col][row-y] != c){
-   	    						victory = false;
-   	    						break;
-   	    					}
-   	    				}
-   	    			}
-   	    			else victory = false;
-
-
-   	    			if (victory) return c;
-
-   	    			victory = true;
-
-   	    			//check diagonal up right
-   	    			if((row <= (numRows - (k-1))) && (col <= (numCols - (k-1))))
-   	    			{
-   	    				for (int xy = 0; xy < k; xy++){
-   	    					if(gameState[col+xy][row+xy] != c){
-   	    						victory = false;
-   	    						break;
-   	    					}
-   	    				}
-   	    			}
-   	    			else victory = false;
-
-   	    			if (victory) return c;
-
-   	    			victory = true;
-
-   	    			//check diagonal up left
-   	    			if((row <= (numRows - (k-1))) && (col >= (k-1)))
-   	    			{
-   	    				for (int xy = 0; xy < k; xy++){
-   	    					if(gameState[col-xy][row+xy] != c){
-   	    						victory = false;
-   	    						break;
-   	    					}
-   	    				}
-   	    			}
-   	    			else victory = false;
-
-   	    			if(victory) return c;
-
-   	    			victory = true;
-
-
-   	    			//check diagonal down right
-   	    			if((row >= (k-1)) && (col <= (numCols - (k-1))))
-   	    			{
-   	    				for (int xy = 0; xy < k; xy++){
-   	    					if(gameState[col+xy][row-xy] != c){
-   	    						victory = false;
-   	    						break;
-   	    					}
-   	    				}
-   	    			}
-   	    			else victory = false;
-
-   	    			if (victory) return c;
-
-   	    			victory = true;
-
-   	    			//check diagonal down left
-   	    			if((row >= (k-1)) && (col >= (k-1)))
-   	    			{
-   	    				for (int xy = 0; xy < k; xy++){
-   	    					if(gameState[col-xy][row-xy] != c){
-   	    						victory = false;
-   	    						break;
-   	    					}
-   	    				}
-   	    			}
-   	    			else victory = false;
-
-   	    			if (victory) return c;
-   	    		}
-   	    	}
-
-   	    }
-
-   	    return 0;*/
-
-
-
 }
 
-
-AiMove AIShell::getbestmove(int** board, int player, int depth) {
+AiMove AIShell::getBestMove(int** board, int player, int depth, int x, int y) {
 
     // Base case, check for end state
     if (depth == depth_limit) {
-    	return AiMove(getscore()); /// getting score of the currentstate
+    	AiMove move = AiMove(getScore(x,y,player)); /// getting score of the currentstate
+    	std::cout<<move.score;
+    	move.x = x;
+    	move.y = y;
+    	return move;
+
     }
 
     std::vector<AiMove> moves;
 
     // Do the recursive function calls and construct the moves vector
-    for (int y = 0; y < numCols; y++) {
-        for (int x = 0; x < numRows; x++) {
-            if (board[y][x] == 0) {
+    for (int x = 0; x < numCols; x++) {
+        for (int y = 0; y < numRows; y++) {
+        	//std::cout<<"Col:"<<x<<std::endl;
+        	//std::cout<<"Row:"<<y<<std::endl;
+        	//std::cout<<"Val:"<<board[x][y]<<std::endl;
+            if (board[x][y] == 0) {
                 AiMove move;
                 move.x = x;
                 move.y = y;
-                board[y][x] = player;
+                board[x][y] = player;
                 if (player == 1) {
-                    move.score = getBestMove(board, -1, depth+1).score;
+                    move.score = getBestMove(board, -1, depth+1,x,y).score;
                 } else {
-                    move.score = getBestMove(board, 1, depth+1).score;
+                    move.score = getBestMove(board, 1, depth+1,x,y).score;
                 }
                 moves.push_back(move);
-                board[y][x] = 0;
+                board[x][y] = 0;
             }
         }
     }

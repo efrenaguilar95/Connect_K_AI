@@ -294,6 +294,7 @@ int check_winner2(int** gameState, int row, int col, int numCols, int numRows, i
 		rlDiagCount = counter;
 		if(counter == (k-1))
 			return 10;
+
 		return 0;
 
 

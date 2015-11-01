@@ -1,11 +1,1 @@
-14:35:45 **** Incremental Build of configuration Debug for project GameTree ****
-Info: Internal Builder is used for build
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
-..\main.cpp: In function 'int check_winner(int**, int, int, int)':
-..\main.cpp:24:1: warning: no return statement in function returning non-void [-Wreturn-type]
- }
- ^
-g++ -o GameTree.exe main.o 
-
-14:35:47 Build Finished (took 1s.806ms)
-
+Info: Nothing to build for GameTree
