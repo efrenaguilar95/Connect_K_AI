@@ -414,7 +414,7 @@ AiMove AIShell::getbestmove(int** board, int player, int depth) {
 
     // Base case, check for end state
     if (depth == depth_limit) {
-    	return AiMove(getscore()); /// getting score of the currentstate
+    	return getscore();
     }
 
     std::vector<AiMove> moves;
@@ -422,18 +422,18 @@ AiMove AIShell::getbestmove(int** board, int player, int depth) {
     // Do the recursive function calls and construct the moves vector
     for (int y = 0; y < numCols; y++) {
         for (int x = 0; x < numRows; x++) {
-            if (board[y][x] == 0) {
+            if (gameState[y][x] == 0) {
                 AiMove move;
                 move.x = x;
                 move.y = y;
-                board[y][x] = player;
+                board.setVal(x, y, player);
                 if (player == 1) {
-                    move.score = getBestMove(board, -1, depth+1).score;
+                    move.score = getBestMove(board, -1, depth-1).score;
                 } else {
-                    move.score = getBestMove(board, 1, depth+1).score;
+                    move.score = getBestMove(board, 1, depth-1).score;
                 }
                 moves.push_back(move);
-                board[y][x] = 0;
+                board.setVal(x, y, NO_VAL);
             }
         }
     }

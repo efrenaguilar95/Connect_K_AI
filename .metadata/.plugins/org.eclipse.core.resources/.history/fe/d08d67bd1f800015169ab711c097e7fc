@@ -1,7 +1,5 @@
 #include "AIShell.h"
 #include <iostream>
-#include <vector>
-
 
 
 AIShell::AIShell(int numCols, int numRows, bool gravityOn, int** gameState, Move lastMove)
@@ -410,37 +408,41 @@ int AIShell::checkvictory(int col, int row) const {
 }
 
 
-AiMove AIShell::getbestmove(int** board, int player, int depth) {
+Move AIShell::getbestmove(int** board, int player, int depth) {
 
     // Base case, check for end state
     if (depth == depth_limit) {
-    	return AiMove(getscore()); /// getting score of the currentstate
+        return AiMove(10);
+    } else if (rv == _humanPlayer) {
+        return AiMove(-10);
+    } else if (rv == TIE_VAL) {
+        return AiMove(0);
     }
 
-    std::vector<AiMove> moves;
+    std::vector<Move> moves;
 
     // Do the recursive function calls and construct the moves vector
     for (int y = 0; y < numCols; y++) {
         for (int x = 0; x < numRows; x++) {
-            if (board[y][x] == 0) {
+            if (gameState[y][x] == NO_VAL) {
                 AiMove move;
                 move.x = x;
                 move.y = y;
-                board[y][x] = player;
-                if (player == 1) {
-                    move.score = getBestMove(board, -1, depth+1).score;
+                board.setVal(x, y, player);
+                if (player == _aiPlayer) {
+                    move.score = getBestMove(board, _humanPlayer).score;
                 } else {
-                    move.score = getBestMove(board, 1, depth+1).score;
+                    move.score = getBestMove(board, _aiPlayer).score;
                 }
                 moves.push_back(move);
-                board[y][x] = 0;
+                board.setVal(x, y, NO_VAL);
             }
         }
     }
 
     // Pick the best move for the current player
     int bestMove = 0;
-    if (player == 1) {
+    if (player == _aiPlayer) {
         int bestScore = -1000000;
         for (int i = 0; i < moves.size(); i++) {
             if (moves[i].score > bestScore) {

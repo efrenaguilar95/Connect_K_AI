@@ -52,7 +52,7 @@ public:
 
 	int checkvictory(int col, int row) const;
 
-	AiMove getbestmove(int ** board, int player, int depth);
+	Move getbestmove(int ** board, int player, int depth);
 
 	int depth_limit = 2;
 

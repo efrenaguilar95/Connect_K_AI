@@ -414,7 +414,7 @@ AiMove AIShell::getbestmove(int** board, int player, int depth) {
 
     // Base case, check for end state
     if (depth == depth_limit) {
-    	return AiMove(getscore()); /// getting score of the currentstate
+    	return getscore();
     }
 
     std::vector<AiMove> moves;
