@@ -135,9 +135,9 @@ int AIShell::getScore(int col, int row, int player)
 	if(gravityOn)
 		{
 			//Check underneath where the piece was just placed
-			if(row != 0)
+			if(row >= k-1)
 			{
-				for (int y = 1; y >= 0; y++)
+				for (int y = 0; y < k; y++)
 				{
 					if(boardCopy[col][row-y] != player)
 						break;

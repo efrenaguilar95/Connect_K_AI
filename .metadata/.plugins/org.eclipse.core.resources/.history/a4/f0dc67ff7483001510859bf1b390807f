@@ -187,9 +187,9 @@ int check_winner2(int** gameState, int row, int col, int numCols, int numRows, i
 	if(gravity)
 	{
 		//Check underneath where the piece was just placed
-		if(row != 0)
+		if(row >= k-1)
 		{
-			for (int y = 1; y >= 0; y++)
+			for (int y = 0; y < k; y++)
 			{
 				if(gameState[col][row-y] != player)
 					break;
@@ -291,12 +291,12 @@ int check_winner2(int** gameState, int row, int col, int numCols, int numRows, i
 			}
 		}
 
-		rlDiagCount = counter;
-
 		std::cout<<"Vertical Count:"<<verticalCount<<std::endl;
 		std::cout<<"Horizontal Count:"<<horizontalCount<<std::endl;
 		std::cout<<"LRDiag Count:"<<lrDiagCount<<std::endl;
 		std::cout<<"RLDiagCount:"<<rlDiagCount<<std::endl;
+
+		rlDiagCount = counter;
 		if(counter == (k-1))
 			return 10;
 
