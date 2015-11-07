@@ -52,7 +52,7 @@ Move AIShell::makeMove(){
 		}
 	}*/
 	AiMove bestMove = getBestMove(boardCopy, 1, 0);
-	std::cout<<bestMove.x<<bestMove.y<<std::endl;
+	std::cout<<"BM: "<<bestMove.x<<bestMove.y<<std::endl;
 	Move m = Move(bestMove.x, bestMove.y);
 	return m;
 	 
@@ -132,7 +132,7 @@ int AIShell::getScore(int col, int row, int player)
 	int horizontalCount;
 	int lrDiagCount;
 	int rlDiagCount;
-	if(gravityOn)
+	if(true)
 		{
 			//Check underneath where the piece was just placed
 			if(row != 0)
@@ -243,6 +243,12 @@ int AIShell::getScore(int col, int row, int player)
 			if(counter == (k-1))
 				return 100 * player;
 
+//			std::cout << "VerticalC: " << verticalCount << std::endl;
+//			std::cout << "HorizontalC: " << horizontalCount << std::endl;
+//			std::cout << "lrDiagCount: " << lrDiagCount <<std::endl;
+//			std::cout << "rlDiagCount: " << rlDiagCount <<std::endl;
+
+
 			return (verticalCount + horizontalCount + lrDiagCount + rlDiagCount) * player;
 
 
@@ -250,14 +256,15 @@ int AIShell::getScore(int col, int row, int player)
 		}
 }
 
-AiMove AIShell::getBestMove(int** board, int player, int depth, int x, int y) {
+AiMove AIShell::getBestMove(int** board, int player, int depth, int col, int row) {
 
     // Base case, check for end state
     if (depth == depth_limit) {
-    	AiMove move = AiMove(getScore(x,y,player)); /// getting score of the currentstate
-    	std::cout<<move.score;
-    	move.x = x;
-    	move.y = y;
+    	AiMove move = AiMove(getScore(col,row,player*-1)); /// getting score of the currentstate
+    	//std::cout<<move.score;
+    	//if (move.score == 2){std::cout<<"got 2!!!!" << std::endl;}
+    	move.x = col;
+    	move.y = row;
     	return move;
 
     }
@@ -271,7 +278,9 @@ AiMove AIShell::getBestMove(int** board, int player, int depth, int x, int y) {
         	//std::cout<<"Row:"<<y<<std::endl;
         	//std::cout<<"Val:"<<board[x][y]<<std::endl;
             if (board[x][y] == 0) {
-                AiMove move;
+            	//std::cout << "player is " << player << " depth: " << depth <<std::endl;
+                //std::cout<<"For move at: "<<x<<y<<std::endl;
+            	AiMove move;
                 move.x = x;
                 move.y = y;
                 board[x][y] = player;
@@ -281,12 +290,22 @@ AiMove AIShell::getBestMove(int** board, int player, int depth, int x, int y) {
                     move.score = getBestMove(board, 1, depth+1,x,y).score;
                 }
                 moves.push_back(move);
+                //for (int i=0; i < moves.size(); i++){
+                	//std::cout << i << ": " << moves[i].score << std::endl;
+                //}
                 board[x][y] = 0;
+                //break;
             }
         }
     }
 
     // Pick the best move for the current player
+    //for (int i =0; i < moves.size();i++)
+    //{
+    	//std::cout<< "m: " << moves[i].score<< std::endl;
+    //}
+
+
     int bestMove = 0;
     if (player == 1) {
         int bestScore = -1000000;
@@ -300,6 +319,7 @@ AiMove AIShell::getBestMove(int** board, int player, int depth, int x, int y) {
         int bestScore = 1000000;
         for (int i = 0; i < moves.size(); i++) {
             if (moves[i].score < bestScore) {
+            	//std::cout<< "m: " <<moves[i].score<< std::endl;
                 bestMove = i;
                 bestScore = moves[i].score;
             }

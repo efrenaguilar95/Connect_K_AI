@@ -2267,3 +2267,1121 @@ g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp"
  ^
 g++ -o GameTree.exe main.o 
 Info: Nothing to build for GameTree
+20:57:12 **** Rebuild of configuration Debug for project GameTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+..\main.cpp: In function 'int check_winner2(int**, int, int, int, int, int, bool, int)':
+..\main.cpp:181:6: warning: unused variable 'val' [-Wunused-variable]
+  int val = 0;
+      ^
+..\main.cpp:308:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o GameTree.exe main.o 
+20:57:18 **** Rebuild of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'GameTree<int**>* AIShell::generatestates(GameTree<int**>*)':
+..\AIShell.cpp:107:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:129:6: warning: unused variable 'val' [-Wunused-variable]
+  int val = 0;
+      ^
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:293:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:301:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:251:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o ConnectK.o "..\\ConnectK.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o Move.o "..\\Move.cpp" 
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+20:59:34 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'GameTree<int**>* AIShell::generatestates(GameTree<int**>*)':
+..\AIShell.cpp:107:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:129:6: warning: unused variable 'val' [-Wunused-variable]
+  int val = 0;
+      ^
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:293:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:302:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:251:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+21:01:05 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'GameTree<int**>* AIShell::generatestates(GameTree<int**>*)':
+..\AIShell.cpp:107:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:129:6: warning: unused variable 'val' [-Wunused-variable]
+  int val = 0;
+      ^
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:293:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:302:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:251:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.8.1/../../../../mingw32/bin/ld.exe: cannot open output file Connect_K_AI.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+21:01:13 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+21:10:53 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'GameTree<int**>* AIShell::generatestates(GameTree<int**>*)':
+..\AIShell.cpp:107:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:129:6: warning: unused variable 'val' [-Wunused-variable]
+  int val = 0;
+      ^
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:284:46: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+                 for (int i=0; i < moves.size(); i++){
+                                              ^
+..\AIShell.cpp:285:41: error: no match for 'operator<<' (operand types are 'std::basic_ostream<char>' and 'AiMove')
+                  std::cout << i << ": " << moves[i] << std::endl;
+                                         ^
+..\AIShell.cpp:285:41: note: candidates are:
+In file included from c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\iostream:39:0,
+                 from ..\gametree.h:4,
+                 from ..\AIShell.h:6,
+                 from ..\AIShell.cpp:1:
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:108:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__ostream_type& (*)(std::basic_ostream<_CharT, _Traits>::__ostream_type&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(__ostream_type& (*__pf)(__ostream_type&))
+       ^
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:108:7: note:   no known conversion for argument 1 from 'AiMove' to 'std::basic_ostream<char>::__ostream_type& (*)(std::basic_ostream<char>::__ostream_type&) {aka std::basic_ostream<char>& (*)(std::basic_ostream<char>&)}'
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:117:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__ios_type& (*)(std::basic_ostream<_CharT, _Traits>::__ios_type&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>; std::basic_ostream<_CharT, _Traits>::__ios_type = std::basic_ios<char>]
+       operator<<(__ios_type& (*__pf)(__ios_type&))
+       ^
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:117:7: note:   no known conversion for argument 1 from 'AiMove' to 'std::basic_ostream<char>::__ios_type& (*)(std::basic_ostream<char>::__ios_type&) {aka std::basic_ios<char>& (*)(std::basic_ios<char>&)}'
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:127:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::ios_base& (*)(std::ios_base&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(ios_base& (*__pf) (ios_base&))
+       ^
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:127:7: note:   no known conversion for argument 1 from 'AiMove' to 'std::ios_base& (*)(std::ios_base&)'
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:166:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(long __n)
+       ^
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:166:7: note:   no known conversion for argument 1 from 'AiMove' to 'long int'
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:170:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(unsigned long __n)
+       ^
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:170:7: note:   no known conversion for argument 1 from 'AiMove' to 'long unsigned int'
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:174:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(bool) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(bool __n)
+       ^
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:174:7: note:   no known conversion for argument 1 from 'AiMove' to 'bool'
+In file included from c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:609:0,
+                 from c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\iostream:39,
+                 from ..\gametree.h:4,
+                 from ..\AIShell.h:6,
+                 from ..\AIShell.cpp:1:
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\bits\ostream.tcc:91:5: note: std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(short int) [with _CharT = char; _Traits = std::char_traits<char>]
+     basic_ostream<_CharT, _Traits>::
+     ^
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\bits\ostream.tcc:91:5: note:   no known conversion for argument 1 from 'AiMove' to 'short int'
+In file included from c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\iostream:39:0,
+                 from ..\gametree.h:4,
+                 from ..\AIShell.h:6,
+                 from ..\AIShell.cpp:1:
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:181:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(short unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(unsigned short __n)
+       ^
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:181:7: note:   no known conversion for argument 1 from 'AiMove' to 'short unsigned int'
+In file included from c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:609:0,
+                 from c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\iostream:39,
+                 from ..\gametree.h:4,
+                 from ..\AIShell.h:6,
+                 from ..\AIShell.cpp:1:
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\bits\ostream.tcc:105:5: note: std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(int) [with _CharT = char; _Traits = std::char_traits<char>]
+     basic_ostream<_CharT, _Traits>::
+     ^
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\bits\ostream.tcc:105:5: note:   no known conversion for argument 1 from 'AiMove' to 'int'
+In file included from c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\iostream:39:0,
+                 from ..\gametree.h:4,
+                 from ..\AIShell.h:6,
+                 from ..\AIShell.cpp:1:
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:192:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(unsigned int __n)
+       ^
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:192:7: note:   no known conversion for argument 1 from 'AiMove' to 'unsigned int'
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:201:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long long int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(long long __n)
+       ^
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:201:7: note:   no known conversion for argument 1 from 'AiMove' to 'long long int'
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:205:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long long unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(unsigned long long __n)
+       ^
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:205:7: note:   no known conversion for argument 1 from 'AiMove' to 'long long unsigned int'
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:220:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(double) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(double __f)
+       ^
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:220:7: note:   no known conversion for argument 1 from 'AiMove' to 'double'
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:224:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(float) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(float __f)
+       ^
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:224:7: note:   no known conversion for argument 1 from 'AiMove' to 'float'
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:232:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long double) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(long double __f)
+       ^
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:232:7: note:   no known conversion for argument 1 from 'AiMove' to 'long double'
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:245:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(const void*) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(const void* __p)
+       ^
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:245:7: note:   no known conversion for argument 1 from 'AiMove' to 'const void*'
+In file included from c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:609:0,
+                 from c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\iostream:39,
+                 from ..\gametree.h:4,
+                 from ..\AIShell.h:6,
+                 from ..\AIShell.cpp:1:
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\bits\ostream.tcc:119:5: note: std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__streambuf_type*) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__streambuf_type = std::basic_streambuf<char>]
+     basic_ostream<_CharT, _Traits>::
+     ^
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\bits\ostream.tcc:119:5: note:   no known conversion for argument 1 from 'AiMove' to 'std::basic_ostream<char>::__streambuf_type* {aka std::basic_streambuf<char>*}'
+In file included from c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\iostream:39:0,
+                 from ..\gametree.h:4,
+                 from ..\AIShell.h:6,
+                 from ..\AIShell.cpp:1:
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:548:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const unsigned char*)
+     operator<<(basic_ostream<char, _Traits>& __out, const unsigned char* __s)
+     ^
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:548:5: note:   template argument deduction/substitution failed:
+..\AIShell.cpp:285:51: note:   cannot convert 'moves.std::vector<_Tp, _Alloc>::operator[]<AiMove, std::allocator<AiMove> >(((std::vector<AiMove>::size_type)i))' (type 'AiMove') to type 'const unsigned char*'
+                  std::cout << i << ": " << moves[i] << std::endl;
+                                                   ^
+In file included from c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\iostream:39:0,
+                 from ..\gametree.h:4,
+                 from ..\AIShell.h:6,
+                 from ..\AIShell.cpp:1:
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:543:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const signed char*)
+     operator<<(basic_ostream<char, _Traits>& __out, const signed char* __s)
+     ^
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:543:5: note:   template argument deduction/substitution failed:
+..\AIShell.cpp:285:51: note:   cannot convert 'moves.std::vector<_Tp, _Alloc>::operator[]<AiMove, std::allocator<AiMove> >(((std::vector<AiMove>::size_type)i))' (type 'AiMove') to type 'const signed char*'
+                  std::cout << i << ": " << moves[i] << std::endl;
+                                                   ^
+In file included from c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\iostream:39:0,
+                 from ..\gametree.h:4,
+                 from ..\AIShell.h:6,
+                 from ..\AIShell.cpp:1:
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:530:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const char*)
+     operator<<(basic_ostream<char, _Traits>& __out, const char* __s)
+     ^
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:530:5: note:   template argument deduction/substitution failed:
+..\AIShell.cpp:285:51: note:   cannot convert 'moves.std::vector<_Tp, _Alloc>::operator[]<AiMove, std::allocator<AiMove> >(((std::vector<AiMove>::size_type)i))' (type 'AiMove') to type 'const char*'
+                  std::cout << i << ": " << moves[i] << std::endl;
+                                                   ^
+In file included from c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:609:0,
+                 from c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\iostream:39,
+                 from ..\gametree.h:4,
+                 from ..\AIShell.h:6,
+                 from ..\AIShell.cpp:1:
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\bits\ostream.tcc:321:5: note: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const char*)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, const char* __s)
+     ^
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\bits\ostream.tcc:321:5: note:   template argument deduction/substitution failed:
+..\AIShell.cpp:285:51: note:   cannot convert 'moves.std::vector<_Tp, _Alloc>::operator[]<AiMove, std::allocator<AiMove> >(((std::vector<AiMove>::size_type)i))' (type 'AiMove') to type 'const char*'
+                  std::cout << i << ": " << moves[i] << std::endl;
+                                                   ^
+In file included from c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\iostream:39:0,
+                 from ..\gametree.h:4,
+                 from ..\AIShell.h:6,
+                 from ..\AIShell.cpp:1:
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:513:5: note: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const _CharT*)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, const _CharT* __s)
+     ^
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:513:5: note:   template argument deduction/substitution failed:
+..\AIShell.cpp:285:51: note:   mismatched types 'const _CharT*' and 'AiMove'
+                  std::cout << i << ": " << moves[i] << std::endl;
+                                                   ^
+In file included from c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\iostream:39:0,
+                 from ..\gametree.h:4,
+                 from ..\AIShell.h:6,
+                 from ..\AIShell.cpp:1:
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:493:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, unsigned char)
+     operator<<(basic_ostream<char, _Traits>& __out, unsigned char __c)
+     ^
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:493:5: note:   template argument deduction/substitution failed:
+..\AIShell.cpp:285:51: note:   cannot convert 'moves.std::vector<_Tp, _Alloc>::operator[]<AiMove, std::allocator<AiMove> >(((std::vector<AiMove>::size_type)i))' (type 'AiMove') to type 'unsigned char'
+                  std::cout << i << ": " << moves[i] << std::endl;
+                                                   ^
+In file included from c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\iostream:39:0,
+                 from ..\gametree.h:4,
+                 from ..\AIShell.h:6,
+                 from ..\AIShell.cpp:1:
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:488:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, signed char)
+     operator<<(basic_ostream<char, _Traits>& __out, signed char __c)
+     ^
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:488:5: note:   template argument deduction/substitution failed:
+..\AIShell.cpp:285:51: note:   cannot convert 'moves.std::vector<_Tp, _Alloc>::operator[]<AiMove, std::allocator<AiMove> >(((std::vector<AiMove>::size_type)i))' (type 'AiMove') to type 'signed char'
+                  std::cout << i << ": " << moves[i] << std::endl;
+                                                   ^
+In file included from c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\iostream:39:0,
+                 from ..\gametree.h:4,
+                 from ..\AIShell.h:6,
+                 from ..\AIShell.cpp:1:
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:482:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, char)
+     operator<<(basic_ostream<char, _Traits>& __out, char __c)
+     ^
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:482:5: note:   template argument deduction/substitution failed:
+..\AIShell.cpp:285:51: note:   cannot convert 'moves.std::vector<_Tp, _Alloc>::operator[]<AiMove, std::allocator<AiMove> >(((std::vector<AiMove>::size_type)i))' (type 'AiMove') to type 'char'
+                  std::cout << i << ": " << moves[i] << std::endl;
+                                                   ^
+In file included from c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\iostream:39:0,
+                 from ..\gametree.h:4,
+                 from ..\AIShell.h:6,
+                 from ..\AIShell.cpp:1:
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:476:5: note: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, char)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, char __c)
+     ^
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:476:5: note:   template argument deduction/substitution failed:
+..\AIShell.cpp:285:51: note:   cannot convert 'moves.std::vector<_Tp, _Alloc>::operator[]<AiMove, std::allocator<AiMove> >(((std::vector<AiMove>::size_type)i))' (type 'AiMove') to type 'char'
+                  std::cout << i << ": " << moves[i] << std::endl;
+                                                   ^
+In file included from c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\iostream:39:0,
+                 from ..\gametree.h:4,
+                 from ..\AIShell.h:6,
+                 from ..\AIShell.cpp:1:
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:471:5: note: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, _CharT)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, _CharT __c)
+     ^
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:471:5: note:   template argument deduction/substitution failed:
+..\AIShell.cpp:285:51: note:   deduced conflicting types for parameter '_CharT' ('char' and 'AiMove')
+                  std::cout << i << ": " << moves[i] << std::endl;
+                                                   ^
+In file included from c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\string:52:0,
+                 from c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\bits\locale_classes.h:40,
+                 from c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\bits\ios_base.h:41,
+                 from c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ios:42,
+                 from c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\ostream:38,
+                 from c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\iostream:39,
+                 from ..\gametree.h:4,
+                 from ..\AIShell.h:6,
+                 from ..\AIShell.cpp:1:
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\bits\basic_string.h:2753:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::basic_string<_CharT, _Traits, _Alloc>&)
+     operator<<(basic_ostream<_CharT, _Traits>& __os,
+     ^
+c:\mingw\lib\gcc\mingw32\4.8.1\include\c++\bits\basic_string.h:2753:5: note:   template argument deduction/substitution failed:
+..\AIShell.cpp:285:51: note:   'AiMove' is not derived from 'const std::basic_string<_CharT, _Traits, _Alloc>'
+                  std::cout << i << ": " << moves[i] << std::endl;
+                                                   ^
+..\AIShell.cpp:296:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:305:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:251:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+21:14:20 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'GameTree<int**>* AIShell::generatestates(GameTree<int**>*)':
+..\AIShell.cpp:107:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:129:6: warning: unused variable 'val' [-Wunused-variable]
+  int val = 0;
+      ^
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:284:46: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+                 for (int i=0; i < moves.size(); i++){
+                                              ^
+..\AIShell.cpp:296:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:305:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:251:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+21:21:59 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'GameTree<int**>* AIShell::generatestates(GameTree<int**>*)':
+..\AIShell.cpp:107:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:129:6: warning: unused variable 'val' [-Wunused-variable]
+  int val = 0;
+      ^
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:296:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:305:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:251:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+Info: Nothing to build for GameTree
+Info: Nothing to build for GameTree
+Info: Nothing to build for Connect_K_AI
+12:28:04 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'GameTree<int**>* AIShell::generatestates(GameTree<int**>*)':
+..\AIShell.cpp:107:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:129:6: warning: unused variable 'val' [-Wunused-variable]
+  int val = 0;
+      ^
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:297:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:306:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:251:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+12:32:40 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'GameTree<int**>* AIShell::generatestates(GameTree<int**>*)':
+..\AIShell.cpp:107:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:129:6: warning: unused variable 'val' [-Wunused-variable]
+  int val = 0;
+      ^
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:297:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:306:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:251:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+12:48:28 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'GameTree<int**>* AIShell::generatestates(GameTree<int**>*)':
+..\AIShell.cpp:107:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int**, int, int, int)':
+..\AIShell.cpp:129:6: warning: unused variable 'val' [-Wunused-variable]
+  int val = 0;
+      ^
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:297:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:306:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int**, int, int, int)':
+..\AIShell.cpp:251:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o ConnectK.o "..\\ConnectK.cpp" 
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+12:49:20 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o ConnectK.o "..\\ConnectK.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'GameTree<int**>* AIShell::generatestates(GameTree<int**>*)':
+..\AIShell.cpp:107:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:129:6: warning: unused variable 'val' [-Wunused-variable]
+  int val = 0;
+      ^
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:297:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:306:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:251:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+12:51:55 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'GameTree<int**>* AIShell::generatestates(GameTree<int**>*)':
+..\AIShell.cpp:107:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:129:6: warning: unused variable 'val' [-Wunused-variable]
+  int val = 0;
+      ^
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:297:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:306:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:251:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+13:00:18 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'GameTree<int**>* AIShell::generatestates(GameTree<int**>*)':
+..\AIShell.cpp:107:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:129:6: warning: unused variable 'val' [-Wunused-variable]
+  int val = 0;
+      ^
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:257:36: error: 'x' was not declared in this scope
+      AiMove move = AiMove(getScore(x,y,player)); /// getting score of the currentstate
+                                    ^
+..\AIShell.cpp:257:38: error: 'y' was not declared in this scope
+      AiMove move = AiMove(getScore(x,y,player)); /// getting score of the currentstate
+                                      ^
+..\AIShell.cpp:297:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:306:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:251:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+13:00:42 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'GameTree<int**>* AIShell::generatestates(GameTree<int**>*)':
+..\AIShell.cpp:107:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:129:6: warning: unused variable 'val' [-Wunused-variable]
+  int val = 0;
+      ^
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:257:36: error: 'x' was not declared in this scope
+      AiMove move = AiMove(getScore(x,y,player)); /// getting score of the currentstate
+                                    ^
+..\AIShell.cpp:257:38: error: 'y' was not declared in this scope
+      AiMove move = AiMove(getScore(x,y,player)); /// getting score of the currentstate
+                                      ^
+..\AIShell.cpp:297:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:306:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:251:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+13:01:17 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'GameTree<int**>* AIShell::generatestates(GameTree<int**>*)':
+..\AIShell.cpp:107:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:129:6: warning: unused variable 'val' [-Wunused-variable]
+  int val = 0;
+      ^
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:297:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:306:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:251:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+Info: Nothing to build for Connect_K_AI
+13:06:31 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'GameTree<int**>* AIShell::generatestates(GameTree<int**>*)':
+..\AIShell.cpp:107:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:129:6: warning: unused variable 'val' [-Wunused-variable]
+  int val = 0;
+      ^
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:298:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:307:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:251:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+13:10:07 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o ConnectK.o "..\\ConnectK.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'GameTree<int**>* AIShell::generatestates(GameTree<int**>*)':
+..\AIShell.cpp:107:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:129:6: warning: unused variable 'val' [-Wunused-variable]
+  int val = 0;
+      ^
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:298:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:307:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:251:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+13:11:14 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'GameTree<int**>* AIShell::generatestates(GameTree<int**>*)':
+..\AIShell.cpp:107:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:129:6: warning: unused variable 'val' [-Wunused-variable]
+  int val = 0;
+      ^
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:298:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:307:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:251:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+13:16:30 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'GameTree<int**>* AIShell::generatestates(GameTree<int**>*)':
+..\AIShell.cpp:107:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:129:6: warning: unused variable 'val' [-Wunused-variable]
+  int val = 0;
+      ^
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:305:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:314:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:257:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+13:21:38 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'GameTree<int**>* AIShell::generatestates(GameTree<int**>*)':
+..\AIShell.cpp:107:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:129:6: warning: unused variable 'val' [-Wunused-variable]
+  int val = 0;
+      ^
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:302:35: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for (int i =0; i < moves.size();i++)
+                                   ^
+..\AIShell.cpp:311:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:319:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:257:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.8.1/../../../../mingw32/bin/ld.exe: cannot open output file Connect_K_AI.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+13:21:47 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+13:26:13 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'GameTree<int**>* AIShell::generatestates(GameTree<int**>*)':
+..\AIShell.cpp:107:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:129:6: warning: unused variable 'val' [-Wunused-variable]
+  int val = 0;
+      ^
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:302:35: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for (int i =0; i < moves.size();i++)
+                                   ^
+..\AIShell.cpp:311:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:319:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:257:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+13:44:01 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'GameTree<int**>* AIShell::generatestates(GameTree<int**>*)':
+..\AIShell.cpp:107:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:129:6: warning: unused variable 'val' [-Wunused-variable]
+  int val = 0;
+      ^
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:302:35: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for (int i =0; i < moves.size();i++)
+                                   ^
+..\AIShell.cpp:311:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:319:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:257:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+14:19:34 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'GameTree<int**>* AIShell::generatestates(GameTree<int**>*)':
+..\AIShell.cpp:107:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:129:6: warning: unused variable 'val' [-Wunused-variable]
+  int val = 0;
+      ^
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:302:35: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for (int i =0; i < moves.size();i++)
+                                   ^
+..\AIShell.cpp:311:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:319:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:257:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+14:21:45 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'GameTree<int**>* AIShell::generatestates(GameTree<int**>*)':
+..\AIShell.cpp:107:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:129:6: warning: unused variable 'val' [-Wunused-variable]
+  int val = 0;
+      ^
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:302:35: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for (int i =0; i < moves.size();i++)
+                                   ^
+..\AIShell.cpp:311:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:319:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:257:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+14:23:47 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'GameTree<int**>* AIShell::generatestates(GameTree<int**>*)':
+..\AIShell.cpp:107:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:129:6: warning: unused variable 'val' [-Wunused-variable]
+  int val = 0;
+      ^
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:303:35: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for (int i =0; i < moves.size();i++)
+                                   ^
+..\AIShell.cpp:312:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:320:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:257:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+14:29:10 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'GameTree<int**>* AIShell::generatestates(GameTree<int**>*)':
+..\AIShell.cpp:107:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:129:6: warning: unused variable 'val' [-Wunused-variable]
+  int val = 0;
+      ^
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:303:35: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for (int i =0; i < moves.size();i++)
+                                   ^
+..\AIShell.cpp:312:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:320:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:257:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+14:32:32 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'GameTree<int**>* AIShell::generatestates(GameTree<int**>*)':
+..\AIShell.cpp:107:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:129:6: warning: unused variable 'val' [-Wunused-variable]
+  int val = 0;
+      ^
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:303:35: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for (int i =0; i < moves.size();i++)
+                                   ^
+..\AIShell.cpp:312:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:320:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:257:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+14:42:04 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'GameTree<int**>* AIShell::generatestates(GameTree<int**>*)':
+..\AIShell.cpp:107:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:129:6: warning: unused variable 'val' [-Wunused-variable]
+  int val = 0;
+      ^
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:303:35: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for (int i =0; i < moves.size();i++)
+                                   ^
+..\AIShell.cpp:312:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:320:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:257:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+14:56:48 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'GameTree<int**>* AIShell::generatestates(GameTree<int**>*)':
+..\AIShell.cpp:107:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:129:6: warning: unused variable 'val' [-Wunused-variable]
+  int val = 0;
+      ^
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:303:35: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for (int i =0; i < moves.size();i++)
+                                   ^
+..\AIShell.cpp:312:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:320:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:257:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+15:02:05 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'GameTree<int**>* AIShell::generatestates(GameTree<int**>*)':
+..\AIShell.cpp:107:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:129:6: warning: unused variable 'val' [-Wunused-variable]
+  int val = 0;
+      ^
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:303:35: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for (int i =0; i < moves.size();i++)
+                                   ^
+..\AIShell.cpp:312:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:320:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:257:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+15:03:56 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'GameTree<int**>* AIShell::generatestates(GameTree<int**>*)':
+..\AIShell.cpp:107:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:129:6: warning: unused variable 'val' [-Wunused-variable]
+  int val = 0;
+      ^
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:303:35: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for (int i =0; i < moves.size();i++)
+                                   ^
+..\AIShell.cpp:312:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:320:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:257:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+20:09:06 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'GameTree<int**>* AIShell::generatestates(GameTree<int**>*)':
+..\AIShell.cpp:107:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:129:6: warning: unused variable 'val' [-Wunused-variable]
+  int val = 0;
+      ^
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:303:35: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for (int i =0; i < moves.size();i++)
+                                   ^
+..\AIShell.cpp:312:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:320:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:257:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.8.1/../../../../mingw32/bin/ld.exe: cannot open output file Connect_K_AI.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+20:09:13 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+20:11:06 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'GameTree<int**>* AIShell::generatestates(GameTree<int**>*)':
+..\AIShell.cpp:107:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:129:6: warning: unused variable 'val' [-Wunused-variable]
+  int val = 0;
+      ^
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:312:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:320:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:257:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+Info: Nothing to build for Connect_K_AI
+20:18:59 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'GameTree<int**>* AIShell::generatestates(GameTree<int**>*)':
+..\AIShell.cpp:107:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:129:6: warning: unused variable 'val' [-Wunused-variable]
+  int val = 0;
+      ^
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:312:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:320:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:257:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+20:20:46 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'GameTree<int**>* AIShell::generatestates(GameTree<int**>*)':
+..\AIShell.cpp:107:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:129:6: warning: unused variable 'val' [-Wunused-variable]
+  int val = 0;
+      ^
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:312:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:320:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:257:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+20:22:40 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'GameTree<int**>* AIShell::generatestates(GameTree<int**>*)':
+..\AIShell.cpp:107:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:129:6: warning: unused variable 'val' [-Wunused-variable]
+  int val = 0;
+      ^
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:312:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:320:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+Info: Nothing to build for Connect_K_AI

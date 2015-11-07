@@ -50,7 +50,7 @@ public:
 
 	int ** copyboard(int ** board);
 
-	AiMove getBestMove(int** board, int player, int depth, int x = 0, int y = 0);
+	AiMove getBestMove(int** board, int player, int depth, int col = 0, int row = 0);
 	int getScore(int col, int row, int player);
 	int** boardCopy;
 
