@@ -170,10 +170,6 @@ int AIShell::getScore(int col, int row, int player)
 					verticalCount = opponentCount;
 			}
 
-			playerCount = 0;
-			opponentCount = 0;
-			counter = 0;
-
 
 			//Check if the row has a winner
 
@@ -196,57 +192,28 @@ int AIShell::getScore(int col, int row, int player)
 
 				}
 			}
-			if(isPlayerPiece)
-			{
-				if(playerCount == k)
-					return 100 * player;
-				else
-					horizontalCount = playerCount * 2;
-			}
-			else
-			{
-				if(opponentCount == k-1)
-					return 99*player;
-				else
-					horizontalCount = opponentCount;
-			}
-
-
+			if(counter == (k-1))
+				return 100 * player;
 			//Then check right
 			if(col != numCols-1)
 			{
 				if(boardCopy[col+1][row] != player)
 				{
 					isPlayerPiece = false;
-					opponentCount += getNumAdjRight(col, row, player*-1);
+					opponentCount = getNumAdjRight(col, row, player*-1);
 					counter = opponentCount;
 				}
 				else
 				{
 					isPlayerPiece = true;
-					playerCount += getNumAdjRight(col, row, player);
+					playerCount = getNumAdjRight(col, row, player);
 					counter = playerCount;
 				}
 			}
-			if(isPlayerPiece)
-			{
-				if(playerCount == k)
-					return 100 * player;
-				else
-					horizontalCount = (playerCount * 2) + opponentCount;
-			}
-			else
-			{
-				if(opponentCount == k-1)
-					return 99*player;
-				else
-					horizontalCount = opponentCount + (playerCount *2);
-			}
-
-			playerCount = 0;
-			opponentCount = 0;
+			if(counter == (k-1))
+				return 100 * player;
+			horizontalCount = counter;
 			counter = 0;
-
 
 			//Check left right diagonal(/)
 
@@ -266,20 +233,8 @@ int AIShell::getScore(int col, int row, int player)
 					counter = playerCount;
 				}
 			}
-			if(isPlayerPiece)
-			{
-				if(playerCount == k)
-					return 100 * player;
-				else
-					lrDiagCount = playerCount * 2;
-			}
-			else
-			{
-				if(opponentCount == k-1)
-					return 99*player;
-				else
-					lrDiagCount = opponentCount;
-			}
+			if(counter == (k-1))
+				return 100 * player;
 
 			//Then check top right
 			if(row != (numRows-1) && col != (numCols-1))
@@ -287,34 +242,19 @@ int AIShell::getScore(int col, int row, int player)
 				if(boardCopy[col+1][row+1] != player)
 				{
 					isPlayerPiece = false;
-					opponentCount += getNumAdjTopRight(col, row, player);
+					opponentCount = getNumAdjTopRight(col, row, player);
 					counter = opponentCount;
 				}
 				else
 				{
 					isPlayerPiece = true;
-					playerCount += getNumAdjTopRight(col, row, player);
+					playerCount = getNumAdjTopRight(col, row, player);
 					counter = playerCount;
 				}
 			}
 			lrDiagCount = counter;
-			if(isPlayerPiece)
-			{
-				if(playerCount == k)
-					return 100 * player;
-				else
-					verticalCount = (playerCount * 2) + opponentCount;
-			}
-			else
-			{
-				if(opponentCount == k-1)
-					return 99 * player;
-				else
-					verticalCount = opponentCount + (playerCount *2);
-			}
-
-			playerCount = 0;
-			opponentCount = 0;
+			if(counter == (k-1))
+				return 100 * player;
 			counter = 0;
 
 			//Lastly, check right left diagonal (\)
@@ -335,20 +275,8 @@ int AIShell::getScore(int col, int row, int player)
 					counter = playerCount;
 				}
 			}
-			if(isPlayerPiece)
-			{
-				if(playerCount == k)
-					return 100 * player;
-				else
-					rlDiagCount = playerCount * 2;
-			}
-			else
-			{
-				if(opponentCount == k-1)
-					return 99 * player;
-				else
-					rlDiagCount = opponentCount;
-			}
+			if(counter == (k-1))
+				return 100 * player;
 
 			//Then check top left
 			if(row != (numRows-1) && col!= 0)
@@ -356,37 +284,21 @@ int AIShell::getScore(int col, int row, int player)
 				if(boardCopy[col-1][row+1] != player)
 				{
 					isPlayerPiece = false;
-					opponentCount += getNumAdjTopLeft(col, row, player);
+					opponentCount = getNumAdjTopLeft(col, row, player);
 					counter = opponentCount;
 				}
 				else
 				{
 					isPlayerPiece = true;
-					playerCount += getNumAdjTopLeft(col, row, player);
+					playerCount = getNumAdjTopLeft(col, row, player);
 					counter = opponentCount;
 				}
 
 			}
 
-			if(isPlayerPiece)
-			{
-				if(playerCount == k)
-					return 100 * player;
-				else
-					verticalCount = (playerCount * 2) + opponentCount;
-			}
-			else
-			{
-				if(opponentCount == k-1)
-					return 99*player;
-				else
-					verticalCount = opponentCount + (playerCount *2);
-			}
-
-			playerCount = 0;
-			opponentCount = 0;
-			counter = 0;
-
+			rlDiagCount = counter;
+			if(counter == (k-1))
+				return 100 * player;
 
 //			std::cout << "VerticalC: " << verticalCount << std::endl;
 //			std::cout << "HorizontalC: " << horizontalCount << std::endl;
@@ -398,6 +310,7 @@ int AIShell::getScore(int col, int row, int player)
 
 
 
+		}
 }
 
 AiMove AIShell::getBestMove(int** board, int player, int depth, int col, int row) {
