@@ -31,8 +31,18 @@ private:
 	int numCols; //the total number of columns in the game state.
 	int **gameState; //a pointer to a two-dimensional array representing the game state.
 	bool gravityOn; //this will be true if gravity is turned on. It will be false if gravity is turned off.
-	Move lastMove; //this is the move made last by your oppenent. If your opponent has not made a move yet (you move first) then this move will hold the value (-1, -1) instead. 
-	
+	Move lastMove; //this is the move made last by your oppenent. If your opponent has not made a move yet (you move first) then this move will hold the value (-1, -1) instead.
+
+
+	//Board checking helper functions
+	int getNumAdjBelow(int col, int row, int player);
+	int getNumAdjAbove(int col, int row, int player);
+	int getNumAdjLeft(int col, int row, int player);
+	int getNumAdjRight(int col, int row, int player);
+	int getNumAdjBottomLeft(int col, int row, int player);
+	int getNumAdjTopRight(int col, int row, int player);
+	int getNumAdjBottomRight(int col, int row, int player);
+	int getNumAdjTopLeft(int col, int row, int player);
 
 public: 
 	int deadline; //this is how many milliseconds the AI has to make move. 
