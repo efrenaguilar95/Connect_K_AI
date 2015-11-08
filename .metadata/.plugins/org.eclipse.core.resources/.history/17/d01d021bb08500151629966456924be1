@@ -345,7 +345,7 @@ int AIShell::getScore(int col, int row, int player)
 			else
 			{
 				if(opponentCount == k-1)
-					return 99 * player;
+					return 99*player;
 				else
 					rlDiagCount = opponentCount;
 			}
@@ -398,6 +398,7 @@ int AIShell::getScore(int col, int row, int player)
 
 
 
+		}
 }
 
 AiMove AIShell::getBestMove(int** board, int player, int depth, int col, int row) {

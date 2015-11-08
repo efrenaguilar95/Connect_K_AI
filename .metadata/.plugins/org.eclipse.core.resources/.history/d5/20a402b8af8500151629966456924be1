@@ -308,7 +308,7 @@ int AIShell::getScore(int col, int row, int player)
 			else
 			{
 				if(opponentCount == k-1)
-					return 99 * player;
+					return 99*player;
 				else
 					verticalCount = opponentCount + (playerCount *2);
 			}
@@ -345,7 +345,7 @@ int AIShell::getScore(int col, int row, int player)
 			else
 			{
 				if(opponentCount == k-1)
-					return 99 * player;
+					return 99*player;
 				else
 					rlDiagCount = opponentCount;
 			}
@@ -373,20 +373,23 @@ int AIShell::getScore(int col, int row, int player)
 				if(playerCount == k)
 					return 100 * player;
 				else
-					verticalCount = (playerCount * 2) + opponentCount;
+					verticalCount = playerCount * 2;
 			}
 			else
 			{
 				if(opponentCount == k-1)
 					return 99*player;
 				else
-					verticalCount = opponentCount + (playerCount *2);
+					verticalCount = opponentCount;
 			}
 
 			playerCount = 0;
 			opponentCount = 0;
 			counter = 0;
 
+			rlDiagCount = counter;
+			if(counter == (k-1))
+				return 100 * player;
 
 //			std::cout << "VerticalC: " << verticalCount << std::endl;
 //			std::cout << "HorizontalC: " << horizontalCount << std::endl;
@@ -398,6 +401,7 @@ int AIShell::getScore(int col, int row, int player)
 
 
 
+		}
 }
 
 AiMove AIShell::getBestMove(int** board, int player, int depth, int col, int row) {
