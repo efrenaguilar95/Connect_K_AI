@@ -3,7 +3,7 @@
 
 #pragma once
 #include "Move.h"
-//#include "gametree.h"
+#include "gametree.h"
 
 	struct AiMove {
 	    AiMove() {};
@@ -54,9 +54,9 @@ public:
 	Move makeMove();
 
 	//Our own code
-	//GameTree<int **>* gameTree;
-	//void makeTree(GameTree<int **>* node);
-	//GameTree<int **>* generatestates(GameTree<int **>* node);
+	GameTree<int **>* gameTree;
+	void makeTree(GameTree<int **>* node);
+	GameTree<int **>* generatestates(GameTree<int **>* node);
 
 	int ** copyboard(int ** board);
 
