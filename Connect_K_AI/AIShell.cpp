@@ -170,6 +170,37 @@ int AIShell::getScore(int col, int row, int player)
 					verticalCount = opponentCount;
 			}
 
+			//Then check above
+			if(row != numRows-1 && !gravityOn)
+			{
+				if(boardCopy[col][row-1] != player)
+				{
+					isPlayerPiece = false;
+					opponentCount += getNumAdjAbove(col, row, player*-1);
+					counter = opponentCount;
+				}
+				else
+				{
+					isPlayerPiece = true;
+					playerCount += getNumAdjAbove(col, row, player);
+					counter = playerCount;
+				}
+			}
+
+			if(isPlayerPiece)
+			{
+				if(playerCount == k)
+					return 100 * player;
+				else
+					verticalCount = (playerCount * 2) + opponentCount;
+			}
+			else
+			{
+				if(opponentCount == k-1)
+					return 99*player;
+				else
+					verticalCount = opponentCount + (playerCount *2);
+			}
 			playerCount = 0;
 			opponentCount = 0;
 			counter = 0;
@@ -495,6 +526,15 @@ int AIShell::getNumAdjBelow(int col, int row, int player)
 int AIShell::getNumAdjAbove(int col, int row, int player)
 {
 	int counter = 0;
+	if(row != numRows-1)
+	{
+		for(int y = row-1; y<= numRows; y++)
+		{
+			if(counter == (k-1) || boardCopy[col][y] != player)
+				break;
+			counter++;
+		}
+	}
 	return counter;
 }
 
