@@ -125,8 +125,6 @@ int ** AIShell::copyboard(int ** board){
 
 int AIShell::getScore(int col, int row, int player)
 {
-	if(col == 0)
-		return -1 * player;
 	return 0;
 }
 /*int AIShell::getScore(int col, int row, int player)
@@ -437,23 +435,6 @@ int AIShell::getScore(int col, int row, int player)
 
 }
 */
-
-AiMove AIShell::getBestMoveGrav(int** board, int player, int depth, int col, int row)
-{
-	if(depth == depth_limit)		//Once the depth limit or a terminal node has been reached
-	{
-		return AiMove(getScore(col, row, player));		//Return the value of putting the piece here
-	}
-
-	if(player == AI_PIECE) // if we are playing
-	{
-		int bestValue = -99999999;	//We want to MAX our score, so start with number that any score is better than
-
-
-	}
-}
-
-/*
 AiMove AIShell::getBestMove(int** board, int player, int depth, int col, int row) {
 
     // Base case, check for end state
@@ -525,7 +506,7 @@ AiMove AIShell::getBestMove(int** board, int player, int depth, int col, int row
     }
     // Return the best move
     return moves[bestMove];
-}*/
+}
 
 
 //Returns the number of adjacent pieces equal to the player below the player

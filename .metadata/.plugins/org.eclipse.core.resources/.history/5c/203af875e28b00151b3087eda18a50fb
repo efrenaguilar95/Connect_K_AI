@@ -438,18 +438,11 @@ int AIShell::getScore(int col, int row, int player)
 }
 */
 
-AiMove AIShell::getBestMoveGrav(int** board, int player, int depth, int col, int row)
+AiMove AIShell::getBestMove(int** board, int player, int depth, int col, int row)
 {
 	if(depth == depth_limit)		//Once the depth limit or a terminal node has been reached
 	{
 		return AiMove(getScore(col, row, player));		//Return the value of putting the piece here
-	}
-
-	if(player == AI_PIECE) // if we are playing
-	{
-		int bestValue = -99999999;	//We want to MAX our score, so start with number that any score is better than
-
-
 	}
 }
 
