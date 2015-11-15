@@ -1,14 +1,18 @@
-13:36:52 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+15:38:49 **** Incremental Build of configuration Debug for project Connect_K_AI ****
 Info: Internal Builder is used for build
 g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
+..\AIShell.cpp:139:6: warning: unused variable 'val' [-Wunused-variable]
+  int val = 0;
+      ^
 ..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
-..\AIShell.cpp:493:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+..\AIShell.cpp:561:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
          for (int i = 0; i < moves.size(); i++) {
                                         ^
-..\AIShell.cpp:501:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+..\AIShell.cpp:569:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
          for (int i = 0; i < moves.size(); i++) {
                                         ^
 g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
 
-13:36:52 Build Finished (took 773ms)
+15:38:50 Build Finished (took 810ms)
 
