@@ -44,6 +44,14 @@ private:
 	int getNumAdjBottomRight(int col, int row, int player);
 	int getNumAdjTopLeft(int col, int row, int player);
 
+	//Heuristic calculation helpers
+	int getVerticalScore(int col, int row, int player);
+	int getHorizontalScore(int col, int row, int player);
+	int getLRDiagCountScore(int col, int row, int player);
+	int getRLDiagCountScore(int col, int row, int player);
+
+	bool isFull(int** board);
+
 public: 
 	int deadline; //this is how many milliseconds the AI has to make move. 
 	int k;        // k is the number of pieces a player must get in a row/column/diagonal to win the game. IE in connect 4, this variable would be 4 
