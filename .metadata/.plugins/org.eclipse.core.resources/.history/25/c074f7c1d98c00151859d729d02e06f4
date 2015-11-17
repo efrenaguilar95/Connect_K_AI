@@ -12,8 +12,11 @@ AIShell::AIShell(int numCols, int numRows, bool gravityOn, int** gameState, Move
 	this->gravityOn=gravityOn;
 	this->gameState=gameState;
 	this->lastMove=lastMove;
+	//this->gameTree=new GameTree<int **>;
 	this->boardCopy = copyboard(this->gameState);
 	this->depth_limit = 3;
+
+	//makeTree(gameTree);
 }
 
 
@@ -38,6 +41,16 @@ Move AIShell::makeMove(){
 		return m;
 	}
 	
+	//this will move to the left-most column possible.
+	/*
+	for (int col = 0; col<numCols; col++){
+		for (int row = 0; row<numRows; row++){
+			if (gameState[col][row] == NO_PIECE){
+				Move m(col, row);
+				return m;
+			}
+		}
+	}*/
 	AiMove bestMove = getBestMove(boardCopy, 1, 0);
 	std::cout<<"BM: "<<bestMove.x<<bestMove.y<<std::endl;
 	Move m = Move(bestMove.x, bestMove.y);
@@ -45,6 +58,53 @@ Move AIShell::makeMove(){
 	 
 }
 
+//void AIShell::makeTree(GameTree<int**>* node){
+//
+//	generatestates(node);
+//	if(node->first_child == NULL) //|| depth_level > max || time >= time_limit)
+//		return;
+//	GameTree<int **>* child = node->first_child;
+//	makeTree(child);
+//	while(child->next_sibling != NULL)
+//	{
+//		child = child->next_sibling;
+//		makeTree(child);
+//	}
+//
+//
+//
+//	//start at root node
+//	//generate its children
+//	//get first child
+//	//recurse
+//	//go to sibling
+//	//recurse
+//
+//
+//
+//}
+
+//GameTree<int **>* AIShell::generatestates(GameTree<int **>* node){
+//
+//
+//	//find the first empty slot aka index value = 0
+//	//place the desired players number into slot 1,-1)
+//	for (int col = 0; col<numCols; col++){
+//		for (int row =0; row<numRows; row++)
+//		{
+//			if(node->value[col][row] == 0)
+//			{
+//				int** copy = copyboard(node->value);
+//				copy[col][row] = 1;
+//				GameTree<int **> n = GameTree<int **>(copy);
+//				node->addChild(n);
+//
+//
+//			}
+//		}
+//	}
+//
+//}
 
 int ** AIShell::copyboard(int ** board){
 

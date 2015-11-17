@@ -14,6 +14,8 @@ AIShell::AIShell(int numCols, int numRows, bool gravityOn, int** gameState, Move
 	this->lastMove=lastMove;
 	this->boardCopy = copyboard(this->gameState);
 	this->depth_limit = 3;
+
+	//makeTree(gameTree);
 }
 
 
