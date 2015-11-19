@@ -47,8 +47,8 @@ private:
 	//Heuristic calculation helpers
 	int getVerticalScore(int col, int row, int player);
 	int getHorizontalScore(int col, int row, int player);
-	int getLRDiagCountScore(int col, int row, int player);
-	int getRLDiagCountScore(int col, int row, int player);
+	int getLRDiagonalScore(int col, int row, int player);
+	int getRLDiagonalScore(int col, int row, int player);
 
 	bool isFull(int** board);
 

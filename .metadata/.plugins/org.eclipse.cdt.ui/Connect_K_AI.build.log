@@ -1,18 +1,30 @@
-20:33:31 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+22:36:29 **** Incremental Build of configuration Debug for project Connect_K_AI ****
 Info: Internal Builder is used for build
 g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
 ..\AIShell.cpp: In member function 'int AIShell::getScore(int, int, int)':
 ..\AIShell.cpp:69:6: warning: unused variable 'val' [-Wunused-variable]
   int val = 0;
       ^
+..\AIShell.cpp:70:6: warning: unused variable 'counter' [-Wunused-variable]
+  int counter = 0;
+      ^
+..\AIShell.cpp:71:6: warning: unused variable 'playerCount' [-Wunused-variable]
+  int playerCount = 0;
+      ^
+..\AIShell.cpp:72:6: warning: unused variable 'opponentCount' [-Wunused-variable]
+  int opponentCount = 0;
+      ^
+..\AIShell.cpp:78:7: warning: unused variable 'isPlayerPiece' [-Wunused-variable]
+  bool isPlayerPiece = false;
+       ^
 ..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
-..\AIShell.cpp:306:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+..\AIShell.cpp:178:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
          for (int i = 0; i < moves.size(); i++) {
                                         ^
-..\AIShell.cpp:314:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+..\AIShell.cpp:186:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
          for (int i = 0; i < moves.size(); i++) {
                                         ^
 g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
 
-20:33:32 Build Finished (took 837ms)
+22:36:30 Build Finished (took 1s.668ms)
 
