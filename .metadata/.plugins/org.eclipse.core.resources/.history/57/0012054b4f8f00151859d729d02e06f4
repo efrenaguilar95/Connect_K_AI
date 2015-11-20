@@ -117,8 +117,13 @@ int AIShell::getScore(int col, int row, int player)
 			return 995 - threatCount;
 	}
 
+//			std::cout << "VerticalC: " << verticalCount << std::endl;
+//			std::cout << "HorizontalC: " << horizontalCount << std::endl;
+//			std::cout << "lrDiagCount: " << lrDiagCount <<std::endl;
+//			std::cout << "rlDiagCount: " << rlDiagCount <<std::endl;
+
 	totalScore = totalScore + verticalScore + horizontalScore + lrDiagScore + rlDiagScore;
-	//std::cout<<"Total Score:"<<totalScore<<std::endl;
+	std::cout<<"Total Score:"<<totalScore<<std::endl;
 	return totalScore;
 }
 

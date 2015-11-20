@@ -13,7 +13,7 @@ AIShell::AIShell(int numCols, int numRows, bool gravityOn, int** gameState, Move
 	this->gameState=gameState;
 	this->lastMove=lastMove;
 	this->boardCopy = copyboard(this->gameState);
-	this->depth_limit = 3;
+	this->depth_limit = 1;
 }
 
 
@@ -76,7 +76,7 @@ int AIShell::getScore(int col, int row, int player)
 
 	//Check if the column has a winner
 	verticalScore = getVerticalScore(col, row, player);
-	//std::cout<<"VerticalScore:"<<verticalScore<<std::endl;
+	std::cout<<"VerticalScore:"<<verticalScore<<std::endl;
 	if(verticalScore == 1000 || verticalScore == -1000)
 		return verticalScore;
 	if(verticalScore == 999 || verticalScore == -999)
@@ -84,7 +84,7 @@ int AIShell::getScore(int col, int row, int player)
 
 	//Check if the row has a winner
 	horizontalScore = getHorizontalScore(col, row, player);
-	//std::cout<<"HorizontalScore:"<<horizontalScore<<std::endl;
+	std::cout<<"HorizontalScore:"<<horizontalScore<<std::endl;
 	if(horizontalScore == 1000 || horizontalScore == -1000)
 		return horizontalScore;
 	if(horizontalScore == 999 || horizontalScore == -999)
@@ -92,7 +92,7 @@ int AIShell::getScore(int col, int row, int player)
 
 	//Check left right diagonal(/)
 	lrDiagScore = getLRDiagonalScore(col, row, player);
-	//std::cout<<"lrDiagScore:"<<lrDiagScore<<std::endl;
+	std::cout<<"lrDiagScore:"<<lrDiagScore<<std::endl;
 	if(lrDiagScore == 1000 || lrDiagScore == -1000)
 		return lrDiagScore;
 	if(lrDiagScore == 999 || lrDiagScore == -999)
@@ -100,7 +100,7 @@ int AIShell::getScore(int col, int row, int player)
 
 	//Lastly, check right left diagonal (\)
 	rlDiagScore = getRLDiagonalScore(col, row, player);
-	//std::cout<<"rlDiagScore:"<<rlDiagScore<<std::endl;
+	std::cout<<"rlDiagScore:"<<rlDiagScore<<std::endl;
 	if(rlDiagScore == 1000 || rlDiagScore == -1000)
 	{
 		return rlDiagScore;
@@ -117,8 +117,13 @@ int AIShell::getScore(int col, int row, int player)
 			return 995 - threatCount;
 	}
 
+//			std::cout << "VerticalC: " << verticalCount << std::endl;
+//			std::cout << "HorizontalC: " << horizontalCount << std::endl;
+//			std::cout << "lrDiagCount: " << lrDiagCount <<std::endl;
+//			std::cout << "rlDiagCount: " << rlDiagCount <<std::endl;
+
 	totalScore = totalScore + verticalScore + horizontalScore + lrDiagScore + rlDiagScore;
-	//std::cout<<"Total Score:"<<totalScore<<std::endl;
+	std::cout<<"Total Score:"<<totalScore<<std::endl;
 	return totalScore;
 }
 
