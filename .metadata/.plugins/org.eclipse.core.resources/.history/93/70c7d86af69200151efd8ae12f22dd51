@@ -39,7 +39,7 @@ Move AIShell::makeMove(){
 	}
 	
 	AiMove bestMove = getBestMove(boardCopy, 1, 0, -1);
-	//std::cout<<"BM: "<<bestMove.x<<bestMove.y<<std::endl;
+	std::cout<<"BM: "<<bestMove.x<<bestMove.y<<std::endl;
 	Move m = Move(bestMove.x, bestMove.y);
 	return m;
 	 
@@ -110,7 +110,7 @@ int AIShell::getScore(int col, int row, int player)
 
 	if(threatCount != 0)
 	{
-		//std::cout<<threatCount<<std::endl;
+		std::cout<<threatCount<<std::endl;
 		if(player == AI_PIECE)
 			return 995 + threatCount;
 		else

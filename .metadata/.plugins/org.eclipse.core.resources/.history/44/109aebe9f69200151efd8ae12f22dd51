@@ -110,7 +110,7 @@ int AIShell::getScore(int col, int row, int player)
 
 	if(threatCount != 0)
 	{
-		//std::cout<<threatCount<<std::endl;
+		std::cout<<threatCount<<std::endl;
 		if(player == AI_PIECE)
 			return 995 + threatCount;
 		else
