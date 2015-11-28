@@ -11,6 +11,7 @@
 	    int x;
 	    int y;
 	    int score;
+	    int level;
 	};
 
 
@@ -43,6 +44,14 @@ private:
 	int getNumAdjTopRight(int col, int row, int player);
 	int getNumAdjBottomRight(int col, int row, int player);
 	int getNumAdjTopLeft(int col, int row, int player);
+
+	//Heuristic calculation helpers
+	int getVerticalScore(int col, int row, int player);
+	int getHorizontalScore(int col, int row, int player);
+	int getLRDiagonalScore(int col, int row, int player);
+	int getRLDiagonalScore(int col, int row, int player);
+
+	bool isFull(int** board);
 
 public: 
 	int deadline; //this is how many milliseconds the AI has to make move. 

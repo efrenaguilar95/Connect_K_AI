@@ -1,0 +1,786 @@
+#include "AIShell.h"
+#include <iostream>
+#include <vector>
+
+
+
+AIShell::AIShell(int numCols, int numRows, bool gravityOn, int** gameState, Move lastMove)
+{
+	this->deadline=0;
+	this->numRows=numRows;
+	this->numCols=numCols;
+	this->gravityOn=gravityOn;
+	this->gameState=gameState;
+	this->lastMove=lastMove;
+	this->boardCopy = copyboard(this->gameState);
+	this->depth_limit = 2;
+}
+
+
+AIShell::~AIShell()
+{
+	
+	//delete the gameState variable.
+	for (int i =0; i<numCols; i++){
+		delete [] gameState[i];
+	}
+	delete [] gameState;
+
+}
+
+Move AIShell::makeMove(){
+	//this part should be filled in by the student to implement the AI
+	//Example of a move could be: Move move(1, 2); //this will make a move at col 1, row 2
+
+	if (lastMove.col == -1 && lastMove.row == -1)
+	{
+		Move m(numCols/2, numRows/2);
+		return m;
+	}
+	
+	AiMove bestMove = getBestMove(boardCopy, 1, 0, -1);
+	std::cout<<"BM: "<<bestMove.x<<bestMove.y<<std::endl;
+	Move m = Move(bestMove.x, bestMove.y);
+	return m;
+	 
+}
+
+
+int ** AIShell::copyboard(int ** board){
+
+	int **copy = NULL;
+	copy = new int*[numCols];
+	for (int i =0; i<numCols; i++){
+		copy[i] = new int[numRows];
+	}
+
+	for (int col = 0; col<numCols; col++){
+			for (int row =0; row<numRows; row++)
+			{
+				copy[col][row] = board[col][row];
+				}
+			}
+	return copy;
+}
+
+int AIShell::getScore(int col, int row, int player)
+{
+	int verticalScore;
+	int horizontalScore;
+	int lrDiagScore;
+	int rlDiagScore;
+	int totalScore = 500;
+
+	int threatCount = 0;
+
+
+	//Check if the column has a winner
+	verticalScore = getVerticalScore(col, row, player);
+	std::cout<<"VerticalScore:"<<verticalScore<<std::endl;
+	if(verticalScore == 1000 || verticalScore == -1000)
+		return verticalScore;
+	if(verticalScore == 999 || verticalScore == -999)
+		threatCount += 1;
+
+	//Check if the row has a winner
+	horizontalScore = getHorizontalScore(col, row, player);
+	std::cout<<"HorizontalScore:"<<horizontalScore<<std::endl;
+	if(horizontalScore == 1000 || horizontalScore == -1000)
+		return horizontalScore;
+	if(horizontalScore == 999 || horizontalScore == -999)
+		threatCount += 1;
+
+	//Check left right diagonal(/)
+	lrDiagScore = getLRDiagonalScore(col, row, player);
+	std::cout<<"lrDiagScore:"<<lrDiagScore<<std::endl;
+	if(lrDiagScore == 1000 || lrDiagScore == -1000)
+		return lrDiagScore;
+	//if(lrDiagScore == 999 || lrDiagScore == -999)
+	//	threatCount += 1;
+
+	//Lastly, check right left diagonal (\)
+	rlDiagScore = getRLDiagonalScore(col, row, player);
+	std::cout<<"rlDiagScore:"<<rlDiagScore<<std::endl;
+	if(rlDiagScore == 1000 || rlDiagScore == -1000)
+	{
+		return rlDiagScore;
+	}
+	//if(rlDiagScore == 999 || rlDiagScore == -999)
+	//	threatCount += 1;
+
+	std::cout<<"GGWP"<<std::endl;
+	if(threatCount != 0)
+	{
+		std::cout<<threatCount<<std::endl;
+		if(player == AI_PIECE)
+			return 995 + threatCount;
+		else
+			return 995 - threatCount;
+	}
+
+	std::cout<<"BGWP"<<std::endl;
+
+//			std::cout << "VerticalC: " << verticalCount << std::endl;
+//			std::cout << "HorizontalC: " << horizontalCount << std::endl;
+//			std::cout << "lrDiagCount: " << lrDiagCount <<std::endl;
+//			std::cout << "rlDiagCount: " << rlDiagCount <<std::endl;
+
+	totalScore = totalScore + verticalScore + horizontalScore; //+ lrDiagScore + rlDiagScore;
+	std::cout<<"Total Score:"<<totalScore<<std::endl;
+	return totalScore;
+}
+
+
+
+AiMove AIShell::getBestMove(int** board, int player, int depth, int col, int row) {
+
+    // Base case, check for end state
+	int score;
+	if(col != -1)
+	{
+		score = getScore(col, row, player *	-1); // getting score of the current state
+	}
+    if (depth == depth_limit || isFull(board) || (score%1000 == 0))	//if depth or terminal node has been reached
+    {
+
+    	AiMove move = AiMove(score);
+    	//std::cout<<move.score<<std::endl;
+    	//if (move.score == 2){std::cout<<"got 2!!!!" << std::endl;}
+    	move.x = col;
+    	move.y = row;
+    	return move;
+
+    }
+
+    std::vector<AiMove> moves;
+
+    // Do the recursive function calls and construct the moves vector
+    for (int x = 0; x < numCols; x++) {
+        for (int y = 0; y < numRows; y++) {
+        	//std::cout<<"Col:"<<x<<std::endl;
+        	//std::cout<<"Row:"<<y<<std::endl;
+        	//std::cout<<"Val:"<<board[x][y]<<std::endl;
+            if (board[x][y] == 0) {
+            	//std::cout << "player is " << player << " depth: " << depth <<std::endl;
+                //std::cout<<"For move at: "<<x<<y<<std::endl;
+            	AiMove move;
+                move.x = x;
+                move.y = y;
+                board[x][y] = player;
+                if (player == 1) {
+                    move.score = getBestMove(board, -1, depth+1,x,y).score;
+                } else {
+                    move.score = getBestMove(board, 1, depth+1,x,y).score;
+                }
+                moves.push_back(move);
+                //for (int i=0; i < moves.size(); i++){
+                	//std::cout << i << ": " << moves[i].score << std::endl;
+                //}
+                board[x][y] = 0;
+                //break;
+            }
+        }
+    }
+
+    // Pick the best move for the current player
+    //for (int i =0; i < moves.size();i++)
+    //{
+    	//std::cout<< "m: " << moves[i].score<< std::endl;
+    //}
+
+
+    int bestMove = 0;
+    if (player == 1) {
+        int bestScore = -1000000;
+        for (int i = 0; i < moves.size(); i++) {
+            if (moves[i].score > bestScore) {
+                bestMove = i;
+                bestScore = moves[i].score;
+            }
+        }
+    } else {
+        int bestScore = 1000000;
+        for (int i = 0; i < moves.size(); i++) {
+            if (moves[i].score < bestScore) {
+            	//std::cout<< "m: " <<moves[i].score<< std::endl;
+                bestMove = i;
+                bestScore = moves[i].score;
+            }
+        }
+    }
+    // Return the best move
+    return moves[bestMove];
+}
+
+
+//Returns the number of adjacent pieces equal to the player below the player
+int AIShell::getNumAdjBelow(int col, int row, int player)
+{
+	int counter = 0;
+	if (row != 0)
+	{
+		for (int y = row-1; y>=0; y--)
+		{
+			if(counter == (k-1) || boardCopy[col][y] != player)
+				break;
+			counter++;
+		}
+	}
+	return counter;
+
+}
+
+//Returns the number of adjacent vertical pieces equal to the player above the player
+int AIShell::getNumAdjAbove(int col, int row, int player)
+{
+	int counter = 0;
+	if(row != numRows-1)
+	{
+		for(int y = row-1; y<= numRows; y++)
+		{
+			if(counter == (k-1) || boardCopy[col][y] != player)
+				break;
+			counter++;
+		}
+	}
+	return counter;
+}
+
+//Returns the number of adjacent horizontal pieces equal to the player to the left of the player
+int AIShell::getNumAdjLeft(int col, int row, int player)
+{
+	int counter = 0;
+	if(col != 0)
+	{
+		for(int x = col-1; x >= 0; x--)
+		{
+			if(counter == (k-1) || boardCopy[x][row] != player)
+				break;
+			counter++;
+		}
+	}
+	return counter;
+}
+
+//Returns the number of adjacent horizontal pieces equal to the player to the right of the player
+int AIShell::getNumAdjRight(int col, int row, int player)
+{
+	int counter = 0;
+	if(col != numCols-1)
+	{
+		for(int x = col+1; x < numCols; x++)
+		{
+			if(counter == (k-1) || boardCopy[x][row] != player)
+				break;
+			counter++;
+		}
+	}
+	return counter;
+}
+
+//Returns the number of adjacent diagonal pieces equal to the player to the bottom right diagonal of the player
+int AIShell::getNumAdjBottomLeft(int col, int row, int player)
+{
+	int counter = 0;
+	if(row != 0 && col != 0)
+	{
+		int x, y;
+		for(x = col-1, y = row-1; x >= 0 && y >= 0; x--, y--)
+		{
+			if(counter == (k-1) || boardCopy[x][y] != player)
+				break;
+			counter++;
+		}
+	}
+
+	return counter;
+}
+
+//Returns the number of adjacent diagonal pieces equal to the player to the top right diagonal of the player
+int AIShell::getNumAdjTopRight(int col, int row, int player)
+{
+	int counter = 0;
+	if(row != (numRows-1) && col != (numCols-1))
+	{
+		int x,y;
+		for(x = col+1, y = row+1; x < numCols && y < numRows; x++, y++)
+		{
+			if(counter == (k-1) || boardCopy[x][y] != player)
+				break;
+			counter++;
+		}
+	}
+	return counter;
+}
+
+//Returns the number of adjacent diagonal pieces to the player to the bottom right diagonal of the player
+int AIShell::getNumAdjBottomRight(int col, int row, int player)
+{
+	int counter = 0;
+	if(row != 0 && col != (numCols-1))
+	{
+		int x,y;
+		for(x = col+1, y = row-1; x < numCols && y>=0; x++, y--)
+		{
+			if(counter == (k-1) || boardCopy[x][y] != player)
+				break;
+			counter++;
+		}
+	}
+
+	return counter;
+}
+
+int AIShell::getNumAdjTopLeft(int col, int row, int player)
+{
+	int counter = 0;
+	if(row != (numRows-1) && col!= 0)
+	{
+		int x,y;
+		for(x = col-1, y = row+1; x >= 0 && y < numRows; x--, y++)
+		{
+			if(counter == (k-1) || boardCopy[x][y] != player)
+				break;
+			counter++;
+		}
+	}
+
+	return counter;
+}
+
+int AIShell::getVerticalScore(int row, int col, int player)
+{
+	int topPiece = player;
+	int bottomPiece = player;
+
+	int topCount = 0;
+	int bottomCount = 0;
+
+	//Start by checking top
+	if(row != numRows - 1 && !gravityOn)
+	{
+		if(boardCopy[col][row+1] != player)
+			topPiece *=-1;
+		topCount = getNumAdjAbove(col, row, topPiece);
+	}
+	if(topCount >= k-1)
+	{
+		if(topPiece == AI_PIECE)
+		{
+			if(player == AI_PIECE)
+				return 1000;
+			else
+				return -999;
+		}
+		else
+		{
+			if(player == AI_PIECE)
+				return 999;
+			else
+				return 1000;
+		}
+	}
+
+	//Then check bottom
+	if(row != 0)
+	{
+		if(boardCopy[col][row-1] != player)
+			bottomPiece *= -1;
+		bottomCount = getNumAdjAbove(col, row, bottomPiece);
+	}
+	if(bottomCount >= k-1)
+	{
+		if(bottomPiece == AI_PIECE)
+		{
+			if(player == AI_PIECE)
+				return 1000;
+			else
+				return -999;
+		}
+		else
+		{
+			if(player == AI_PIECE)
+				return 999;
+			else
+				return -1000;
+		}
+	}
+
+	int topScore = 0;
+	int bottomScore = 0;
+
+	if(topCount >= k/2)
+		topScore = topCount * 1.5;
+	else
+		topScore = topCount;
+
+	if(bottomCount >= k/2)
+		bottomScore = bottomCount * 1.5;
+	else
+		bottomScore = bottomCount;
+
+	if(topPiece == bottomPiece)
+	{
+		if((topCount + bottomCount) >= k-1)
+		{
+			if(topPiece == AI_PIECE)
+			{
+				if(player == AI_PIECE)
+					return 1000;
+				else
+					return -999;
+			}
+			else
+			{
+				if(player == AI_PIECE)
+					return 999;
+				else
+					return -1000;
+			}
+
+		}
+		return (topScore + bottomScore) * player;
+	}
+
+	if(topPiece == AI_PIECE)
+		return (topScore - bottomScore);
+	else
+		return (bottomScore - topScore);
+
+
+}
+
+int AIShell::getHorizontalScore(int row, int col, int player)
+{
+	int leftPiece = player;
+	int rightPiece = player;
+
+	int leftCount = 0;
+	int rightCount = 0;
+
+	//start by checking left
+	if(col != 0)
+	{
+		if(boardCopy[col-1][row] != player)		//If the piece to the left is not equal to player piece
+			leftPiece *=-1;	//Assign left side value opposite of player
+		leftCount = getNumAdjLeft(col, row, leftPiece);
+	}
+
+
+	if(leftCount >= k-1)
+	{
+		if(leftPiece == AI_PIECE)
+		{
+			if(player == AI_PIECE)
+				return 1000;
+			else
+				return -999;
+		}
+		else
+		{
+			if(player == AI_PIECE)
+				return 999;
+			else
+				return 1000;
+		}
+	}
+
+	//Then check right
+	if(col != numCols-1)
+	{
+		if(boardCopy[col+1][row] != player)
+			rightPiece *= -1;
+		rightCount = getNumAdjRight(col, row, rightPiece);
+	}
+
+	if(rightCount >= k-1)
+	{
+		if(rightPiece == AI_PIECE)
+		{
+			if(player == AI_PIECE)
+				return 1000;
+			else
+				return -999;
+		}
+		else
+		{
+			if(player == AI_PIECE)
+				return 999;
+			else
+				return 1000;
+		}
+	}
+
+	int rightScore = 0;
+	int leftScore = 0;
+
+	if(rightCount >= k/2)
+		rightScore = rightCount * 1.5;
+	else
+		rightScore = rightCount;
+
+	if(leftCount >= k/2)
+		leftScore =  leftCount * 1.5;
+	else
+		leftScore = leftCount;
+
+	if(rightPiece == leftPiece)
+	{
+		if((leftCount + rightCount) >= k-1)
+		{
+			if(leftPiece == AI_PIECE)
+			{
+				if(player == AI_PIECE)
+					return 1000;
+				else
+					return -999;
+			}
+			else
+			{
+				if(player == AI_PIECE)
+					return 999;
+				else
+					return -1000;
+			}
+
+		}
+		return ((rightScore + leftScore) * player);
+	}
+
+	if(rightPiece == AI_PIECE)
+		return (rightScore  - leftScore);
+	else
+		return (leftScore - rightScore);
+}
+
+
+//Check left right diagonal(/)
+int AIShell::getLRDiagonalScore(int row, int col, int player)
+{
+	int leftPiece = player;
+	int rightPiece = player;
+
+	int leftCount = 0;
+	int rightCount = 0;
+
+	//start by checking bottom left
+	if(row != 0 && col != 0)
+	{
+		if(boardCopy[row-1][col-1] != player)
+			leftPiece *= -1;
+		leftCount = getNumAdjBottomLeft(col, row, leftPiece);
+	}
+
+	if(leftCount >= k-1)
+		{
+			if(leftPiece == AI_PIECE)
+			{
+				if(player == AI_PIECE)
+					return 1000;
+				else
+					return -999;
+			}
+			else
+			{
+				if(player == AI_PIECE)
+					return 999;
+				else
+					return -1000;
+			}
+		}
+
+	//Then check top right
+	if(row != (numRows-1) && col != (numCols-1))
+	{
+		if(boardCopy[col+1][row+1] != player)
+			rightPiece *= -1;
+		rightCount = getNumAdjTopRight(col, row, rightPiece);
+	}
+
+	if(rightCount >= k-1)
+		{
+			if(rightPiece == AI_PIECE)
+			{
+				if(player == AI_PIECE)
+					return 1000;
+				else
+					return -999;
+			}
+			else
+			{
+				if(player == AI_PIECE)
+					return 999;
+				else
+					return -1000;
+			}
+		}
+
+
+	int leftScore = 0;
+	int rightScore = 0;
+
+	if(rightCount >= k/2)
+		rightScore = rightCount * 1.5;
+	else
+		rightScore = rightCount;
+
+	if(leftCount >= k/2)
+		leftScore =  leftCount * 1.5;
+	else
+		leftScore = leftCount;
+
+
+	if(rightPiece == leftPiece)
+	{
+		if((leftCount + rightCount) >= k-1)
+		{
+			if(leftPiece == AI_PIECE)
+			{
+				if(player == AI_PIECE)
+					return 1000;
+				else
+					return -999;
+			}
+			else
+			{
+				if(player == AI_PIECE)
+					return 999;
+				else
+					return -1000;
+			}
+
+		}
+		return ((rightScore + leftScore) * player);
+	}
+
+	if(rightPiece == AI_PIECE)
+		return (rightScore - leftScore);
+	else
+		return (leftScore - rightScore);
+
+}
+
+//Check right left diagonal (\)
+int AIShell::getRLDiagonalScore(int col, int row, int player)
+{
+	int leftPiece = player;
+	int rightPiece = player;
+
+	int leftCount = 0;
+	int rightCount = 0;
+
+
+	//Start by checking bottom right
+	if(row != 0 && col != (numCols-1))
+	{
+		if(boardCopy[row-1][col+1] != player)
+			rightPiece *= -1;
+		rightCount = getNumAdjBottomRight(col, row, rightPiece);
+	}
+
+	if(rightCount >= k-1)
+	{
+		if(rightPiece == AI_PIECE)
+		{
+			if(player == AI_PIECE)
+				return 1000;
+			else
+				return -999;
+		}
+		else
+		{
+			if(player == AI_PIECE)
+				return 999;
+			else
+				return -1000;
+		}
+	}
+
+	//Then check top left
+	if(row != (numRows-1) && col!= 0)
+	{
+		if(boardCopy[row+1][col-1] != player)
+			leftPiece *= -1;
+		leftCount = getNumAdjTopLeft(col, row, leftPiece);
+	}
+
+	std::cout<<"OHHAI"<<std::endl;
+	std::cout<<leftCount<<std::endl;
+
+	if(leftCount >= k-1)
+	{
+		if(leftPiece == AI_PIECE)
+		{
+			if(player == AI_PIECE)
+				return 1000;
+			else
+				return -999;
+		}
+		else
+		{
+			if(player == AI_PIECE)
+				return 999;
+			else
+				return -1000;
+		}
+	}
+
+	int leftScore = 0;
+	int rightScore = 0;
+
+	if(rightCount >= k/2)
+		rightScore = rightCount * 1.5;
+	else
+		rightScore = rightCount;
+
+	if(leftCount >= k/2)
+		leftScore =  leftCount * 1.5;
+	else
+		leftScore = leftCount;
+
+	if(rightPiece == leftPiece)
+	{
+		if((leftCount + rightCount) >= k-1)
+		{
+			if(leftPiece == AI_PIECE)
+			{
+				if(player == AI_PIECE)
+					return 1000;
+				else
+					return -999;
+			}
+			else
+			{
+				if(player == AI_PIECE)
+					return 999;
+				else
+					return -1000;
+			}
+
+		}
+		return ((rightScore + leftScore) * player);
+	}
+	if(rightPiece == AI_PIECE)
+		return (rightScore  - leftScore);
+	else
+		return (leftScore - rightScore);
+
+
+}
+
+//Returns true if a board is full
+bool AIShell::isFull(int** board)
+{
+	for(int row = 0; row < numRows; row++)
+	{
+		for(int col = 0; col < numCols; col++)
+		{
+			if(board[col][row] == 0)
+				return false;
+		}
+	}
+	return true;
+}
+
+
+
