@@ -13,10 +13,7 @@ AIShell::AIShell(int numCols, int numRows, bool gravityOn, int** gameState, Move
 	this->gameState=gameState;
 	this->lastMove=lastMove;
 	this->boardCopy = copyboard(this->gameState);
-	if(gravityOn)
-		this->depth_limit = 6;
-	else
-		this->depth_limit = 4;
+	this->depth_limit = 6;
 }
 
 
@@ -253,7 +250,7 @@ int AIShell::getNumAdjAbove(int col, int row, int player)
 	int counter = 0;
 	if(row != numRows-1)
 	{
-		for(int y = row-1; y< numRows; y++)
+		for(int y = row-1; y<= numRows; y++)
 		{
 			if(counter == (k-1) || boardCopy[col][y] != player)
 				break;

@@ -566,9 +566,9 @@ int AIShell::getHorizontalScore(int col, int row, int player)
 	}
 
 	if(rightPiece == AI_PIECE)
-		return (rightScore  - leftScore);
+		return (rightScore  + leftScore);
 	else
-		return (leftScore - rightScore);
+		return (leftScore + rightScore);
 }
 
 
@@ -672,9 +672,9 @@ int AIShell::getLRDiagonalScore(int col, int row, int player)
 	}
 
 	if(rightPiece == AI_PIECE)
-		return (rightScore - leftScore);
+		return (rightScore + leftScore);
 	else
-		return (leftScore - rightScore);
+		return (leftScore + rightScore);
 
 }
 
@@ -777,9 +777,9 @@ int AIShell::getRLDiagonalScore(int col, int row, int player)
 		return ((rightScore + leftScore) * player);
 	}
 	if(rightPiece == AI_PIECE)
-		return (rightScore  - leftScore);
+		return (rightScore  + leftScore);
 	else
-		return (leftScore - rightScore);
+		return (leftScore + rightScore);
 
 
 }
