@@ -11,6 +11,7 @@
 	    int x;
 	    int y;
 	    int score;
+	    int level;
 	};
 
 

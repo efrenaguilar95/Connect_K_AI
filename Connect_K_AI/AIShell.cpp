@@ -13,7 +13,7 @@ AIShell::AIShell(int numCols, int numRows, bool gravityOn, int** gameState, Move
 	this->gameState=gameState;
 	this->lastMove=lastMove;
 	this->boardCopy = copyboard(this->gameState);
-	this->depth_limit = 3;
+	this->depth_limit = 6;
 }
 
 
@@ -127,19 +127,32 @@ int AIShell::getScore(int col, int row, int player)
 AiMove AIShell::getBestMove(int** board, int player, int depth, int col, int row) {
 
     // Base case, check for end state
-	int score;
+	int score = 0;
 	if(col != -1)
 	{
 		score = getScore(col, row, player *	-1); // getting score of the current state
 	}
-    if (depth == depth_limit || isFull(board) || (score%1000 == 0))	//if depth or terminal node has been reached
+    if (depth == depth_limit || isFull(board) || (score <= -996) || (score >= 996))	//if depth or terminal node has been reached
     {
+
 
     	AiMove move = AiMove(score);
     	//std::cout<<move.score<<std::endl;
     	//if (move.score == 2){std::cout<<"got 2!!!!" << std::endl;}
     	move.x = col;
     	move.y = row;
+    	move.level = depth;
+
+    	if(player == AI_PIECE)
+    	{
+    		//std::cout<<"Node value for AI move at "<<col<< ", " <<row<<": "<<score<<std::endl;
+    	}
+    	else
+    	{
+    		//std::cout<<"Node value for Opponent move at " <<col<< ", "<<row<<": "<<score<<std::endl;
+     	}
+    	//if(score <= -996 || score >= 996)
+    		//std::cout<<score<<std::endl;
     	return move;
 
     }
@@ -153,23 +166,22 @@ AiMove AIShell::getBestMove(int** board, int player, int depth, int col, int row
         	//std::cout<<"Row:"<<y<<std::endl;
         	//std::cout<<"Val:"<<board[x][y]<<std::endl;
             if (board[x][y] == 0) {
-            	//std::cout << "player is " << player << " depth: " << depth <<std::endl;
-                //std::cout<<"For move at: "<<x<<y<<std::endl;
             	AiMove move;
                 move.x = x;
                 move.y = y;
                 board[x][y] = player;
                 if (player == 1) {
-                    move.score = getBestMove(board, -1, depth+1,x,y).score;
+                    move = getBestMove(board, -1, depth+1,x,y);
                 } else {
-                    move.score = getBestMove(board, 1, depth+1,x,y).score;
+                    move = getBestMove(board, 1, depth+1,x,y);
                 }
                 moves.push_back(move);
                 //for (int i=0; i < moves.size(); i++){
                 	//std::cout << i << ": " << moves[i].score << std::endl;
                 //}
                 board[x][y] = 0;
-                //break;
+                if(gravityOn)
+                	break;
             }
         }
     }
@@ -182,25 +194,34 @@ AiMove AIShell::getBestMove(int** board, int player, int depth, int col, int row
 
 
     int bestMove = 0;
+    int lowestDepth = 999999999;
+   // std::cout<<"Prints start here"<<std::endl;
     if (player == 1) {
         int bestScore = -1000000;
         for (int i = 0; i < moves.size(); i++) {
-            if (moves[i].score > bestScore) {
+
+        	//std::cout<<moves[i].x<<" "<<moves[i].y<<" "<<moves[i].score<<std::endl;
+            if (moves[i].score > bestScore && moves[i].level <= lowestDepth) {
                 bestMove = i;
                 bestScore = moves[i].score;
+                lowestDepth = moves[i].level;
+                //std::cout<<lowestDepth<<std::endl;
             }
         }
     } else {
         int bestScore = 1000000;
         for (int i = 0; i < moves.size(); i++) {
-            if (moves[i].score < bestScore) {
+            if (moves[i].score < bestScore && moves[i].level <= lowestDepth) {
             	//std::cout<< "m: " <<moves[i].score<< std::endl;
                 bestMove = i;
                 bestScore = moves[i].score;
+                lowestDepth = moves[i].level;
+                //std::cout<<lowestDepth<<std::endl;
             }
         }
     }
     // Return the best move
+    //std::cout<<"Prints end here"<<std::endl;
     return moves[bestMove];
 }
 
@@ -209,6 +230,7 @@ AiMove AIShell::getBestMove(int** board, int player, int depth, int col, int row
 int AIShell::getNumAdjBelow(int col, int row, int player)
 {
 	int counter = 0;
+	//std::cout<<player;
 	if (row != 0)
 	{
 		for (int y = row-1; y>=0; y--)
@@ -251,6 +273,7 @@ int AIShell::getNumAdjLeft(int col, int row, int player)
 			counter++;
 		}
 	}
+	//std::cout<<"num left for "<< col << " " << row<<" "<<counter<<std::endl;
 	return counter;
 }
 
@@ -340,7 +363,7 @@ int AIShell::getNumAdjTopLeft(int col, int row, int player)
 	return counter;
 }
 
-int AIShell::getVerticalScore(int row, int col, int player)
+int AIShell::getVerticalScore(int col, int row, int player)
 {
 	int topPiece = player;
 	int bottomPiece = player;
@@ -378,7 +401,7 @@ int AIShell::getVerticalScore(int row, int col, int player)
 	{
 		if(boardCopy[col][row-1] != player)
 			bottomPiece *= -1;
-		bottomCount = getNumAdjAbove(col, row, bottomPiece);
+		bottomCount = getNumAdjBelow(col, row, bottomPiece);
 	}
 	if(bottomCount >= k-1)
 	{
@@ -401,12 +424,12 @@ int AIShell::getVerticalScore(int row, int col, int player)
 	int topScore = 0;
 	int bottomScore = 0;
 
-	if(topCount >= k/2)
+	if(topCount >= (k/2))
 		topScore = topCount * 1.5;
 	else
 		topScore = topCount;
 
-	if(bottomCount >= k/2)
+	if(bottomCount >= (k/2))
 		bottomScore = bottomCount * 1.5;
 	else
 		bottomScore = bottomCount;
@@ -435,14 +458,14 @@ int AIShell::getVerticalScore(int row, int col, int player)
 	}
 
 	if(topPiece == AI_PIECE)
-		return (topScore - bottomScore);
+		return (topScore + bottomScore);
 	else
-		return (bottomScore - topScore);
+		return (bottomScore + topScore);
 
 
 }
 
-int AIShell::getHorizontalScore(int row, int col, int player)
+int AIShell::getHorizontalScore(int col, int row, int player)
 {
 	int leftPiece = player;
 	int rightPiece = player;
@@ -547,7 +570,7 @@ int AIShell::getHorizontalScore(int row, int col, int player)
 
 
 //Check left right diagonal(/)
-int AIShell::getLRDiagonalScore(int row, int col, int player)
+int AIShell::getLRDiagonalScore(int col, int row, int player)
 {
 	int leftPiece = player;
 	int rightPiece = player;
