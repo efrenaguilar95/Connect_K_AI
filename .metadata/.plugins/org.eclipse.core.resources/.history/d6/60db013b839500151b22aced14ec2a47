@@ -433,7 +433,7 @@ int AIShell::getVerticalScore(int col, int row, int player)
 		if(topPiece == player)
 			topScore = topCount * 1.5;
 		else
-			topScore = topCount * 2 * -1;
+			topScore = topCount * 2;
 	}
 	else
 		topScore = topCount;
@@ -443,7 +443,7 @@ int AIShell::getVerticalScore(int col, int row, int player)
 		if(bottomPiece == player)
 			bottomScore = bottomCount * 1.5;
 		else
-			bottomScore = bottomCount * 2 * -1;
+			bottomScore = bottomCount * 2;
 	}
 	else
 		bottomScore = bottomCount;
@@ -548,7 +548,7 @@ int AIShell::getHorizontalScore(int col, int row, int player)
 		if(rightPiece == player)
 			rightScore = rightCount * 1.5;
 		else
-			rightScore = rightCount * 2 * -1;
+			rightScore = rightCount * 2;
 	}
 	else
 		rightScore = rightCount;
@@ -556,9 +556,9 @@ int AIShell::getHorizontalScore(int col, int row, int player)
 	if(leftCount >= k/2)
 	{
 		if(leftPiece == player)
-			leftScore = leftCount * 1.5;
+			leftScore =  leftCount * 1.5;
 		else
-			leftScore = leftCount * 2 * -1;
+			leftScore = leftCount * 2;
 	}
 	else
 		leftScore = leftCount;
@@ -663,18 +663,13 @@ int AIShell::getLRDiagonalScore(int col, int row, int player)
 		if(rightPiece == player)
 			rightScore = rightCount * 1.5;
 		else
-			rightScore = rightCount * 2 * -1;
+			rightScore = rightCount * 2;
 	}
 	else
 		rightScore = rightCount;
 
 	if(leftCount >= k/2)
-	{
-		if(leftPiece == player)
-			leftScore =  leftCount * 1.5;
-		else
-			leftScore = leftCount * 2 * -1;
-	}
+		leftScore =  leftCount * 1.5;
 	else
 		leftScore = leftCount;
 
@@ -776,22 +771,12 @@ int AIShell::getRLDiagonalScore(int col, int row, int player)
 	int rightScore = 0;
 
 	if(rightCount >= k/2)
-	{
-		if(rightPiece == player)
-			rightScore = rightCount * 1.5;
-		else
-			rightScore = rightCount * 2 * -1;
-	}
+		rightScore = rightCount * 1.5;
 	else
 		rightScore = rightCount;
 
 	if(leftCount >= k/2)
-	{
-		if(leftPiece == player)
-			leftScore = leftCount * 1.5;
-		else
-			leftScore = leftCount * 2 * -1;
-	}
+		leftScore =  leftCount * 1.5;
 	else
 		leftScore = leftCount;
 

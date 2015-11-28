@@ -433,7 +433,7 @@ int AIShell::getVerticalScore(int col, int row, int player)
 		if(topPiece == player)
 			topScore = topCount * 1.5;
 		else
-			topScore = topCount * 2 * -1;
+			topScore = topCount * 2;
 	}
 	else
 		topScore = topCount;

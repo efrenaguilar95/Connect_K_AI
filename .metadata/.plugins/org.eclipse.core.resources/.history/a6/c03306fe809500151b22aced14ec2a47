@@ -427,24 +427,13 @@ int AIShell::getVerticalScore(int col, int row, int player)
 	int topScore = 0;
 	int bottomScore = 0;
 
-	//Give priority to the opponent
 	if(topCount >= (k/2))
-	{
-		if(topPiece == player)
-			topScore = topCount * 1.5;
-		else
-			topScore = topCount * 2 * -1;
-	}
+		topScore = topCount * 1.5;
 	else
 		topScore = topCount;
 
 	if(bottomCount >= (k/2))
-	{
-		if(bottomPiece == player)
-			bottomScore = bottomCount * 1.5;
-		else
-			bottomScore = bottomCount * 2 * -1;
-	}
+		bottomScore = bottomCount * 1.5;
 	else
 		bottomScore = bottomCount;
 
@@ -544,22 +533,12 @@ int AIShell::getHorizontalScore(int col, int row, int player)
 	int leftScore = 0;
 
 	if(rightCount >= k/2)
-	{
-		if(rightPiece == player)
-			rightScore = rightCount * 1.5;
-		else
-			rightScore = rightCount * 2 * -1;
-	}
+		rightScore = rightCount * 1.5;
 	else
 		rightScore = rightCount;
 
 	if(leftCount >= k/2)
-	{
-		if(leftPiece == player)
-			leftScore = leftCount * 1.5;
-		else
-			leftScore = leftCount * 2 * -1;
-	}
+		leftScore =  leftCount * 1.5;
 	else
 		leftScore = leftCount;
 
@@ -659,22 +638,12 @@ int AIShell::getLRDiagonalScore(int col, int row, int player)
 	int rightScore = 0;
 
 	if(rightCount >= k/2)
-	{
-		if(rightPiece == player)
-			rightScore = rightCount * 1.5;
-		else
-			rightScore = rightCount * 2 * -1;
-	}
+		rightScore = rightCount * 1.5;
 	else
 		rightScore = rightCount;
 
 	if(leftCount >= k/2)
-	{
-		if(leftPiece == player)
-			leftScore =  leftCount * 1.5;
-		else
-			leftScore = leftCount * 2 * -1;
-	}
+		leftScore =  leftCount * 1.5;
 	else
 		leftScore = leftCount;
 
@@ -776,22 +745,12 @@ int AIShell::getRLDiagonalScore(int col, int row, int player)
 	int rightScore = 0;
 
 	if(rightCount >= k/2)
-	{
-		if(rightPiece == player)
-			rightScore = rightCount * 1.5;
-		else
-			rightScore = rightCount * 2 * -1;
-	}
+		rightScore = rightCount * 1.5;
 	else
 		rightScore = rightCount;
 
 	if(leftCount >= k/2)
-	{
-		if(leftPiece == player)
-			leftScore = leftCount * 1.5;
-		else
-			leftScore = leftCount * 2 * -1;
-	}
+		leftScore =  leftCount * 1.5;
 	else
 		leftScore = leftCount;
 
