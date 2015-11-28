@@ -613,6 +613,7 @@ int AIShell::getHorizontalScore(int col, int row, int player)
 				}
 			}
 		}
+			rightScore = rightCount * 2 * -1;
 	}
 	else
 		rightScore = rightCount;

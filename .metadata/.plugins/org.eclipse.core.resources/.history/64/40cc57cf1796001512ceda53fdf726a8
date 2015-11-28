@@ -608,11 +608,10 @@ int AIShell::getHorizontalScore(int col, int row, int player)
 				{
 					if(rightCount == (numCols-k))
 						rightScore = rightCount * 10;
-					else
-						rightScore = rightCount * 2 * -1;
 				}
 			}
 		}
+			rightScore = rightCount * 2 * -1;
 	}
 	else
 		rightScore = rightCount;
