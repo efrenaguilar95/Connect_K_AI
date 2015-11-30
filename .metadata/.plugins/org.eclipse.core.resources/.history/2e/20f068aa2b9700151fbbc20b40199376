@@ -208,8 +208,7 @@ AiMove AIShell::getBestMove(int** board, int player, int depth, int col, int row
                 bestMove = i;
                 bestScore = moves[i].score;
                 lowestDepth = moves[i].level;
-                if(lowestDepth <= 3)
-                	std::cout<<lowestDepth<<std::endl;
+                //std::cout<<lowestDepth<<std::endl;
             }
         }
     } else {
@@ -220,8 +219,7 @@ AiMove AIShell::getBestMove(int** board, int player, int depth, int col, int row
                 bestMove = i;
                 bestScore = moves[i].score;
                 lowestDepth = moves[i].level;
-                if(lowestDepth <= 3)
-                	std::cout<<lowestDepth<<std::endl;
+                //std::cout<<lowestDepth<<std::endl;
             }
         }
     }
@@ -255,7 +253,7 @@ int AIShell::getNumAdjAbove(int col, int row, int player)
 	int counter = 0;
 	if(row != numRows-1)
 	{
-		for(int y = row+1; y< numRows; y++)
+		for(int y = row-1; y< numRows; y++)
 		{
 			if(counter == (k-1) || boardCopy[col][y] != player)
 				break;
@@ -525,13 +523,6 @@ int AIShell::getVerticalScore(int col, int row, int player)
 			topScore = topCount;
 		if(bottomScore == 0)
 			bottomScore = bottomCount;
-		if(player != topPiece)
-		{
-			if(row >= (numRows - k) && !(bottomCount < (numRows-k)) && !(bottomCount == (numRows -k)) && bottomCount >= (k/2))
-				bottomScore *= -1;
-			if(row < (numRows - (numRows - k)) && !(topCount < (numRows-k)) && !(topCount == (numRows -k)) && topCount >= (k/2))
-				topScore *= -1;
-		}
 		return (topScore + bottomScore) * player;
 	}
 
