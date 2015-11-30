@@ -519,10 +519,6 @@ int AIShell::getVerticalScore(int col, int row, int player)
 			}
 
 		}
-		if(topScore == 0)
-			topScore = topCount;
-		if(bottomScore == 0)
-			bottomScore = bottomCount;
 		return (topScore + bottomScore) * player;
 	}
 

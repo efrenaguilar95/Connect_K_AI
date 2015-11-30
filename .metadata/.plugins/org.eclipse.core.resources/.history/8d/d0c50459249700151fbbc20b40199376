@@ -483,18 +483,13 @@ int AIShell::getVerticalScore(int col, int row, int player)
 		if(row >= (numRows - k))
 		{
 			if(bottomCount < (numRows-k))
-				bottomScore = 0;
+				bottomScore = bottomCount;
 			else
 			{
 				if(bottomCount == (numRows -k))
 					bottomScore = bottomCount * 10;
 				else
-				{
-					if(bottomCount >= (k/2))
-						bottomScore = bottomCount * 2 * -1;
-					else
-						bottomScore = bottomCount;
-				}
+					//bottomScore = bottomCount * 2 * -1;
 			}
 		}
 	}
@@ -519,10 +514,6 @@ int AIShell::getVerticalScore(int col, int row, int player)
 			}
 
 		}
-		if(topScore == 0)
-			topScore = topCount;
-		if(bottomScore == 0)
-			bottomScore = bottomCount;
 		return (topScore + bottomScore) * player;
 	}
 
@@ -598,77 +589,67 @@ int AIShell::getHorizontalScore(int col, int row, int player)
 	int rightScore = 0;
 	int leftScore = 0;
 
-	if(rightPiece == player)
+	if(rightCount >= 0)
 	{
-		if(col < (numCols - (numCols-k)))
+		if(rightPiece == player)
 		{
-			if(rightCount < (numCols - k))
-				rightScore = 0;
-			else
+			if(col < (numCols - (numCols-k)))
 			{
-				if(rightScore >= (k/2))
-					rightScore = rightCount * 1.5;
-				else
+				if(rightCount < (numCols - k))
 					rightScore = rightCount;
+				else
+					rightScore = rightCount * 1.5;
 			}
 		}
-	}
-	else
-	{
-		if(col < (numCols - (numCols - k)))
+		else
 		{
-			if(rightCount < (numCols - k))
-				rightScore = 0;
-			else
+			if(col < (numCols - (numCols - k)))
 			{
-				if(rightCount == (numCols-k))
-					rightScore = rightCount * 10;
+				if(rightCount < (numCols - k))
+					rightScore = rightCount;
 				else
 				{
-					if(rightScore >= (k/2))
+					if(rightCount == (numCols-k))
+						rightScore = rightCount * 10;
+					else
 						rightScore = rightCount * 2 * -1;
-					else
-						rightScore = rightCount;
 				}
-			}
-		}
-	}
-
-	if(leftPiece == player)
-	{
-		if(col >= (numCols - k))
-		{
-			if(leftCount < (numCols -k))
-				leftScore = 0;
-			else
-			{
-				if(leftCount >= (k/2))
-					leftScore = leftCount * 1.5;
-				else
-					leftScore = leftCount;
 			}
 		}
 	}
 	else
+		rightScore = rightCount;
+
+	if(leftCount >= 0)
 	{
-		if(col >= (numCols - k))
+		if(leftPiece == player)
 		{
-			if(leftCount < (numCols - k))
-				leftScore = 0;
-			else
+			if(col >= (numCols - k))
 			{
-				if(leftCount == (numCols - k))
-					leftScore = leftCount * 10;
+				if(leftCount < (numCols -k))
+					leftScore = leftCount;
+				else
+					leftScore = leftCount * 1.5;
+			}
+		}
+		else
+		{
+			if(col >= (numCols - k))
+			{
+				if(leftCount < (numCols - k))
+					leftScore = leftCount;
 				else
 				{
-					if(leftCount >= (k/2))
-						leftScore = leftCount * 2 * -1;
+					if(leftCount == (numCols - k))
+						leftScore = leftCount * 10;
 					else
-						leftScore = leftCount;
+						leftScore = leftCount * 2 * -1;
 				}
 			}
 		}
 	}
+	else
+		leftScore = leftCount;
 
 	if(rightPiece == leftPiece)
 	{
@@ -690,11 +671,6 @@ int AIShell::getHorizontalScore(int col, int row, int player)
 			}
 
 		}
-		if(rightScore == 0)
-			rightScore = rightCount;
-		if(leftScore == 0)
-			leftScore = leftCount;
-
 		return ((rightScore + leftScore) * player);
 	}
 

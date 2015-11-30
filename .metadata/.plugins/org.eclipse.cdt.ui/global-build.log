@@ -5671,3 +5671,80 @@ g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp"
          for (int i = 0; i < moves.size(); i++) {
                                         ^
 g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+21:21:09 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:204:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:216:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+21:24:17 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:204:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:216:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+21:37:54 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:204:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:216:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+21:48:13 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:204:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:216:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+21:57:08 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:204:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:216:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+21:57:32 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:204:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:216:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+22:01:28 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:204:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:216:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 

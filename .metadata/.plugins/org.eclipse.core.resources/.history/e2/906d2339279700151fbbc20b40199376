@@ -519,10 +519,6 @@ int AIShell::getVerticalScore(int col, int row, int player)
 			}
 
 		}
-		if(topScore == 0)
-			topScore = topCount;
-		if(bottomScore == 0)
-			bottomScore = bottomCount;
 		return (topScore + bottomScore) * player;
 	}
 
@@ -603,7 +599,7 @@ int AIShell::getHorizontalScore(int col, int row, int player)
 		if(col < (numCols - (numCols-k)))
 		{
 			if(rightCount < (numCols - k))
-				rightScore = 0;
+				rightScore = rightCount;
 			else
 			{
 				if(rightScore >= (k/2))
@@ -618,7 +614,7 @@ int AIShell::getHorizontalScore(int col, int row, int player)
 		if(col < (numCols - (numCols - k)))
 		{
 			if(rightCount < (numCols - k))
-				rightScore = 0;
+				rightScore = rightCount;
 			else
 			{
 				if(rightCount == (numCols-k))
@@ -690,11 +686,6 @@ int AIShell::getHorizontalScore(int col, int row, int player)
 			}
 
 		}
-		if(rightScore == 0)
-			rightScore = rightCount;
-		if(leftScore == 0)
-			leftScore = leftCount;
-
 		return ((rightScore + leftScore) * player);
 	}
 
