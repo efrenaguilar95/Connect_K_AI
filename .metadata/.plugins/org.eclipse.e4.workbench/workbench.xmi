@@ -76,6 +76,17 @@
               <children xsi:type="advanced:Placeholder" xmi:id="_DK40mZe7EeW2arPfPMwvVg" elementId="org.eclipse.ui.views.ResourceNavigator" toBeRendered="false" ref="_DK-8XJe7EeW2arPfPMwvVg"/>
               <children xsi:type="advanced:Placeholder" xmi:id="_DK40mpe7EeW2arPfPMwvVg" elementId="org.eclipse.ui.views.BookmarkView" toBeRendered="false" ref="_DK-8XZe7EeW2arPfPMwvVg"/>
             </children>
+<<<<<<< HEAD
+            <children xsi:type="basic:PartSashContainer" xmi:id="_OPWQq5WDEeWx_fgQCiKtXA" containerData="8280" selectedElement="_OPWQrJWDEeWx_fgQCiKtXA" horizontal="true">
+              <children xsi:type="basic:PartSashContainer" xmi:id="_OPWQrJWDEeWx_fgQCiKtXA" containerData="7500" selectedElement="_OPWQrZWDEeWx_fgQCiKtXA">
+                <children xsi:type="advanced:Placeholder" xmi:id="_OPWQrZWDEeWx_fgQCiKtXA" elementId="org.eclipse.ui.editorss" containerData="7305" ref="_OPaiK5WDEeWx_fgQCiKtXA"/>
+                <children xsi:type="basic:PartStack" xmi:id="_OPWQrpWDEeWx_fgQCiKtXA" elementId="bottom" containerData="2695" selectedElement="_OPWQsZWDEeWx_fgQCiKtXA">
+                  <tags>newtablook</tags>
+                  <children xsi:type="advanced:Placeholder" xmi:id="_OPWQr5WDEeWx_fgQCiKtXA" elementId="org.eclipse.ui.views.ProblemView" ref="_OPbwSpWDEeWx_fgQCiKtXA"/>
+                  <children xsi:type="advanced:Placeholder" xmi:id="_OPWQsJWDEeWx_fgQCiKtXA" elementId="org.eclipse.ui.views.TaskList" ref="_OPbwW5WDEeWx_fgQCiKtXA"/>
+                  <children xsi:type="advanced:Placeholder" xmi:id="_OPWQsZWDEeWx_fgQCiKtXA" elementId="org.eclipse.ui.console.ConsoleView" ref="_OPbwXJWDEeWx_fgQCiKtXA"/>
+                  <children xsi:type="advanced:Placeholder" xmi:id="_OPWQspWDEeWx_fgQCiKtXA" elementId="org.eclipse.ui.views.PropertySheet" ref="_OPcXa5WDEeWx_fgQCiKtXA"/>
+=======
             <children xsi:type="basic:PartSashContainer" xmi:id="_DK40m5e7EeW2arPfPMwvVg" containerData="8280" selectedElement="_DK40nJe7EeW2arPfPMwvVg" horizontal="true">
               <children xsi:type="basic:PartSashContainer" xmi:id="_DK40nJe7EeW2arPfPMwvVg" containerData="7500" selectedElement="_DK40npe7EeW2arPfPMwvVg">
                 <children xsi:type="advanced:Placeholder" xmi:id="_DK40nZe7EeW2arPfPMwvVg" elementId="org.eclipse.ui.editorss" containerData="7305" ref="_DK-70Ze7EeW2arPfPMwvVg"/>
@@ -86,6 +97,7 @@
                   <children xsi:type="advanced:Placeholder" xmi:id="_DK40oJe7EeW2arPfPMwvVg" elementId="org.eclipse.ui.views.TaskList" ref="_DK-8cJe7EeW2arPfPMwvVg"/>
                   <children xsi:type="advanced:Placeholder" xmi:id="_DK40oZe7EeW2arPfPMwvVg" elementId="org.eclipse.ui.console.ConsoleView" ref="_DK-8cZe7EeW2arPfPMwvVg"/>
                   <children xsi:type="advanced:Placeholder" xmi:id="_DK40ope7EeW2arPfPMwvVg" elementId="org.eclipse.ui.views.PropertySheet" ref="_DK-8t5e7EeW2arPfPMwvVg"/>
+>>>>>>> master
                 </children>
               </children>
               <children xsi:type="basic:PartStack" xmi:id="_DK40o5e7EeW2arPfPMwvVg" elementId="topRight" containerData="2500" selectedElement="_DK40pJe7EeW2arPfPMwvVg">
@@ -212,7 +224,12 @@
         <tags>newtablook</tags>
         <tags>org.eclipse.e4.primaryDataStack</tags>
         <tags>EditorStack</tags>
+<<<<<<< HEAD
+        <tags>active</tags>
+        <children xsi:type="basic:Part" xmi:id="_OPaiLZWDEeWx_fgQCiKtXA" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="gametree.h" iconURI="platform:/plugin/org.eclipse.cdt.ui/icons/obj16/c_file_obj.gif" closeable="true">
+=======
         <children xsi:type="basic:Part" xmi:id="_DK-705e7EeW2arPfPMwvVg" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="gametree.h" iconURI="platform:/plugin/org.eclipse.cdt.ui/icons/obj16/c_file_obj.gif" closeable="true">
+>>>>>>> master
           <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;gametree.h&quot; partName=&quot;gametree.h&quot; title=&quot;gametree.h&quot; tooltip=&quot;GameTree/gametree.h&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/GameTree/gametree.h&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;2453&quot; selectionTopPixel=&quot;1650&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>org.eclipse.cdt.ui.editor.CEditor</tags>
@@ -368,12 +385,23 @@
             <tags>popup:#OverviewRulerContext</tags>
           </menus>
         </children>
+<<<<<<< HEAD
+        <children xsi:type="basic:Part" xmi:id="_OPaiSpWDEeWx_fgQCiKtXA" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="AIShell.cpp" iconURI="platform:/plugin/org.eclipse.cdt.ui/icons/obj16/c_file_obj.gif" closeable="true">
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;AIShell.cpp&quot; partName=&quot;AIShell.cpp&quot; title=&quot;AIShell.cpp&quot; tooltip=&quot;Connect_K_AI/AIShell.cpp&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Connect_K_AI/AIShell.cpp&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;1557&quot; selectionTopPixel=&quot;975&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <tags>Editor</tags>
+          <tags>org.eclipse.cdt.ui.editor.CEditor</tags>
+          <tags>removeOnHide</tags>
+          <tags>active</tags>
+          <tags>activeOnClose</tags>
+          <menus xsi:type="menu:PopupMenu" xmi:id="_OPaiS5WDEeWx_fgQCiKtXA" elementId="#CEditorContext">
+=======
         <children xsi:type="basic:Part" xmi:id="_DK-78Je7EeW2arPfPMwvVg" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="AIShell.cpp" iconURI="platform:/plugin/org.eclipse.cdt.ui/icons/obj16/c_file_obj.gif" closeable="true">
           <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;AIShell.cpp&quot; partName=&quot;AIShell.cpp&quot; title=&quot;AIShell.cpp&quot; tooltip=&quot;Connect_K_AI/AIShell.cpp&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Connect_K_AI/AIShell.cpp&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;7227&quot; selectionTopPixel=&quot;3675&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>org.eclipse.cdt.ui.editor.CEditor</tags>
           <tags>removeOnHide</tags>
           <menus xsi:type="menu:PopupMenu" xmi:id="_DK-78Ze7EeW2arPfPMwvVg" elementId="#CEditorContext">
+>>>>>>> master
             <tags>menuContribution:popup</tags>
             <tags>popup:#CEditorContext</tags>
             <tags>popup:org.eclipse.cdt.ui.editor.CEditor.EditorContext</tags>
@@ -943,8 +971,12 @@
       <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view/>"/>
       <tags>View</tags>
       <tags>categoryTag:General</tags>
+<<<<<<< HEAD
+      <menus xmi:id="_OPcXQJWDEeWx_fgQCiKtXA" elementId="org.eclipse.ui.console.ConsoleView">
+=======
       <tags>active</tags>
       <menus xmi:id="_DK-8cpe7EeW2arPfPMwvVg" elementId="org.eclipse.ui.console.ConsoleView">
+>>>>>>> master
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
       </menus>
@@ -1431,6 +1463,9 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_DK-9IJe7EeW2arPfPMwvVg" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
+<<<<<<< HEAD
+        <children xsi:type="menu:HandledToolItem" xmi:id="_Wjgrl5e6EeW2arPfPMwvVg" elementId="print" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" enabled="false" command="_OPpzB5WDEeWx_fgQCiKtXA"/>
+=======
         <children xsi:type="menu:DirectToolItem" xmi:id="_DK-9IZe7EeW2arPfPMwvVg" elementId="new.group">
           <tags>Opaque</tags>
         </children>
@@ -1474,6 +1509,7 @@
         <children xsi:type="menu:DirectToolItem" xmi:id="_DK-9L5e7EeW2arPfPMwvVg" elementId="org.eclipse.cdt.ui.buildActiveConfigToolbarAction">
           <tags>Opaque</tags>
         </children>
+>>>>>>> master
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_DK-9MJe7EeW2arPfPMwvVg" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -1585,6 +1621,10 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_DLFB5Ze7EeW2arPfPMwvVg" elementId="org.eclipse.cdt.ui.editor.CEditor" visible="false">
         <tags>Draggable</tags>
+<<<<<<< HEAD
+        <children xsi:type="menu:HandledToolItem" xmi:id="_WjmyOpe6EeW2arPfPMwvVg" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_OPpMwZWDEeWx_fgQCiKtXA"/>
+=======
+>>>>>>> master
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_DLFB5pe7EeW2arPfPMwvVg" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>

@@ -76,7 +76,7 @@ int AIShell::getScore(int col, int row, int player)
 
 	int threatCount = 0;
 
-
+	//std::cout<<col<<row<<std::endl;
 	//Check if the column has a winner
 	verticalScore = getVerticalScore(col, row, player);
 	//std::cout<<"VerticalScore:"<<verticalScore<<std::endl;
@@ -202,24 +202,26 @@ AiMove AIShell::getBestMove(int** board, int player, int depth, int col, int row
     if (player == 1) {
         int bestScore = -1000000;
         for (int i = 0; i < moves.size(); i++) {
-
-        	//std::cout<<moves[i].x<<" "<<moves[i].y<<" "<<moves[i].score<<std::endl;
+        	//std::cout<<moves[i].x<<" "<<moves[i].y<<" "<<moves[i].score<<" "<<moves[i].level<<std::endl;
             if (moves[i].score > bestScore && moves[i].level <= lowestDepth) {
                 bestMove = i;
                 bestScore = moves[i].score;
                 lowestDepth = moves[i].level;
-                //std::cout<<lowestDepth<<std::endl;
+                //if(lowestDepth == 2)
+                	//std::cout<<lowestDepth<<std::endl;
             }
         }
     } else {
         int bestScore = 1000000;
         for (int i = 0; i < moves.size(); i++) {
+        	//std::cout<<moves[i].x<<" "<<moves[i].y<<" "<<moves[i].score<<" "<<moves[i].level<<std::endl;
             if (moves[i].score < bestScore && moves[i].level <= lowestDepth) {
             	//std::cout<< "m: " <<moves[i].score<< std::endl;
                 bestMove = i;
                 bestScore = moves[i].score;
                 lowestDepth = moves[i].level;
-                //std::cout<<lowestDepth<<std::endl;
+                //if(lowestDepth == 2)
+                	//std::cout<<lowestDepth<<std::endl;
             }
         }
     }
@@ -296,7 +298,7 @@ int AIShell::getNumAdjRight(int col, int row, int player)
 	return counter;
 }
 
-//Returns the number of adjacent diagonal pieces equal to the player to the bottom right diagonal of the player
+//Returns the number of adjacent diagonal pieces equal to the player to the bottom left diagonal of the player
 int AIShell::getNumAdjBottomLeft(int col, int row, int player)
 {
 	int counter = 0;
@@ -427,70 +429,89 @@ int AIShell::getVerticalScore(int col, int row, int player)
 	int topScore = 0;
 	int bottomScore = 0;
 
-	//Give priority to the opponent
-	if(topCount >= (k/2))
+	if(topPiece == player)
 	{
-		if(topPiece == player)
+		if(row < (numRows - (numRows-k)))
 		{
-			if(row < (numRows - (numRows-k)))
+			if(topCount < (numRows - k))
+				topScore = 0;
+			else
 			{
-				if(topCount < (numRows - k))
-					topScore = topCount;
-				else
+				if(topCount >= (k/2))
 					topScore = topCount * 1.5;
-
-			}
-		}
-		else
-		{
-			if(row < (numRows - (numRows - k)))
-			{
-				if(topCount < (numRows-k))
+				else
 					topScore = topCount;
-				else
-				{
-					if(topCount == (numRows - k))
-						topScore = topCount * 10;
-					else
-						topScore = topCount * 2 * -1;
-				}
-			}
-		}
-	}
-	else
-		topScore = topCount;
-
-	if(bottomCount >= (k/2))
-	{
-		if(bottomPiece == player)
-		{
-			if(row >= (numRows - k))	//There is a possibility that this move can't win vertically
-			{
-				if(bottomCount < (numRows - k))		// It is impossible to win just with pieces below you
-					bottomScore = bottomCount;
-				else
-					bottomScore = bottomCount * 1.5;
 			}
 		}
 		else
+			topScore = topCount;
+	}
+	else
+	{
+		if(row < (numRows - (numRows - k)))
 		{
-			if(row >= (numRows - k))
+			if(topCount < (numRows-k))
+				topScore = 0;
+			else
 			{
-				if(bottomCount < (numRows-k))
-					bottomScore = bottomCount;
+				if(topCount == (numRows - k))
+					topScore = topCount * 10;
 				else
 				{
-					if(bottomCount == (numRows -k))
-						bottomScore = bottomCount * 10;
+					if(topCount >= (k/2))
+						topScore = topCount * 2;
 					else
-						bottomScore = bottomCount * 2 * -1;
+						topScore = topCount;
 				}
 			}
 		}
+		else
+			topScore = topCount;
+	}
+
+	if(bottomPiece == player)
+	{
+		if(row >= (numRows - k))	//There is a possibility that this move can't win vertically
+		{
+			if(bottomCount < (numRows - k))		// It is impossible to win just with pieces below you
+				bottomScore = 0;
+			else
+			{
+				if(bottomCount >= (k/2))
+					bottomScore = bottomCount * 1.5;
+				else
+					bottomScore = bottomCount;
+			}
+		}
+
+		else
+			bottomScore = bottomCount;
 	}
 	else
-		bottomScore = bottomCount;
+	{
+		if(row >= (numRows - k))
+		{
+			if(bottomCount < (numRows-k))
+				bottomScore = 0;
+			else
+			{
+				if(bottomCount == (numRows -k))
+					bottomScore = bottomCount * 10;
+				else
+				{
+					if(bottomCount >= (k/2))
+						bottomScore = bottomCount * 2 * -1;
+					else
+						bottomScore = bottomCount;
+				}
+			}
+		}
+		else
+			bottomScore = bottomCount;
+	}
 
+	//std::cout<<"bot:"<<bottomScore<<std::endl;
+	//std::cout<<"top:"<<topCount<<std::endl;
 	if(topPiece == bottomPiece)
 	{
 		if((topCount + bottomCount) >= k-1)
@@ -511,13 +532,24 @@ int AIShell::getVerticalScore(int col, int row, int player)
 			}
 
 		}
-		return (topScore + bottomScore) * player;
+		if(topScore == 0)
+			topScore = topCount;
+		if(bottomScore == 0)
+			bottomScore = bottomCount;
+		/*if(player != topPiece)
+		{
+			if(row >= (numRows - k) && !(bottomCount < (numRows-k)) && !(bottomCount == (numRows -k)) && bottomCount >= (k/2))
+				bottomScore *= -1;
+			if(row < (numRows - (numRows - k)) && !(topCount < (numRows-k)) && !(topCount == (numRows -k)) && topCount >= (k/2))
+				topScore *= -1;
+		}*/
+		return (topScore + bottomScore) * topPiece;
 	}
 
-	if(topPiece == AI_PIECE)
-		return (topScore + bottomScore);
+	if(topPiece == player)
+		return (topScore - bottomScore);
 	else
-		return (bottomScore + topScore);
+		return (bottomScore - topScore);
 
 
 }
@@ -586,67 +618,86 @@ int AIShell::getHorizontalScore(int col, int row, int player)
 	int rightScore = 0;
 	int leftScore = 0;
 
-	if(rightCount >= k/2)
+	if(rightPiece == player)
 	{
-		if(rightPiece == player)
+		if(col < (numCols - (numCols-k)))
 		{
-			if(col < (numCols - (numCols-k)))
+			if(rightCount < (numCols - k))
+				rightScore = 0;
+			else
 			{
-				if(rightCount < (numCols - k))
-					rightScore = rightCount;
-				else
+				if(rightScore >= (k/2))
 					rightScore = rightCount * 1.5;
-			}
-		}
-		else
-		{
-			if(col < (numCols - (numCols - k)))
-			{
-				if(rightCount < (numCols - k))
+				else
 					rightScore = rightCount;
-				else
-				{
-					if(rightCount == (numCols-k))
-						rightScore = rightCount * 10;
-					else
-						rightScore = rightCount * 2 * -1;
-				}
-			}
-		}
-	}
-	else
-		rightScore = rightCount;
-
-	if(leftCount >= k/2)
-	{
-		if(leftPiece == player)
-		{
-			if(col >= (numCols - k))
-			{
-				if(leftCount < (numCols -k))
-					leftScore = leftCount;
-				else
-					leftScore = leftCount * 1.5;
 			}
 		}
 		else
+			rightScore = rightCount;
+	}
+	else
+	{
+		if(col < (numCols - (numCols - k)))
 		{
-			if(col >= (numCols - k))
+			if(rightCount < (numCols - k))
+				rightScore = 0;
+			else
 			{
-				if(leftCount < (numCols - k))
-					leftScore = leftCount;
+				if(rightCount == (numCols-k))
+					rightScore = rightCount * 10;
 				else
 				{
-					if(leftCount == (numCols - k))
-						leftScore = leftCount * 10;
+					if(rightScore >= (k/2))
+						rightScore = rightCount * 2 * -1;
 					else
-						leftScore = leftCount * 2 * -1;
+						rightScore = rightCount;
 				}
 			}
 		}
+		else
+			rightScore = rightCount;
+	}
+
+	if(leftPiece == player)
+	{
+		if(col >= (numCols - k))
+		{
+			if(leftCount < (numCols -k))
+				leftScore = 0;
+			else
+			{
+				if(leftCount >= (k/2))
+					leftScore = leftCount * 1.5;
+				else
+					leftScore = leftCount;
+			}
+		}
+		else
+			leftScore = leftCount;
 	}
 	else
-		leftScore = leftCount;
+	{
+		if(col >= (numCols - k))
+		{
+			if(leftCount < (numCols - k))
+				leftScore = 0;
+			else
+			{
+				if(leftCount == (numCols - k))
+					leftScore = leftCount * 10;
+				else
+				{
+					if(leftCount >= (k/2))
+						leftScore = leftCount * 2 * -1;
+					else
+						leftScore = leftCount;
+				}
+			}
+		}
+		else
+			leftScore = leftCount;
+	}
+
 
 	if(rightPiece == leftPiece)
 	{
@@ -668,10 +719,14 @@ int AIShell::getHorizontalScore(int col, int row, int player)
 			}
 
 		}
-		return ((rightScore + leftScore) * player);
+		if(rightScore == 0)
+			rightScore = rightCount;
+		if(leftScore == 0)
+			leftScore = leftCount;
+		return ((rightScore + leftScore) * rightPiece);
 	}
-
-	if(rightPiece == AI_PIECE)
+	//std::cout<<"right:"<<rightScore<<std::endl;
+	if(rightPiece == player)
 		return (rightScore  - leftScore);
 	else
 		return (leftScore - rightScore);
@@ -784,10 +839,10 @@ int AIShell::getLRDiagonalScore(int col, int row, int player)
 			}
 
 		}
-		return ((rightScore + leftScore) * player);
+		return ((rightScore + leftScore) * rightPiece);
 	}
 
-	if(rightPiece == AI_PIECE)
+	if(rightPiece == player)
 		return (rightScore - leftScore);
 	else
 		return (leftScore - rightScore);
@@ -900,9 +955,9 @@ int AIShell::getRLDiagonalScore(int col, int row, int player)
 			}
 
 		}
-		return ((rightScore + leftScore) * player);
+		return ((rightScore + leftScore) * rightPiece);
 	}
-	if(rightPiece == AI_PIECE)
+	if(rightPiece == player)
 		return (rightScore  - leftScore);
 	else
 		return (leftScore - rightScore);
