@@ -76,7 +76,7 @@ int AIShell::getScore(int col, int row, int player)
 
 	int threatCount = 0;
 
-	//std::cout<<col<<row<<std::endl;
+	std::cout<<col<<row<<std::endl;
 	//Check if the column has a winner
 	verticalScore = getVerticalScore(col, row, player);
 	//std::cout<<"VerticalScore:"<<verticalScore<<std::endl;
@@ -94,8 +94,8 @@ int AIShell::getScore(int col, int row, int player)
 		threatCount += 1;
 
 	//Check left right diagonal(/)
-	lrDiagScore = getLRDiagonalScore(col, row, player);
-	//std::cout<<"lrDiagScore:"<<lrDiagScore<<std::endl;
+	//lrDiagScore = getLRDiagonalScore(col, row, player);
+	std::cout<<"lrDiagScore:"<<lrDiagScore<<std::endl;
 	if(lrDiagScore == 1000 || lrDiagScore == -1000)
 		return lrDiagScore;
 	if(lrDiagScore == 999 || lrDiagScore == -999)
@@ -725,7 +725,7 @@ int AIShell::getHorizontalScore(int col, int row, int player)
 			leftScore = leftCount;
 		return ((rightScore + leftScore) * rightPiece);
 	}
-	//std::cout<<"right:"<<rightScore<<std::endl;
+	std::cout<<"right:"<<rightScore<<std::endl;
 	if(rightPiece == player)
 		return (rightScore  - leftScore);
 	else

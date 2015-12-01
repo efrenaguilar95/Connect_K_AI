@@ -76,7 +76,7 @@ int AIShell::getScore(int col, int row, int player)
 
 	int threatCount = 0;
 
-	//std::cout<<col<<row<<std::endl;
+	std::cout<<col<<row<<std::endl;
 	//Check if the column has a winner
 	verticalScore = getVerticalScore(col, row, player);
 	//std::cout<<"VerticalScore:"<<verticalScore<<std::endl;

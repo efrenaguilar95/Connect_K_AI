@@ -76,7 +76,7 @@ int AIShell::getScore(int col, int row, int player)
 
 	int threatCount = 0;
 
-	//std::cout<<col<<row<<std::endl;
+	std::cout<<col<<row<<std::endl;
 	//Check if the column has a winner
 	verticalScore = getVerticalScore(col, row, player);
 	//std::cout<<"VerticalScore:"<<verticalScore<<std::endl;
@@ -536,14 +536,14 @@ int AIShell::getVerticalScore(int col, int row, int player)
 			topScore = topCount;
 		if(bottomScore == 0)
 			bottomScore = bottomCount;
-		/*if(player != topPiece)
+		if(player != topPiece)
 		{
 			if(row >= (numRows - k) && !(bottomCount < (numRows-k)) && !(bottomCount == (numRows -k)) && bottomCount >= (k/2))
 				bottomScore *= -1;
 			if(row < (numRows - (numRows - k)) && !(topCount < (numRows-k)) && !(topCount == (numRows -k)) && topCount >= (k/2))
 				topScore *= -1;
-		}*/
-		return (topScore + bottomScore) * topPiece;
+		}
+		return (topScore + bottomScore) * player;
 	}
 
 	if(topPiece == player)
@@ -698,7 +698,6 @@ int AIShell::getHorizontalScore(int col, int row, int player)
 			leftScore = leftCount;
 	}
 
-
 	if(rightPiece == leftPiece)
 	{
 		if((leftCount + rightCount) >= k-1)
@@ -723,9 +722,10 @@ int AIShell::getHorizontalScore(int col, int row, int player)
 			rightScore = rightCount;
 		if(leftScore == 0)
 			leftScore = leftCount;
-		return ((rightScore + leftScore) * rightPiece);
+
+		return ((rightScore + leftScore) * player);
 	}
-	//std::cout<<"right:"<<rightScore<<std::endl;
+
 	if(rightPiece == player)
 		return (rightScore  - leftScore);
 	else
@@ -839,7 +839,7 @@ int AIShell::getLRDiagonalScore(int col, int row, int player)
 			}
 
 		}
-		return ((rightScore + leftScore) * rightPiece);
+		return ((rightScore + leftScore) * player);
 	}
 
 	if(rightPiece == player)
@@ -955,7 +955,7 @@ int AIShell::getRLDiagonalScore(int col, int row, int player)
 			}
 
 		}
-		return ((rightScore + leftScore) * rightPiece);
+		return ((rightScore + leftScore) * player);
 	}
 	if(rightPiece == player)
 		return (rightScore  - leftScore);
