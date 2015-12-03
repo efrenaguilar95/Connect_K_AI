@@ -45,6 +45,14 @@ private:
 	int getNumAdjBottomRight(int col, int row, int player);
 	int getNumAdjTopLeft(int col, int row, int player);
 
+	bool winPossibleBelow(int col, int row, int player);
+	bool verticalWinPossible(int col, int row, int player);
+	bool horizontalWinPossible(int col, int row, int player);
+	bool winPossibleBottomLeft(int col, int row, int player);
+	bool winPossibleTopRight(int col, int row, int player);
+	bool winPossibleBottomRight(int col, int row, int player);
+	bool winPossibleTopLeft(int col, int row, int player);
+
 	//Heuristic calculation helpers
 	int getVerticalScore(int col, int row, int player);
 	int getHorizontalScore(int col, int row, int player);
