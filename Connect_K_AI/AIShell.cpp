@@ -44,6 +44,7 @@ Move AIShell::makeMove(){
 	AiMove bestMove = getBestMove(boardCopy, 1, 0, -1);
 	//std::cout<<"BM: "<<bestMove.x<<bestMove.y<<std::endl;
 	Move m = Move(bestMove.x, bestMove.y);
+	//std::cout<<"Move made:"<<bestMove.x<<" "<<bestMove.y<<std::endl;
 	return m;
 	 
 }
@@ -170,14 +171,16 @@ AiMove AIShell::getBestMove(int** board, int player, int depth, int col, int row
         	//std::cout<<"Val:"<<board[x][y]<<std::endl;
             if (board[x][y] == 0) {
             	AiMove move;
-                move.x = x;
-                move.y = y;
+                //move.x = x;
+                //move.y = y;
                 board[x][y] = player;
                 if (player == 1) {
                     move = getBestMove(board, -1, depth+1,x,y);
                 } else {
                     move = getBestMove(board, 1, depth+1,x,y);
                 }
+                move.x = x;
+                move.y = y;
                 moves.push_back(move);
                 //for (int i=0; i < moves.size(); i++){
                 	//std::cout << i << ": " << moves[i].score << std::endl;
@@ -195,7 +198,21 @@ AiMove AIShell::getBestMove(int** board, int player, int depth, int col, int row
     	//std::cout<< "m: " << moves[i].score<< std::endl;
     //}
 
-
+/*
+    if(depth == 1 || depth == 0)
+    {
+    	std::cout<<player<<std::endl;
+    	if(depth == 1)
+    		std::cout<<"first print"<<std::endl;
+    	else
+    		std::cout<<"final choices"<<std::endl;
+    	for(int i = 0; i < moves.size(); i++)
+    	{
+    		std::cout<<moves[i].x<<" "<<moves[i].y<<" "<<moves[i].score<<" "<<moves[i].level<<std::endl;
+    	}
+    	std::cout<<"second print"<<std::endl;
+    }
+*/
     int bestMove = 0;
     int lowestDepth = 999999999;
    // std::cout<<"Prints start here"<<std::endl;
@@ -214,7 +231,7 @@ AiMove AIShell::getBestMove(int** board, int player, int depth, int col, int row
     } else {
         int bestScore = 1000000;
         for (int i = 0; i < moves.size(); i++) {
-        	//std::cout<<moves[i].x<<" "<<moves[i].y<<" "<<moves[i].score<<" "<<moves[i].level<<std::endl;
+        	//std`::cout<<moves[i].x<<" "<<moves[i].y<<" "<<moves[i].score<<" "<<moves[i].level<<std::endl;
             if (moves[i].score < bestScore && moves[i].level <= lowestDepth) {
             	//std::cout<< "m: " <<moves[i].score<< std::endl;
                 bestMove = i;
@@ -225,8 +242,11 @@ AiMove AIShell::getBestMove(int** board, int player, int depth, int col, int row
             }
         }
     }
+    //if(depth <= 1)
+    	//std::cout<<"Move chosen"<<moves[bestMove].x<<" "<<moves[bestMove].y<<" "<<moves[bestMove].score<<" "<<moves[bestMove].level<<std::endl;
     // Return the best move
     //std::cout<<"Prints end here"<<std::endl;
+
     return moves[bestMove];
 }
 
@@ -406,6 +426,36 @@ int AIShell::getNumAdjTopRight(int col, int row, int player)
 	return counter;
 }
 
+bool AIShell::bottomLeftWinPossible(int col, int row, int player)
+{
+	int counter = 1;
+	if(row != 0 && col != 0)
+	{
+		int x, y;
+		for(x = col-1, y = row-1; x >= 0 && y>= 0; x--, y--)
+		{
+			if(boardCopy[x][y] == (player*-1))
+				break;
+			counter++;
+			if(counter == k)
+				return true;
+		}
+	}
+	if(row != numRows-1 && col != numCols-1)
+	{
+		int x, y;
+		for(x = col+1, y = row+1; x<numCols && y<numRows; x++, y++)
+		{
+			if(boardCopy[x][y] == (player*-1))
+				break;
+			counter++;
+			if(counter == k)
+				return true;
+		}
+	}
+	return false;
+}
+
 //Returns the number of adjacent diagonal pieces to the player to the bottom right diagonal of the player
 int AIShell::getNumAdjBottomRight(int col, int row, int player)
 {
@@ -439,6 +489,36 @@ int AIShell::getNumAdjTopLeft(int col, int row, int player)
 	}
 
 	return counter;
+}
+
+bool AIShell::topLeftWinPossible(int col, int row, int player)
+{
+	int counter = 1;
+	if(row != numRows-1 && col != 0)
+	{
+		int x, y;
+		for(x = col-1, y = row+1; x >= 0 && y< numRows; x--, y++)
+		{
+			if(boardCopy[x][y] == (player*-1))
+				break;
+			counter++;
+			if(counter == k)
+				return true;
+		}
+	}
+	if(row != 0 && col != numCols-1)
+	{
+		int x, y;
+		for(x = col+1, y = row-1; x<numCols && y>= 0; x++, y--)
+		{
+			if(boardCopy[x][y] == (player*-1))
+				break;
+			counter++;
+			if(counter == k)
+				return true;
+		}
+	}
+	return false;
 }
 
 int AIShell::getVerticalScore(int col, int row, int player)
@@ -657,7 +737,6 @@ int AIShell::getVerticalScore(int col, int row, int player)
 int AIShell::getHorizontalScore(int col, int row, int player)
 {
 
-	//Need to rewrite a lot
 	//If there is no possibility of winning for either player, return
 	//If there is a possibility to win, then we add weights to pieces
 	//If pieces on both sides are different players. ONLY if different players
@@ -827,233 +906,332 @@ int AIShell::getHorizontalScore(int col, int row, int player)
 //Check left right diagonal(/)
 int AIShell::getLRDiagonalScore(int col, int row, int player)
 {
-	int leftPiece = player;
-	int rightPiece = player;
+	//If there is no possibility of winning for either player, return
+	//If there is a possibility to win, then we add weights to pieces
+	//If pieces on both sides are different players. ONLY if different players
+	//THEN we use what we know about win possibility to weight side
+	//ex a win is possible for opponent, but we have a piece on the left
+	//so the right side can lead to an opponent win
 
-	int leftCount = 0;
+	bool canWin = bottomLeftWinPossible(col, row, player);
+	bool canOpponentWin = bottomLeftWinPossible(col, row, player);
+
+	if(canWin == false && canOpponentWin == false)
+			return 0;
+
+	int leftPiece = -7;
+	int rightPiece = -7;
 	int rightCount = 0;
-
-	//start by checking bottom left
-	if(row != 0 && col != 0)
-	{
-		if(boardCopy[row-1][col-1] != player)
-			leftPiece *= -1;
-		leftCount = getNumAdjBottomLeft(col, row, leftPiece);
-	}
-
-	if(leftCount >= k-1)
-		{
-			if(leftPiece == AI_PIECE)
-			{
-				if(player == AI_PIECE)
-					return 1000;
-				else
-					return -999;
-			}
-			else
-			{
-				if(player == AI_PIECE)
-					return 999;
-				else
-					return -1000;
-			}
-		}
-
-	//Then check top right
-	if(row != (numRows-1) && col != (numCols-1))
-	{
-		if(boardCopy[col+1][row+1] != player)
-			rightPiece *= -1;
-		rightCount = getNumAdjTopRight(col, row, rightPiece);
-	}
-
-	if(rightCount >= k-1)
-		{
-			if(rightPiece == AI_PIECE)
-			{
-				if(player == AI_PIECE)
-					return 1000;
-				else
-					return -999;
-			}
-			else
-			{
-				if(player == AI_PIECE)
-					return 999;
-				else
-					return -1000;
-			}
-		}
-
-
-	int leftScore = 0;
 	int rightScore = 0;
+	int leftCount = 0;
+	int leftScore = 0;
 
-	if(rightCount >= k/2)
+	if(col != 0 && row != 0)
+		leftPiece = boardCopy[col-1][row-1];
+	if(col != numCols-1 && row!= numRows-1)
+		rightPiece = boardCopy[col+1][row+1];
+
+	if(canWin && (leftPiece == player*-1 || (col == 0 || row == 0)))	//the player can win, but only on the right side
 	{
-		if(rightPiece == player)
-			rightScore = rightCount * 1.5;
-		else
-			rightScore = rightCount * 2 * -1;
-	}
-	else
-		rightScore = rightCount;
-
-	if(leftCount >= k/2)
-	{
-		if(leftPiece == player)
-			leftScore =  leftCount * 1.5;
-		else
-			leftScore = leftCount * 2 * -1;
-	}
-	else
-		leftScore = leftCount;
-
-
-	if(rightPiece == leftPiece)
-	{
-		if((leftCount + rightCount) >= k-1)
+		if(rightPiece == 0)	//There are only blanks to the right, but it is possible to win
 		{
-			if(leftPiece == AI_PIECE)
+			rightScore = 1 * player;
+		}
+		else
+		{
+			rightCount = getNumAdjTopRight(col, row, rightPiece);
+			if(rightCount >= k-1)	//The player will win if he puts piece here
 			{
 				if(player == AI_PIECE)
 					return 1000;
 				else
-					return -999;
+					return -1000;
 			}
+			if(rightCount > k/2)
+				rightScore = rightCount * 1.5 * player;
 			else
+				rightScore = rightCount * player;
+
+		}
+		canWin = false;
+	}
+
+	if(canWin && (rightPiece == player*-1 || (col == numCols-1) || row == numRows-1))	//the player can win, but only on the left side
+	{
+		if(leftPiece == 0)
+			leftScore = 1 * player;	//There are only blanks to the left, but it is possible to win
+		else
+		{
+			leftCount = getNumAdjBottomLeft(col, row, leftPiece);
+			if(leftCount >= k-1)	//The player will win if he puts piece here
+			{
+				if(player == AI_PIECE)
+					return 1000;
+				else
+					return -1000;
+			}
+			if(leftCount > k/2)
+				leftScore = leftCount * 1.5 * player;
+			else
+				leftScore = leftCount * player;
+		}
+		canWin = false;
+
+	}
+	if(canWin)
+	{
+		if((leftPiece == 0 || leftPiece == -7) && (rightPiece == 0 || rightPiece == -7))
+		{
+			return 1 * player;		//possible to win because it is surrounded by blanks
+		}
+		if(leftPiece != 0)
+			leftCount = getNumAdjBottomLeft(col,row,leftPiece);
+		if(rightPiece != 0)
+			rightCount = getNumAdjTopRight(col,row,rightPiece);
+		if((leftCount+rightCount)>= k-1)	//The player will win if he puts piece here
+		{
+			if(player == AI_PIECE)
+				return 1000;
+			else
+				return -1000;
+		}
+		if((leftCount+rightCount) > k/2)
+			return (leftCount+rightCount) * 1.5 * player;
+		else
+			return (leftCount+rightCount) * player;
+	}
+
+	if(canOpponentWin && (leftPiece == player || (col == 0 || row == 0)))	//The opponent can win, but only on the right side
+	{
+		if(rightPiece == 0)
+			rightScore = 1 * player;
+		else
+		{
+			rightCount = getNumAdjTopRight(col, row, rightPiece);
+			if(rightCount >= k-1)
 			{
 				if(player == AI_PIECE)
 					return 999;
 				else
-					return -1000;
+					return -999;
 			}
-
+			if(rightCount > k/2)
+				rightScore = rightCount * 2 * (player*-1) * -1;
+			else
+				rightScore = rightCount * (player*-1);
 		}
-		return ((rightScore + leftScore) * rightPiece);
+		canOpponentWin = false;
 	}
+	if(canOpponentWin && (rightPiece == (player) || (col == numCols-1 || row == numRows-1)))	//The opponent can win, but only on the left side
+	{
+		if(leftPiece == 0)
+			leftScore = 1 * player;
+		else
+		{
+			leftCount = getNumAdjBottomLeft(col, row, leftPiece);
+			if(leftCount >= k-1)
+			{
+				if(player == AI_PIECE)
+					return 999;
+				else
+					return -999;
+			}
+			if(leftCount > k/2)
+				leftScore = leftCount * 2 * (player*-1) * -1;
+			else
+				leftScore = leftCount * (player*-1);
+		}
+		canOpponentWin = false;
+	}
+	if(canOpponentWin)
+	{
+		if((leftPiece == 0 || leftPiece == -7) && (rightPiece == 0 || rightPiece == -7))
+		{
+			return 1 * player;		//possible to win because it is surrounded by blanks
+		}
+		if(leftPiece != 0)
+			leftCount = getNumAdjBottomLeft(col,row,leftPiece);
+		if(rightPiece != 0)
+			rightCount = getNumAdjTopRight(col,row,rightPiece);
+		if((leftCount+rightCount)>= k-1)	//The opponent will win if he puts piece here
+		{
+			if(player == AI_PIECE)
+				return 999;
+			else
+				return -999;
+		}
+		if((leftCount+rightCount) > k/2)
+			return (leftCount+rightCount) * 2 * (player*-1) * -1;
+		else
+		{
+			return (leftCount+rightCount) * (player*-1);
+		}
 
-	if(rightPiece == AI_PIECE)
-		return (rightScore - leftScore);
-	else
-		return (leftScore - rightScore);
-
+	}
+		return (leftScore + rightScore);
 }
 
 //Check right left diagonal (\)
 int AIShell::getRLDiagonalScore(int col, int row, int player)
 {
-	int leftPiece = player;
-	int rightPiece = player;
+	//If there is no possibility of winning for either player, return
+	//If there is a possibility to win, then we add weights to pieces
+	//If pieces on both sides are different players. ONLY if different players
+	//THEN we use what we know about win possibility to weight side
+	//ex a win is possible for opponent, but we have a piece on the left
+	//so the right side can lead to an opponent win
 
-	int leftCount = 0;
+	bool canWin = topLeftWinPossible(col, row, player);
+	bool canOpponentWin = topLeftWinPossible(col, row, player*-1);
+
+	int leftPiece = -7;
+	int rightPiece = -7;
 	int rightCount = 0;
-
-
-	//Start by checking bottom right
-	if(row != 0 && col != (numCols-1))
-	{
-		if(boardCopy[row-1][col+1] != player)
-			rightPiece *= -1;
-		rightCount = getNumAdjBottomRight(col, row, rightPiece);
-	}
-
-	if(rightCount >= k-1)
-	{
-		if(rightPiece == AI_PIECE)
-		{
-			if(player == AI_PIECE)
-				return 1000;
-			else
-				return -999;
-		}
-		else
-		{
-			if(player == AI_PIECE)
-				return 999;
-			else
-				return -1000;
-		}
-	}
-
-	//Then check top left
-	if(row != (numRows-1) && col!= 0)
-	{
-		if(boardCopy[row+1][col-1] != player)
-			leftPiece *= -1;
-		leftCount = getNumAdjTopLeft(col, row, leftPiece);
-	}
-
-
-	if(leftCount >= k-1)
-	{
-		if(leftPiece == AI_PIECE)
-		{
-			if(player == AI_PIECE)
-				return 1000;
-			else
-				return -999;
-		}
-		else
-		{
-			if(player == AI_PIECE)
-				return 999;
-			else
-				return -1000;
-		}
-	}
-
-	int leftScore = 0;
 	int rightScore = 0;
+	int leftCount = 0;
+	int leftScore = 0;
+	if(col != 0 && row!= numRows-1)
+		leftPiece = boardCopy[col-1][row+1];
+	if(col != numCols-1 && row != 0)
+		rightPiece = boardCopy[col+1][row-1];
 
-	if(rightCount >= k/2)
+	if(canWin && (leftPiece == player*-1 || (col == 0 || row == numRows-1)))	//the player can win, but only on the right side
 	{
-		if(rightPiece == player)
-			rightScore = rightCount * 1.5;
-		else
-			rightScore = rightCount * 2 * -1;
-	}
-	else
-		rightScore = rightCount;
-
-	if(leftCount >= k/2)
-	{
-		if(leftPiece == player)
-			leftScore = leftCount * 1.5;
-		else
-			leftScore = leftCount * 2 * -1;
-	}
-	else
-		leftScore = leftCount;
-
-	if(rightPiece == leftPiece)
-	{
-		if((leftCount + rightCount) >= k-1)
+		if(rightPiece == 0)	//There are only blanks to the right, but it is possible to win
 		{
-			if(leftPiece == AI_PIECE)
+			rightScore = 1 * player;
+		}
+		else
+		{
+			rightCount = getNumAdjBottomRight(col, row, rightPiece);
+			if(rightCount >= k-1)	//The player will win if he puts piece here
 			{
 				if(player == AI_PIECE)
 					return 1000;
 				else
-					return -999;
+					return -1000;
 			}
+			if(rightCount > k/2)
+				rightScore = rightCount * 1.5 * player;
 			else
+				rightScore = rightCount * player;
+		}
+		canWin = false;
+	}
+	if(canWin && (rightPiece == player*-1 || (col == numCols-1 || row == 0)))	//the player can win, but only on the left side
+	{
+		if(leftPiece == 0)
+			leftScore = 1 * player;	//There are only blanks to the left, but it is possible to win
+		else
+		{
+			leftCount = getNumAdjTopLeft(col, row, leftPiece);
+			if(leftCount >= k-1)	//The player will win if he puts piece here
+			{
+				if(player == AI_PIECE)
+					return 1000;
+				else
+					return -1000;
+			}
+			if(leftCount > k/2)
+				leftScore = leftCount * 1.5 * player;
+			else
+				leftScore = leftCount * player;
+		}
+		canWin = false;
+	}
+	if(canWin)
+	{
+		if((leftPiece == 0 || leftPiece == -7) && (rightPiece == 0 || rightPiece == -7))
+		{
+			return 1 * player;		//possible to win because it is surrounded by blanks
+		}
+		if(leftPiece != 0)
+			leftCount = getNumAdjTopLeft(col,row,leftPiece);
+		if(rightPiece != 0)
+			rightCount = getNumAdjBottomRight(col,row,rightPiece);
+		if((leftCount+rightCount)>= k-1)	//The player will win if he puts piece here
+		{
+			if(player == AI_PIECE)
+				return 1000;
+			else
+				return -1000;
+		}
+		if((leftCount+rightCount) > k/2)
+			return (leftCount+rightCount) * 1.5 * player;
+		else
+			return (leftCount+rightCount) * player;
+	}
+
+	if(canOpponentWin && (leftPiece == player || (col == 0 || row == numRows-1)))	//The opponent can win, but only on the right side
+	{
+		if(rightPiece == 0)
+			rightScore = 1 * player;
+		else
+		{
+			rightCount = getNumAdjBottomRight(col, row, rightPiece);
+			if(rightCount >= k-1)
 			{
 				if(player == AI_PIECE)
 					return 999;
 				else
-					return -1000;
+					return -999;
 			}
-
+			if(rightCount > k/2)
+				rightScore = rightCount * 2 * (player*-1) * -1;
+			else
+				rightScore = rightCount * (player*-1);
 		}
-		return ((rightScore + leftScore) * rightPiece);
+		canOpponentWin = false;
 	}
-	if(rightPiece == AI_PIECE)
-		return (rightScore  - leftScore);
-	else
-		return (leftScore - rightScore);
 
+	if(canOpponentWin && (rightPiece == (player) || (col == numCols-1 || row == 0)))	//The opponent can win, but only on the left side
+	{
+		if(leftPiece == 0)
+			leftScore = 1 * player;
+		else
+		{
+			leftCount = getNumAdjTopLeft(col, row, leftPiece);
+			if(leftCount >= k-1)
+			{
+				if(player == AI_PIECE)
+					return 999;
+				else
+					return -999;
+			}
+			if(leftCount > k/2)
+				leftScore = leftCount * 2 * (player*-1) * -1;
+			else
+				leftScore = leftCount * (player*-1);
+			}
+		canOpponentWin = false;
+	}
 
+	if(canOpponentWin)
+	{
+		if((leftPiece == 0 || leftPiece == -7) && (rightPiece == 0 || rightPiece == -7))
+		{
+			return  1 * player;		//possible to win because it is surrounded by blanks
+		}
+		if(leftPiece != 0)
+			leftCount = getNumAdjTopLeft(col,row,leftPiece);
+		if(rightPiece != 0)
+			rightCount = getNumAdjBottomRight(col,row,rightPiece);
+		if((leftCount+rightCount)>= k-1)	//The opponent will win if he puts piece here
+		{
+			if(player == AI_PIECE)
+				return 999;
+			else
+				return -999;
+		}
+		if((leftCount+rightCount) > k/2)
+			return (leftCount+rightCount) * 2 * (player*-1) * -1;
+		else
+		{
+			return (leftCount+rightCount) * (player*-1);
+		}
+
+	}
+	return (leftScore + rightScore);
 }
 
 //Returns true if a board is full

@@ -7032,3 +7032,973 @@ g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp"
  }
  ^
 g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+17:14:26 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:204:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:216:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getVerticalScore(int, int, int)':
+..\AIShell.cpp:460:7: warning: unused variable 'bottomScore' [-Wunused-variable]
+   int bottomScore = 0;
+       ^
+..\AIShell.cpp:655:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+17:17:22 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:204:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:216:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getVerticalScore(int, int, int)':
+..\AIShell.cpp:460:7: warning: unused variable 'bottomScore' [-Wunused-variable]
+   int bottomScore = 0;
+       ^
+..\AIShell.cpp:655:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+17:17:40 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:204:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:216:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getVerticalScore(int, int, int)':
+..\AIShell.cpp:460:7: warning: unused variable 'bottomScore' [-Wunused-variable]
+   int bottomScore = 0;
+       ^
+..\AIShell.cpp:655:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+17:19:58 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:200:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+      for(int i = 0; i < moves.size(); i++)
+                                    ^
+..\AIShell.cpp:210:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:222:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getVerticalScore(int, int, int)':
+..\AIShell.cpp:466:7: warning: unused variable 'bottomScore' [-Wunused-variable]
+   int bottomScore = 0;
+       ^
+..\AIShell.cpp:661:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+17:27:05 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:200:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+      for(int i = 0; i < moves.size(); i++)
+                                    ^
+..\AIShell.cpp:210:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:222:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getVerticalScore(int, int, int)':
+..\AIShell.cpp:466:7: warning: unused variable 'bottomScore' [-Wunused-variable]
+   int bottomScore = 0;
+       ^
+..\AIShell.cpp:661:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+17:28:42 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:201:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+      for(int i = 0; i < moves.size(); i++)
+                                    ^
+..\AIShell.cpp:212:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:224:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getVerticalScore(int, int, int)':
+..\AIShell.cpp:468:7: warning: unused variable 'bottomScore' [-Wunused-variable]
+   int bottomScore = 0;
+       ^
+..\AIShell.cpp:663:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+17:30:19 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:201:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+      for(int i = 0; i < moves.size(); i++)
+                                    ^
+..\AIShell.cpp:212:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:224:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getVerticalScore(int, int, int)':
+..\AIShell.cpp:468:7: warning: unused variable 'bottomScore' [-Wunused-variable]
+   int bottomScore = 0;
+       ^
+..\AIShell.cpp:663:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+17:31:44 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:201:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+      for(int i = 0; i < moves.size(); i++)
+                                    ^
+..\AIShell.cpp:212:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:224:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getVerticalScore(int, int, int)':
+..\AIShell.cpp:468:7: warning: unused variable 'bottomScore' [-Wunused-variable]
+   int bottomScore = 0;
+       ^
+..\AIShell.cpp:663:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+17:33:11 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:201:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+      for(int i = 0; i < moves.size(); i++)
+                                    ^
+..\AIShell.cpp:212:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:224:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getVerticalScore(int, int, int)':
+..\AIShell.cpp:470:7: warning: unused variable 'bottomScore' [-Wunused-variable]
+   int bottomScore = 0;
+       ^
+..\AIShell.cpp:665:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+17:33:46 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:201:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+      for(int i = 0; i < moves.size(); i++)
+                                    ^
+..\AIShell.cpp:212:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:224:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getVerticalScore(int, int, int)':
+..\AIShell.cpp:471:7: warning: unused variable 'bottomScore' [-Wunused-variable]
+   int bottomScore = 0;
+       ^
+..\AIShell.cpp:666:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+17:36:05 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:202:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+      for(int i = 0; i < moves.size(); i++)
+                                    ^
+..\AIShell.cpp:213:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:225:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getVerticalScore(int, int, int)':
+..\AIShell.cpp:472:7: warning: unused variable 'bottomScore' [-Wunused-variable]
+   int bottomScore = 0;
+       ^
+..\AIShell.cpp:667:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+17:39:36 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:202:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+      for(int i = 0; i < moves.size(); i++)
+                                    ^
+..\AIShell.cpp:213:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:214:21: error: no match for 'operator<=' (operand types are 'AiMove' and 'int')
+          if(moves[i]<= -996 && moves[i] != -1000)
+                     ^
+..\AIShell.cpp:214:41: error: no match for 'operator!=' (operand types are 'AiMove' and 'int')
+          if(moves[i]<= -996 && moves[i] != -1000)
+                                         ^
+..\AIShell.cpp:215:20: error: no match for 'operator==' (operand types are 'AiMove' and 'int')
+           moves[i] == 1000;
+                    ^
+..\AIShell.cpp:227:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:228:21: error: no match for 'operator>=' (operand types are 'AiMove' and 'int')
+          if(moves[i]>= 996 && moves[i]!= 1000)
+                     ^
+..\AIShell.cpp:228:39: error: no match for 'operator!=' (operand types are 'AiMove' and 'int')
+          if(moves[i]>= 996 && moves[i]!= 1000)
+                                       ^
+..\AIShell.cpp: In member function 'int AIShell::getVerticalScore(int, int, int)':
+..\AIShell.cpp:476:7: warning: unused variable 'bottomScore' [-Wunused-variable]
+   int bottomScore = 0;
+       ^
+..\AIShell.cpp:671:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+17:40:10 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:202:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+      for(int i = 0; i < moves.size(); i++)
+                                    ^
+..\AIShell.cpp:213:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:215:26: warning: value computed is not used [-Wunused-value]
+           moves[i].score == 1000;
+                          ^
+..\AIShell.cpp:227:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getVerticalScore(int, int, int)':
+..\AIShell.cpp:476:7: warning: unused variable 'bottomScore' [-Wunused-variable]
+   int bottomScore = 0;
+       ^
+..\AIShell.cpp:671:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+17:45:49 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:203:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+      for(int i = 0; i < moves.size(); i++)
+                                    ^
+..\AIShell.cpp:214:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:216:26: warning: value computed is not used [-Wunused-value]
+           moves[i].score == 1000;
+                          ^
+..\AIShell.cpp:228:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getVerticalScore(int, int, int)':
+..\AIShell.cpp:477:7: warning: unused variable 'bottomScore' [-Wunused-variable]
+   int bottomScore = 0;
+       ^
+..\AIShell.cpp:672:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+17:54:57 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:203:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+      for(int i = 0; i < moves.size(); i++)
+                                    ^
+..\AIShell.cpp:214:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:228:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getVerticalScore(int, int, int)':
+..\AIShell.cpp:477:7: warning: unused variable 'bottomScore' [-Wunused-variable]
+   int bottomScore = 0;
+       ^
+..\AIShell.cpp:672:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+Info: Nothing to build for Connect_K_AI
+17:57:28 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:206:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+      for(int i = 0; i < moves.size(); i++)
+                                    ^
+..\AIShell.cpp:217:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:231:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getVerticalScore(int, int, int)':
+..\AIShell.cpp:480:7: warning: unused variable 'bottomScore' [-Wunused-variable]
+   int bottomScore = 0;
+       ^
+..\AIShell.cpp:675:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+17:59:56 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:206:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+      for(int i = 0; i < moves.size(); i++)
+                                    ^
+..\AIShell.cpp:217:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:219:26: warning: value computed is not used [-Wunused-value]
+           moves[i].score == 1000;
+                          ^
+..\AIShell.cpp:231:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:233:26: warning: value computed is not used [-Wunused-value]
+           moves[i].score == -1000;
+                          ^
+..\AIShell.cpp: In member function 'int AIShell::getVerticalScore(int, int, int)':
+..\AIShell.cpp:480:7: warning: unused variable 'bottomScore' [-Wunused-variable]
+   int bottomScore = 0;
+       ^
+..\AIShell.cpp:675:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.8.1/../../../../mingw32/bin/ld.exe: cannot open output file Connect_K_AI.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+18:00:02 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+18:04:28 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:206:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+      for(int i = 0; i < moves.size(); i++)
+                                    ^
+..\AIShell.cpp:217:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:234:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getVerticalScore(int, int, int)':
+..\AIShell.cpp:486:7: warning: unused variable 'bottomScore' [-Wunused-variable]
+   int bottomScore = 0;
+       ^
+..\AIShell.cpp:681:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+18:42:35 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:208:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+      for(int i = 0; i < moves.size(); i++)
+                                    ^
+..\AIShell.cpp:219:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:221:26: warning: value computed is not used [-Wunused-value]
+           moves[i].score == 1000;
+                          ^
+..\AIShell.cpp:233:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:235:26: warning: value computed is not used [-Wunused-value]
+           moves[i].score == -1000;
+                          ^
+..\AIShell.cpp: In member function 'int AIShell::getVerticalScore(int, int, int)':
+..\AIShell.cpp:482:7: warning: unused variable 'bottomScore' [-Wunused-variable]
+   int bottomScore = 0;
+       ^
+..\AIShell.cpp:677:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+18:43:44 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:208:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+      for(int i = 0; i < moves.size(); i++)
+                                    ^
+..\AIShell.cpp:219:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:233:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getVerticalScore(int, int, int)':
+..\AIShell.cpp:482:7: warning: unused variable 'bottomScore' [-Wunused-variable]
+   int bottomScore = 0;
+       ^
+..\AIShell.cpp:677:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.8.1/../../../../mingw32/bin/ld.exe: cannot open output file Connect_K_AI.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+18:43:51 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+18:51:26 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:208:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+      for(int i = 0; i < moves.size(); i++)
+                                    ^
+..\AIShell.cpp:219:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:236:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getVerticalScore(int, int, int)':
+..\AIShell.cpp:488:7: warning: unused variable 'bottomScore' [-Wunused-variable]
+   int bottomScore = 0;
+       ^
+..\AIShell.cpp:683:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+18:52:13 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:208:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+      for(int i = 0; i < moves.size(); i++)
+                                    ^
+..\AIShell.cpp:219:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:233:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getVerticalScore(int, int, int)':
+..\AIShell.cpp:482:7: warning: unused variable 'bottomScore' [-Wunused-variable]
+   int bottomScore = 0;
+       ^
+..\AIShell.cpp:677:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+18:55:13 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:208:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+      for(int i = 0; i < moves.size(); i++)
+                                    ^
+..\AIShell.cpp:219:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:231:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getVerticalScore(int, int, int)':
+..\AIShell.cpp:478:7: warning: unused variable 'bottomScore' [-Wunused-variable]
+   int bottomScore = 0;
+       ^
+..\AIShell.cpp:673:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+18:55:50 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:208:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+      for(int i = 0; i < moves.size(); i++)
+                                    ^
+..\AIShell.cpp:219:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:231:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getVerticalScore(int, int, int)':
+..\AIShell.cpp:478:7: warning: unused variable 'bottomScore' [-Wunused-variable]
+   int bottomScore = 0;
+       ^
+..\AIShell.cpp:673:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+18:56:20 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:208:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+      for(int i = 0; i < moves.size(); i++)
+                                    ^
+..\AIShell.cpp:219:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:231:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getVerticalScore(int, int, int)':
+..\AIShell.cpp:478:7: warning: unused variable 'bottomScore' [-Wunused-variable]
+   int bottomScore = 0;
+       ^
+..\AIShell.cpp:673:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.8.1/../../../../mingw32/bin/ld.exe: cannot open output file Connect_K_AI.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+19:03:39 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:208:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+      for(int i = 0; i < moves.size(); i++)
+                                    ^
+..\AIShell.cpp:219:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:231:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getVerticalScore(int, int, int)':
+..\AIShell.cpp:478:7: warning: unused variable 'bottomScore' [-Wunused-variable]
+   int bottomScore = 0;
+       ^
+..\AIShell.cpp:673:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+19:06:03 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:221:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:233:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getVerticalScore(int, int, int)':
+..\AIShell.cpp:480:7: warning: unused variable 'bottomScore' [-Wunused-variable]
+   int bottomScore = 0;
+       ^
+..\AIShell.cpp:675:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.8.1/../../../../mingw32/bin/ld.exe: cannot open output file Connect_K_AI.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+19:06:10 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.8.1/../../../../mingw32/bin/ld.exe: cannot open output file Connect_K_AI.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+19:06:20 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+19:36:35 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:209:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+      for(int i = 0; i < moves.size(); i++)
+                                    ^
+..\AIShell.cpp:221:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:233:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getVerticalScore(int, int, int)':
+..\AIShell.cpp:480:7: warning: unused variable 'bottomScore' [-Wunused-variable]
+   int bottomScore = 0;
+       ^
+..\AIShell.cpp:675:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+19:41:59 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:209:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+      for(int i = 0; i < moves.size(); i++)
+                                    ^
+..\AIShell.cpp:221:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:233:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getVerticalScore(int, int, int)':
+..\AIShell.cpp:480:7: warning: unused variable 'bottomScore' [-Wunused-variable]
+   int bottomScore = 0;
+       ^
+..\AIShell.cpp:675:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.8.1/../../../../mingw32/bin/ld.exe: cannot open output file Connect_K_AI.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+19:42:04 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+20:27:28 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:209:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+      for(int i = 0; i < moves.size(); i++)
+                                    ^
+..\AIShell.cpp:221:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:233:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getVerticalScore(int, int, int)':
+..\AIShell.cpp:480:7: warning: unused variable 'bottomScore' [-Wunused-variable]
+   int bottomScore = 0;
+       ^
+..\AIShell.cpp:675:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+20:27:36 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:209:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+      for(int i = 0; i < moves.size(); i++)
+                                    ^
+..\AIShell.cpp:221:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:233:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getVerticalScore(int, int, int)':
+..\AIShell.cpp:480:7: warning: unused variable 'bottomScore' [-Wunused-variable]
+   int bottomScore = 0;
+       ^
+..\AIShell.cpp:675:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+23:17:02 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:209:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+      for(int i = 0; i < moves.size(); i++)
+                                    ^
+..\AIShell.cpp:221:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:233:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In function 'int bottomLeftWinPossible(int, int, int)':
+..\AIShell.cpp:437:7: error: 'boardCopy' was not declared in this scope
+    if(boardCopy[x][y] == (player*-1))
+       ^
+..\AIShell.cpp:440:18: error: 'k' was not declared in this scope
+    if(counter == k)
+                  ^
+..\AIShell.cpp:444:12: error: 'numRows' was not declared in this scope
+  if(row != numRows-1 && col !- numCols-1)
+            ^
+..\AIShell.cpp:444:29: error: expected ')' before '!' token
+  if(row != numRows-1 && col !- numCols-1)
+                             ^
+..\AIShell.cpp:447:35: error: 'numCols' was not declared in this scope
+   for(int x = col+1, y = row+1; x<numCols && y<numRows; x++, y++)
+                                   ^
+..\AIShell.cpp:449:7: error: 'boardCopy' was not declared in this scope
+    if(boardCopy[x][y] == (player*-1))
+       ^
+..\AIShell.cpp:452:18: error: 'k' was not declared in this scope
+    if(counter == k)
+                  ^
+..\AIShell.cpp:446:7: warning: unused variable 'x' [-Wunused-variable]
+   int x, y;
+       ^
+..\AIShell.cpp:446:10: warning: unused variable 'y' [-Wunused-variable]
+   int x, y;
+          ^
+..\AIShell.cpp: In member function 'int AIShell::getVerticalScore(int, int, int)':
+..\AIShell.cpp:510:7: warning: unused variable 'bottomScore' [-Wunused-variable]
+   int bottomScore = 0;
+       ^
+..\AIShell.cpp:705:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+23:17:43 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o ConnectK.o "..\\ConnectK.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:209:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+      for(int i = 0; i < moves.size(); i++)
+                                    ^
+..\AIShell.cpp:221:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:233:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'bool AIShell::bottomLeftWinPossible(int, int, int)':
+..\AIShell.cpp:444:29: error: expected ')' before '!' token
+  if(row != numRows-1 && col !- numCols-1)
+                             ^
+..\AIShell.cpp:446:7: warning: unused variable 'x' [-Wunused-variable]
+   int x, y;
+       ^
+..\AIShell.cpp:446:10: warning: unused variable 'y' [-Wunused-variable]
+   int x, y;
+          ^
+..\AIShell.cpp: In member function 'int AIShell::getVerticalScore(int, int, int)':
+..\AIShell.cpp:510:7: warning: unused variable 'bottomScore' [-Wunused-variable]
+   int bottomScore = 0;
+       ^
+..\AIShell.cpp:705:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+23:18:03 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:209:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+      for(int i = 0; i < moves.size(); i++)
+                                    ^
+..\AIShell.cpp:221:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:233:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'bool AIShell::bottomLeftWinPossible(int, int, int)':
+..\AIShell.cpp:446:7: warning: unused variable 'x' [-Wunused-variable]
+   int x, y;
+       ^
+..\AIShell.cpp:446:10: warning: unused variable 'y' [-Wunused-variable]
+   int x, y;
+          ^
+..\AIShell.cpp: In member function 'int AIShell::getVerticalScore(int, int, int)':
+..\AIShell.cpp:510:7: warning: unused variable 'bottomScore' [-Wunused-variable]
+   int bottomScore = 0;
+       ^
+..\AIShell.cpp:705:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+23:18:34 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:209:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+      for(int i = 0; i < moves.size(); i++)
+                                    ^
+..\AIShell.cpp:221:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:233:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getVerticalScore(int, int, int)':
+..\AIShell.cpp:510:7: warning: unused variable 'bottomScore' [-Wunused-variable]
+   int bottomScore = 0;
+       ^
+..\AIShell.cpp:705:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+23:25:54 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:209:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+      for(int i = 0; i < moves.size(); i++)
+                                    ^
+..\AIShell.cpp:221:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:233:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getVerticalScore(int, int, int)':
+..\AIShell.cpp:510:7: warning: unused variable 'bottomScore' [-Wunused-variable]
+   int bottomScore = 0;
+       ^
+..\AIShell.cpp: In member function 'int AIShell::getLRDiagonalScore(int, int, int)':
+..\AIShell.cpp:905:2: error: expected ')' before '{' token
+  {
+  ^
+..\AIShell.cpp:1059:1: error: expected statement at end of input
+ }
+ ^
+..\AIShell.cpp:894:6: warning: unused variable 'rightCount' [-Wunused-variable]
+  int rightCount = 0;
+      ^
+..\AIShell.cpp:895:6: warning: unused variable 'rightScore' [-Wunused-variable]
+  int rightScore = 0;
+      ^
+..\AIShell.cpp:896:6: warning: unused variable 'leftCount' [-Wunused-variable]
+  int leftCount = 0;
+      ^
+..\AIShell.cpp:897:6: warning: unused variable 'leftScore' [-Wunused-variable]
+  int leftScore = 0;
+      ^
+..\AIShell.cpp:1059:1: error: expected '}' at end of input
+ }
+ ^
+..\AIShell.cpp: In member function 'int AIShell::getVerticalScore(int, int, int)':
+..\AIShell.cpp:705:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+..\AIShell.cpp: In member function 'int AIShell::getLRDiagonalScore(int, int, int)':
+..\AIShell.cpp:1059:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+23:26:35 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:209:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+      for(int i = 0; i < moves.size(); i++)
+                                    ^
+..\AIShell.cpp:221:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:233:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getVerticalScore(int, int, int)':
+..\AIShell.cpp:510:7: warning: unused variable 'bottomScore' [-Wunused-variable]
+   int bottomScore = 0;
+       ^
+..\AIShell.cpp: In member function 'int AIShell::getLRDiagonalScore(int, int, int)':
+..\AIShell.cpp:895:6: warning: variable 'rightScore' set but not used [-Wunused-but-set-variable]
+  int rightScore = 0;
+      ^
+..\AIShell.cpp:896:6: warning: unused variable 'leftCount' [-Wunused-variable]
+  int leftCount = 0;
+      ^
+..\AIShell.cpp:897:6: warning: unused variable 'leftScore' [-Wunused-variable]
+  int leftScore = 0;
+      ^
+..\AIShell.cpp: In member function 'int AIShell::getVerticalScore(int, int, int)':
+..\AIShell.cpp:705:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+..\AIShell.cpp: In member function 'int AIShell::getLRDiagonalScore(int, int, int)':
+..\AIShell.cpp:930:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+23:42:26 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:209:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+      for(int i = 0; i < moves.size(); i++)
+                                    ^
+..\AIShell.cpp:221:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:233:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getVerticalScore(int, int, int)':
+..\AIShell.cpp:510:7: warning: unused variable 'bottomScore' [-Wunused-variable]
+   int bottomScore = 0;
+       ^
+..\AIShell.cpp:705:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+00:31:15 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:209:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+      for(int i = 0; i < moves.size(); i++)
+                                    ^
+..\AIShell.cpp:221:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:233:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getVerticalScore(int, int, int)':
+..\AIShell.cpp:540:7: warning: unused variable 'bottomScore' [-Wunused-variable]
+   int bottomScore = 0;
+       ^
+..\AIShell.cpp:735:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
+00:51:48 **** Incremental Build of configuration Debug for project Connect_K_AI ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AIShell.o "..\\AIShell.cpp" 
+..\AIShell.cpp: In member function 'AiMove AIShell::getBestMove(int**, int, int, int, int)':
+..\AIShell.cpp:221:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp:233:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int i = 0; i < moves.size(); i++) {
+                                        ^
+..\AIShell.cpp: In member function 'int AIShell::getVerticalScore(int, int, int)':
+..\AIShell.cpp:540:7: warning: unused variable 'bottomScore' [-Wunused-variable]
+   int bottomScore = 0;
+       ^
+..\AIShell.cpp:735:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+g++ -o Connect_K_AI.exe Move.o ConnectK.o AIShell.o 
